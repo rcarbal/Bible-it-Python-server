@@ -12,16 +12,16 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
-def convert_list_to_book_db(list_of_books, section):
-    bible_section = None
+def convert_list_to_book_db(old_testament, new_testament):
 
-    if section == 0:
-        bible_section = session.query(BibleSection).filter_by(name="Old Testament").first()
-    elif section == 1:
-        bible_section = session.query(BibleSection).filter_by(name='New Testament').first()
+    old = session.query(BibleSection).filter_by(name="Old Testament").first()
+    new = session.query(BibleSection).filter_by(name='New Testament').first()
     list = []
 
-    for book in list_of_books:
-        list.append(Book(name=book, section_id=bible_section.id))
+    for book in old_testament:
+        list.append(Book(name=book, section_id=old.id))
+
+    for book in new_testament:
+        list.append(Book(name=book, section_id=new.id))
 
     return list

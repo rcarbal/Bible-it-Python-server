@@ -29,6 +29,9 @@ def add_books_to_db():
     old_testament = books_sectioned_off[0]['OLD TESTAMENT']
     new_testament = books_sectioned_off[1]['NEW TESTAMENT']
 
-    list_old_testament_db = convert_list_to_book_db(old_testament, 0)
+    list_old_testament_db = convert_list_to_book_db(old_testament, new_testament)
     session.add_all(list_old_testament_db)
     session.commit()
+
+def add_chapters_to_db():
+    pass

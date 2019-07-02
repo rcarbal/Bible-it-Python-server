@@ -18,7 +18,7 @@ def get_all_bible_books(complete_bible_data):
 
 
 def get_book_from_bible(complete_bible_data, book):
-    single_book = []
+    single_book = {}
     bible_book = complete_bible_data.get(book)
+    single_book.update({book: bible_book})
     return bible_book
-

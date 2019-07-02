@@ -19,7 +19,6 @@ class Book(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(25), nullable=False)
-    chapter = Column(Integer(), nullable=False)
     section_id = Column(Integer, ForeignKey('section.id'))
     section = relationship(BibleSection)
 

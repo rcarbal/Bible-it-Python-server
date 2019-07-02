@@ -16,10 +16,12 @@ def convert_list_to_book_db(list_of_books, section):
     bible_section = None
 
     if section == 0:
-        bible_section = session.query(BibleSection).filter_by(name='Old Testament')
+        bible_section = session.query(BibleSection).filter_by(name="Old Testament").first()
     elif section == 1:
-        bible_section = session.query(BibleSection).filter_by(name='New Testament')
+        bible_section = session.query(BibleSection).filter_by(name='New Testament').first()
     list = []
 
     for book in list_of_books:
-        list.append(Book())
+        list.append(Book(name=book, section_id=bible_section.id))
+
+    return list

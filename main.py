@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, render_template, request, url_for, flash, jsonify
-from sqlalchemy import create_engine, asc
-from sqlalchemy.orm import sessionmaker
-from urllib3.connectionpool import xrange
-from werkzeug.utils import redirect
+from flask import Flask
 
 app = Flask(__name__)
 

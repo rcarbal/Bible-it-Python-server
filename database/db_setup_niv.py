@@ -15,12 +15,12 @@ class BibleSection(Base):
 
 
 class Book(Base):
-    __tablename_ = "book"
+    __tablename__ = "book"
 
     id = Column(Integer, primary_key=True)
     name = Column(String(25), nullable=False)
     chapter = Column(Integer(), nullable=False)
-    section_id = Column(Integer, ForeignKey="section.id")
+    section_id = Column(Integer, ForeignKey('section.id'))
     section = relationship(BibleSection)
 
 
@@ -28,7 +28,7 @@ class Chapter(Base):
     __tablename__ = "chapter"
     id = Column(Integer, primary_key=True)
     chapter = Column(Integer, nullable=False)
-    book_id = Column(Integer, ForeignKey='book.id')
+    book_id = Column(Integer, ForeignKey('book.id'))
     book = relationship(Book)
 
 

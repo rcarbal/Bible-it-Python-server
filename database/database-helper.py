@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import BibleSection, Book
-from utilities.db_converter import convert_list_to_book_db
+from utilities.db_converter import convert_section_list_to_book_db, convert_book_list_to_db, convert_verses_list_to_db
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books
 from utilities.matcher import match_books_to_section
 
@@ -15,7 +15,7 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
-def setup_bible_section_db():
+def add_bible_sections_to_db():
     old_testament = BibleSection(name="Old Testament")
     new_tesament = BibleSection(name="New Testament")
 
@@ -29,9 +29,23 @@ def add_books_to_db():
     old_testament = books_sectioned_off[0]['OLD TESTAMENT']
     new_testament = books_sectioned_off[1]['NEW TESTAMENT']
 
-    list_old_testament_db = convert_list_to_book_db(old_testament, new_testament)
+    list_old_testament_db = convert_section_list_to_book_db(old_testament, new_testament)
     session.add_all(list_old_testament_db)
     session.commit()
 
 def add_chapters_to_db():
-    pass
+    bible = get_complete_bible()
+    books = get_all_bible_books(bible)
+    chapters = convert_book_list_to_db(bible, books)
+
+    session.add_all(chapters)
+    session.commit()
+
+def add_verses_to_db():
+    bible = get_complete_bible()
+    books = get_all_bible_books(bible)
+    verses = convert_verses_list_to_db(books)
+
+    session.add_all(verses)
+    session.commit()
+

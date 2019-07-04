@@ -26,7 +26,7 @@ class Book(Base):
 class Chapter(Base):
     __tablename__ = "chapter"
     id = Column(Integer, primary_key=True)
-    chapter = Column(Integer, nullable=False)
+    chapter = Column(String, nullable=False)
     book_id = Column(Integer, ForeignKey('book.id'))
     book = relationship(Book)
 
@@ -35,7 +35,8 @@ class Verse(Base):
     __tablename__ = "verse"
 
     id = Column(Integer, primary_key=True)
-    verse = Column(String(600), nullable=False)
+    verse_number= Column(String(10), nullable=False)
+    verse_string = Column(String(600), nullable=False)
     chapter_id = Column(Integer, ForeignKey('chapter.id'))
     chapter = relationship(Chapter)
 

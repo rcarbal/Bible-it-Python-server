@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
 
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def root():
     return "root"
+
+
+@app.route('/api/v1.0/search')
+def search():
+    query_param = request.args.get('query')
+    print(query_param)
+    return query_param
 
 
 if __name__ == '__main__':

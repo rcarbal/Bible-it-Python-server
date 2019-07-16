@@ -2,17 +2,17 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from database.db_setup_niv import BibleSection, Book
+from database.db_setup_niv import BibleSection, Book, Verse
 from utilities.db_converter import convert_section_list_to_book_db, convert_book_list_to_db, convert_verses_list_to_db
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books
 from utilities.matcher import match_books_to_section
 
-Base = declarative_base()
 
-engine = create_engine('sqlite:///bibledatabase.db')
-Base.metadata.create_all(engine)
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
+def setup_bible_db():
+    add_bible_sections_to_db()
+    add_books_to_db()
+    add_chapters_to_db()
+    add_verses_to_db()
 
 
 def add_bible_sections_to_db():
@@ -33,6 +33,7 @@ def add_books_to_db():
     session.add_all(list_old_testament_db)
     session.commit()
 
+
 def add_chapters_to_db():
     bible = get_complete_bible()
     books = get_all_bible_books(bible)
@@ -40,6 +41,7 @@ def add_chapters_to_db():
 
     session.add_all(chapters)
     session.commit()
+
 
 def add_verses_to_db():
     bible = get_complete_bible()
@@ -49,3 +51,20 @@ def add_verses_to_db():
     session.add_all(verses)
     session.commit()
 
+
+def parse_word_db(word):
+    pass
+
+
+def get_verses(session):
+    verses = session.query(Verse).all()
+    for verse in verses:
+        print(verse.verse_string)
+
+
+if __name__ == '__main__':
+    Base = declarative_base()
+    engine = create_engine('sqlite:///bibledatabase.db?check_same_thread=False')
+    Base.metadata.create_all(engine)
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()

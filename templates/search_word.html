@@ -1,0 +1,11 @@
+{% include "header.html" %}
+<form action="{{url_for('search')}}" method='POST'>
+
+    <p>Bible-it word search:</p>
+
+    <input type='text' size='50' name='word'>
+
+    <input type='submit' value='Create'>
+
+</form>
+{% include "footer.html" %}

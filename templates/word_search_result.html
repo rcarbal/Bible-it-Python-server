@@ -1,0 +1,10 @@
+{% include "header.html" %}
+<div>Bible-it word search result:</div>
+<ul>
+{% for i in verses %}
+    <li>
+        {{ i }}
+    </li>
+{% endfor %}
+</ul>
+{% include "footer.html" %}

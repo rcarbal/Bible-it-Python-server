@@ -1,8 +1,21 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request
+from flask import Flask, request, render_template
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+from database.db_setup_niv import Verse
 
 app = Flask(__name__)
+
+Base = declarative_base()
+
+engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False')
+
+Base.metadata.create_all(engine)
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
 
 
 @app.route('/')
@@ -10,11 +23,22 @@ def root():
     return "root"
 
 
-@app.route('/api/v1.0/search')
+@app.route('/word_search', methods=['GET', 'POST'])
 def search():
-    query_param = request.args.get('query')
-    print(query_param)
-    return query_param
+    if request.method == 'POST':
+        query_param = request.form['word']
+        verses = session.query(Verse).all()
+
+        arr = []
+
+        for verse in verses:
+            if query_param in verse.verse_string:
+                arr.append(verse.verse_string)
+
+        return render_template('word_search_result.html', verses=arr)
+
+    else:
+        return render_template('search_word.html')
 
 
 if __name__ == '__main__':

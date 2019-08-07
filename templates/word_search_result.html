@@ -6,19 +6,25 @@
 
     <input type='text' size='50' name='word'>
 
-    <input type='submit' value='Create'>
+    <input type='submit' value='Bible-it'>
 
 </form>
 <br><br>
 
-<div>Bible-it word search result:</div>
+<div>Bible-it word search result: <strong>{{word}}</strong></div>
 
-<br><br>
-<ul>
+<br>
+
+<div>Search Results: {{count}}</div>
+
+<br>
+{% include "header.html" %}
+<div>Bible-it word search result:</div>
+<ol>
 {% for i in verses %}
     <li>
-        {{ i.verse_string }}
+        {{ i }}
     </li>
 {% endfor %}
-</ul>
+</ol>
 {% include "footer.html" %}

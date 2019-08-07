@@ -25,7 +25,32 @@ def search():
         query_param = request.form['word']
         verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
 
-        return render_template('word_search_result.html', verses=verses)
+        exact = []
+
+        # loop through verses result
+        for verse in verses:
+
+            # split the words in the verse
+            words = verse.verse_string.split()
+
+            # loop through the words and check
+            for i in words:
+                word = i
+
+                if "hell" in word:
+                    print(i)
+                if "." in word:
+                    word = word.replace(".", "")
+                if "," in word:
+                    word = word.replace(",", "")
+                if '"' in word:
+                    word = word.replace('"', "")
+                if ";" in word:
+                    word = word.replace(';', "")
+                if word == query_param:
+                    exact.append(verse.verse_string)
+
+        return render_template('word_search_result.html', verses=exact, count=len(exact), word=query_param)
 
     else:
         return render_template('search_word.html')

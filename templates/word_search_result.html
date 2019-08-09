@@ -52,4 +52,14 @@
 
 <!-- End of bootstrap sample-->
 
+<ol>
+    {% for i in second_verses %}
+    <li>
+        <p>
+            {{ i }}
+        </p>
+    </li>
+    {% endfor %}
+</ol>
+
 {% include "footer.html" %}

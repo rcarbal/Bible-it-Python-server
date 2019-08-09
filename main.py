@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+from typing import List
 
 from flask import Flask, request, render_template, Markup
 from sqlalchemy import create_engine
@@ -37,8 +38,6 @@ def search():
             for i in words:
                 word = i
 
-                if "hell" in word:
-                    print(i)
                 if "." in word:
                     word = word.replace(".", "")
                 if "," in word:
@@ -47,13 +46,36 @@ def search():
                     word = word.replace('"', "")
                 if ";" in word:
                     word = word.replace(';', "")
+                if "?" in word:
+                    word = word.replace('?', "")
                 if word == query_param:
                     complete_words = verse.verse_string.replace(word, '<strong>' + word + '</strong>')
-                    newWords = Markup(complete_words)
-                    exact.append(newWords)
+                    new_words = Markup(complete_words)
+                    exact.append(new_words)
 
-        return render_template('word_search_result.html', verses=exact, count=len(exact), word=query_param)
+        # Process Inexact results
+        second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%'))
 
+        second_exact: List[str] = []
+
+        for verse in second_verses:
+            split_verse = verse.verse_string.split()
+            _second_split_verse_container = []
+
+            for i in split_verse:
+                if i == "God":
+                    print(i)
+                if query_param in i.lower() and i != query_param:
+                    i = i.replace(i, '<strong>' + i + '</strong>')
+
+                _second_split_verse_container.append(i)
+
+            joinned_verse = " ".join(_second_split_verse_container)
+            markup_verse = Markup(joinned_verse)
+            second_exact.append(markup_verse)
+
+        return render_template('word_search_result.html', verses=exact, second_verses=second_exact, count=len(exact),
+                               word=query_param)
     else:
         return render_template('search_word.html')
 

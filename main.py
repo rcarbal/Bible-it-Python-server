@@ -19,7 +19,7 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/word_search', methods=['GET', 'POST'])
 def search():
     if request.method == 'POST':
         query_param = request.form['word']

@@ -1,11 +1,19 @@
 {% include "header.html" %}
-<form action="{{url_for('search')}}" method='POST'>
 
-    <p>Bible-it word search:</p>
+<div class="jumbotron vertical-center">
+  <div class="container">
+    <h1 class="display-4">Bible-it word search:</h1>
+    <div class="lead">
+        <form class="form-inline my-2 my-lg-0" action="{{url_for('search')}}" method='POST'>
 
-    <input type='text' size='50' name='word'>
+    <input class="form-control mr-sm-2" type='search' size='50' name='word'>
 
-    <input type='submit' value='Bible-it'>
+    <input class="btn btn-outline-success my-2 my-sm-0" type='submit' value='Bible-it'>
 
 </form>
+    </div>
+  </div>
+</div>
+
+
 {% include "footer.html" %}

@@ -1,38 +1,55 @@
 {% include "header.html" %}
 
 <div class="jumbotron vertical-center">
-  <div class="container">
-    <h1 class="display-4">Bible-it word search:</h1>
-    <div class="lead">
-        <form class="form-inline my-2 my-lg-0" action="{{url_for('search')}}" method='POST'>
+    <div class="container">
+        <h1 class="display-4">Bible-it word search:</h1>
+        <div class="lead">
+            <form class="form-inline my-2 my-lg-0" action="{{url_for('search')}}" method='POST'>
 
-    <input class="form-control mr-sm-2" type='search' size='50' name='word'>
+                <input class="form-control mr-sm-2" type='search' size='50' name='word'>
 
-    <input class="btn btn-outline-success my-2 my-sm-0" type='submit' value='Bible-it'>
+                <input class="btn btn-outline-success my-2 my-sm-0" type='submit' value='Bible-it'>
 
-</form>
+            </form>
+        </div>
     </div>
-  </div>
 </div>
 
 <br><br>
 
-<div>Bible-it word search result: <strong>{{word}}</strong></div>
+<div><strong>Exact</strong> word search result: <strong>{{word}}</strong></div>
 
 <br>
 
-<div>Search Results: {{count}}</div>
+<!-- Bootstrap Sample-->
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <div>Search Results: {{count}}</div>
+                </button>
+            </h2>
+        </div>
 
-<br>
-{% include "header.html" %}
-<div>Bible-it word search result:</div>
-<ol>
-{% for i in verses %}
-    <li>
-        <p>
-            {{ i }}
-        </p>
-    </li>
-{% endfor %}
-</ol>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <ol>
+                    {% for i in verses %}
+                    <li>
+                        <p>
+                            {{ i }}
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- End of bootstrap sample-->
+
 {% include "footer.html" %}

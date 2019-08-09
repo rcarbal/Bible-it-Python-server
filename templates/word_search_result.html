@@ -17,18 +17,18 @@
 
 <br><br>
 
-<div><strong>Exact</strong> word search result: <strong>{{word}}</strong></div>
+<div>Word search result: <strong>{{word}}</strong></div>
 
 <br>
 
-<!-- Bootstrap Sample-->
+<!-- Bootstrap first collapsable search result-->
 <div class="accordion" id="accordionExample">
     <div class="card">
         <div class="card-header" id="headingOne">
             <h2 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
-                    <div>Search Results: {{count}}</div>
+                    <div>Exact Search Results: {{count}}</div>
                 </button>
             </h2>
         </div>
@@ -50,16 +50,34 @@
 
 </div>
 
-<!-- End of bootstrap sample-->
 
-<ol>
-    {% for i in second_verses %}
-    <li>
-        <p>
-            {{ i }}
-        </p>
-    </li>
-    {% endfor %}
-</ol>
+<!-- Bootstrap first collapsable search result-->
+<div class="accordion" id="accordionExample2">
+    <div class="card">
+        <div class="card-header" id="headingtwo">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
+                    aria-expanded="true" aria-controls="collapseOne2">
+                    <div>Inexact Search Results: {{second_count}}</div>
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseOne2" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample2">
+            <div class="card-body">
+                <ol>
+                    {% for i in second_verses %}
+                    <li>
+                        <p>
+                            {{ i }}
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 {% include "footer.html" %}

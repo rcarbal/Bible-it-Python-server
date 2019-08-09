@@ -75,7 +75,7 @@ def search():
             second_exact.append(markup_verse)
 
         return render_template('word_search_result.html', verses=exact, second_verses=second_exact, count=len(exact),
-                               word=query_param)
+                               word=query_param, second_count=len(second_exact))
     else:
         return render_template('search_word.html')
 

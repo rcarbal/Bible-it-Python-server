@@ -1,4 +1,4 @@
-from static.static import BIBLE
+from constants.static import BIBLE
 
 
 def match_books_to_section():

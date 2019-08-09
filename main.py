@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Markup
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -48,7 +48,9 @@ def search():
                 if ";" in word:
                     word = word.replace(';', "")
                 if word == query_param:
-                    exact.append(verse.verse_string)
+                    complete_words = verse.verse_string.replace(word, '<strong>' + word + '</strong>')
+                    newWords = Markup(complete_words)
+                    exact.append(newWords)
 
         return render_template('word_search_result.html', verses=exact, count=len(exact), word=query_param)
 

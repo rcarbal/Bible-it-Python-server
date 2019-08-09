@@ -16,6 +16,7 @@ def setup_bible_db():
 
 
 def add_bible_sections_to_db():
+    print("Inside Add bible sections")
     old_testament = BibleSection(name="Old Testament")
     new_tesament = BibleSection(name="New Testament")
 
@@ -68,3 +69,5 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     DBSession = sessionmaker(bind=engine)
     session = DBSession()
+
+setup_bible_db()

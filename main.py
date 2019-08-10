@@ -59,20 +59,45 @@ def search():
         second_exact: List[str] = []
         match = True
 
+        # loops through all verses
         for verse in second_verses:
-            split_verse = verse.verse_string.split()
-            _second_split_verse_container = []
+            match = True
+            # splits the verses per word
+            split_verse_into_words = verse.verse_string.split()
 
-            for i in split_verse:
-                if query_param in i.lower() and i != query_param:
-                    match = False
-                    i = i.replace(i, '<strong>' + i + '</strong>')
+            second_slipt_into_words = []
 
-                _second_split_verse_container.append(i)
+            for i in split_verse_into_words:
 
-            joinned_verse = " ".join(_second_split_verse_container)
+                original_word = i
+
+                if query_param in i.lower():
+
+                    if "!" in i:
+                        i = i.replace('!', "")
+                    if ".'" in i:
+                        i = i.replace(".'", "")
+                    if ".'\"" in i:
+                        i = i.replace(".'\"", "")
+                    if "." in i:
+                        i = i.replace(".", "")
+                    if "," in i:
+                        i = i.replace(",", "")
+                    if '"' in i:
+                        i = i.replace('"', "")
+                    if ";" in i:
+                        i = i.replace(';', "")
+                    if "?" in i:
+                        i = i.replace('?', "")
+
+                    if i != query_param:
+                        match = False
+                        original_word = original_word.replace(original_word, '<strong>' + original_word + '</strong>')
+
+                second_slipt_into_words.append(original_word)
 
             if not match:
+                joinned_verse = " ".join(second_slipt_into_words)
                 markup_verse = Markup(joinned_verse)
                 second_exact.append(markup_verse)
 

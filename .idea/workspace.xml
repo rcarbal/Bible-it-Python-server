@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84a38014-ffb7-43ef-9bf6-9d6cedaada00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="1258">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="e#23#32#0" expanded="true" />
               </folding>
@@ -29,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -38,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/databse_connection.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -46,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/database_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -65,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/db_setup_niv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
               </folding>
@@ -160,16 +158,16 @@
         <option value="$PROJECT_DIR$/templates/footer.html" />
         <option value="$PROJECT_DIR$/utilities/db_converter.py" />
         <option value="$PROJECT_DIR$/templates/word_search_result.html" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/database/database_helper.py" />
         <option value="$PROJECT_DIR$/database/_init_.py" />
         <option value="$PROJECT_DIR$/database/database_utils.py" />
         <option value="$PROJECT_DIR$/tests/tests.py" />
         <option value="$PROJECT_DIR$/database/databse_connection.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="206" />
     <option name="width" value="2800" />
     <option name="height" value="1840" />
@@ -187,21 +185,6 @@
             <path>
               <item name="Bible-it-Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Bible-it-Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bible-it-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bible-it-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bible-it-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bible-it-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bible-it-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bible-it-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="utilities" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -235,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in tests.py">
+  <component name="RunManager" selected="Python.main">
     <configuration name="database_helper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BibleItServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -336,9 +319,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Unittests in tests.py" />
         <item itemvalue="Python.database_utils" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.database_helper" />
         <item itemvalue="Python.db_setup_niv" />
       </list>
@@ -384,13 +367,13 @@
     <frame x="-7" y="-7" width="1513" height="973" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22988506" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22988506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36374408" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43246445" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36374408" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43246445" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -415,9 +398,11 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
+        <watch expression="match" />
+        <watch expression="second_exact" />
+        <watch expression="second_slipt_into_words" />
         <watch expression="i" />
-        <watch expression="word" />
-        <watch expression="exact" />
+        <watch expression="query_param" />
       </configuration>
     </watches-manager>
   </component>
@@ -570,42 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/_init_.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/_init_.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/database_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/databse_connection.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/db_setup_niv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/database_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -616,15 +565,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/database_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/_init_.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/_init_.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/db_setup_niv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="1258">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/databse_connection.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

@@ -63,11 +63,11 @@ def get_verses(session):
         print(verse.verse_string)
 
 
+
+
 if __name__ == '__main__':
     Base = declarative_base()
     engine = create_engine('sqlite:///bibledatabase.db?check_same_thread=False')
     Base.metadata.create_all(engine)
     DBSession = sessionmaker(bind=engine)
     session = DBSession()
-
-setup_bible_db()

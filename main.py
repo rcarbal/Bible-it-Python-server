@@ -57,22 +57,24 @@ def search():
         second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%'))
 
         second_exact: List[str] = []
+        match = True
 
         for verse in second_verses:
             split_verse = verse.verse_string.split()
             _second_split_verse_container = []
 
             for i in split_verse:
-                if i == "God":
-                    print(i)
                 if query_param in i.lower() and i != query_param:
+                    match = False
                     i = i.replace(i, '<strong>' + i + '</strong>')
 
                 _second_split_verse_container.append(i)
 
             joinned_verse = " ".join(_second_split_verse_container)
-            markup_verse = Markup(joinned_verse)
-            second_exact.append(markup_verse)
+
+            if not match:
+                markup_verse = Markup(joinned_verse)
+                second_exact.append(markup_verse)
 
         return render_template('word_search_result.html', verses=exact, second_verses=second_exact, count=len(exact),
                                word=query_param, second_count=len(second_exact))

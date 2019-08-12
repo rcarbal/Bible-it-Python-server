@@ -57,12 +57,10 @@ def parse_word_db(word):
     pass
 
 
-def get_verses(session):
+def get_verses():
     verses = session.query(Verse).all()
     for verse in verses:
         print(verse.verse_string)
-
-
 
 
 if __name__ == '__main__':

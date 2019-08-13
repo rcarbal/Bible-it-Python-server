@@ -33,13 +33,14 @@ class Verse(Base):
     __tablename__ = "verse"
 
     id = Column(Integer, primary_key=True)
-    verse_number= Column(String(10), nullable=False)
+    verse_number = Column(String(10), nullable=False)
     verse_string = Column(String(600), nullable=False)
     chapter_id = Column(Integer, ForeignKey('chapter.id'))
     chapter = relationship(Chapter)
 
 
-# engine = create_engine('sqlite:///bibledatabase.db')
-# Base.metadata.create_all(engine)
-# DBSession = sessionmaker(bind=engine)
-# session = DBSession()
+def run_main():
+    engine = create_engine('sqlite:///bibledatabase.db')
+    Base.metadata.create_all(engine)
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()

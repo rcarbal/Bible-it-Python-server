@@ -2,9 +2,6 @@
 import os
 
 from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
-from objects import verse
-from typing import List
-
 from flask import Flask, request, render_template, Markup
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -33,8 +30,6 @@ def search():
         index = 0
         # loop through verses result
         for exact_verse in verses:
-
-
 
             # get current available information -  verse string, verse number and chapter
             verse_dictionary = build_dictionary_verse_query(exact_verse)
@@ -97,8 +92,6 @@ def search():
 
             for i in split_verse_into_words:
 
-
-
                 original_word = i
 
                 if query_param in i.lower():
@@ -141,9 +134,11 @@ def search():
 
 
 if __name__ == '__main__':
+    print("Bible-it Server Started ==================================================>")
     app.secret_key = 'super_secret_key'
     port = int(os.environ.get('PORT', 8000))
     host = '127.0.0.1'
     app.debug = True
     # app.run(host='0.0.0.0', port=5000)
     app.run(host=host, port=port)
+

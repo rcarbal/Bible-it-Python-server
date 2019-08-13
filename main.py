@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import os
+
+from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
 from objects import verse
 from typing import List
 
@@ -27,27 +29,19 @@ def search():
         query_param = request.form['word']
         verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
 
-
         exact = []
 
         # loop through verses result
         for verse in verses:
 
-            verse_dictionary = {}
-
             # get current available information -  verse string, verse number and chapter
-
-            verse_dictionary['verse_string'] = verse.verse_string
-            verse_dictionary['verse_number'] = verse.verse_number
-            verse_dictionary['chapter_number'] = verse.chapter.chapter
-            verse_dictionary['book_id'] = verse.chapter.book_id
+            verse_dictionary = build_dictionary_verse_query(verse)
 
             # get chapter information
             book = session.query(Book).get(verse_dictionary["book_id"])
 
             # get the book name (name) , section name (section.name)
-            verse_dictionary['book_name'] = book.name
-            verse_dictionary['section_name'] = book.section.name
+            completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # split the words in the verse
             words = verse.verse_string.split()
@@ -69,7 +63,8 @@ def search():
                 if word == query_param:
                     complete_words = verse.verse_string.replace(word, '<strong>' + word + '</strong>')
                     new_words = Markup(complete_words)
-                    exact.append(new_words)
+                    completed_dictionary['verse_string'] = new_words
+                    exact.append(completed_dictionary)
 
         # Process Inexact results
         second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%'))

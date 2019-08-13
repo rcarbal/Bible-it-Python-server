@@ -69,12 +69,22 @@ def search():
         # Process Inexact results
         second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%'))
 
-        second_exact: List[str] = []
+        second_exact = []
         match = True
 
         # loops through all verses
         for verse in second_verses:
             match = True
+
+            # get current available information -  verse string, verse number and chapter
+            verse_dictionary = build_dictionary_verse_query(verse)
+
+            # get chapter information
+            book = session.query(Book).get(verse_dictionary["book_id"])
+
+            # get the book name (name) , section name (section.name)
+            completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
+
             # splits the verses per word
             split_verse_into_words = verse.verse_string.split()
 
@@ -112,7 +122,8 @@ def search():
             if not match:
                 joinned_verse = " ".join(second_slipt_into_words)
                 markup_verse = Markup(joinned_verse)
-                second_exact.append(markup_verse)
+                completed_dictionary['verse_string'] = markup_verse
+                second_exact.append(completed_dictionary)
 
         return render_template('word_search_result.html', verses=exact, second_verses=second_exact, count=len(exact),
                                word=query_param, second_count=len(second_exact))

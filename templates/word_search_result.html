@@ -71,16 +71,23 @@
         </div>
 
         <div id="collapseOne2" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample2">
-            <div class="card-body">
-                <ol>
+            <div>
+                <ul class="list-group list-group-flush">
                     {% for i in second_verses %}
-                    <li>
-                        <p>
-                            {{ i }}
-                        </p>
+                    <li class="list-group-item" >
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2">{{i.section_name}}</h6>
+                            <h6 class="card-subtitle mb-2">Book: {{i.book_name}}</h6>
+                            <h6 class="card-subtitle mb-2"> Chapter: {{i.chapter_number}}</h6>
+                            <h6 class="card-subtitle mb-2"> Verse: {{i.verse_number}}</h6>
+                            <p class="card-text">
+                                {{ i.verse_string }}
+                            </p>
+                        </div>
+
                     </li>
                     {% endfor %}
-                </ol>
+                </ul>
             </div>
         </div>
     </div>

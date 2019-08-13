@@ -35,10 +35,11 @@
 
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div>
-                <ul class="list-group list-group-flush">
+                <ol class="list-group list-group-flush">
                     {% for i in verses %}
                     <li class="list-group-item" >
                         <div class="card-body">
+                            <div class="float-right text-muted">{{i.index}}</div>
                             <h6 class="card-subtitle mb-2">{{i.section_name}}</h6>
                             <h6 class="card-subtitle mb-2">Book: {{i.book_name}}</h6>
                             <h6 class="card-subtitle mb-2"> Chapter: {{i.chapter_number}}</h6>
@@ -50,7 +51,7 @@
 
                     </li>
                     {% endfor %}
-                </ul>
+                </ol>
             </div>
         </div>
     </div>
@@ -72,10 +73,11 @@
 
         <div id="collapseOne2" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample2">
             <div>
-                <ul class="list-group list-group-flush">
+                <ol class="list-group list-group-flush">
                     {% for i in second_verses %}
                     <li class="list-group-item" >
                         <div class="card-body">
+                            <div class="float-right text-muted">{{i.index}}</div>
                             <h6 class="card-subtitle mb-2">{{i.section_name}}</h6>
                             <h6 class="card-subtitle mb-2">Book: {{i.book_name}}</h6>
                             <h6 class="card-subtitle mb-2"> Chapter: {{i.chapter_number}}</h6>
@@ -87,7 +89,7 @@
 
                     </li>
                     {% endfor %}
-                </ul>
+                </ol>
             </div>
         </div>
     </div>

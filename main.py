@@ -30,12 +30,14 @@ def search():
         verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
 
         exact = []
-
+        index = 0
         # loop through verses result
-        for verse in verses:
+        for exact_verse in verses:
+
+
 
             # get current available information -  verse string, verse number and chapter
-            verse_dictionary = build_dictionary_verse_query(verse)
+            verse_dictionary = build_dictionary_verse_query(exact_verse)
 
             # get chapter information
             book = session.query(Book).get(verse_dictionary["book_id"])
@@ -44,7 +46,7 @@ def search():
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # split the words in the verse
-            words = verse.verse_string.split()
+            words = exact_verse.verse_string.split()
 
             # loop through the words and check
             for i in words:
@@ -61,9 +63,11 @@ def search():
                 if "?" in word:
                     word = word.replace('?', "")
                 if word == query_param:
-                    complete_words = verse.verse_string.replace(word, '<strong>' + word + '</strong>')
+                    index += 1
+                    complete_words = exact_verse.verse_string.replace(word, '<strong>' + word + '</strong>')
                     new_words = Markup(complete_words)
                     completed_dictionary['verse_string'] = new_words
+                    completed_dictionary['index'] = index
                     exact.append(completed_dictionary)
 
         # Process Inexact results
@@ -72,12 +76,13 @@ def search():
         second_exact = []
         match = True
 
+        index = 0
         # loops through all verses
-        for verse in second_verses:
+        for exact_verse in second_verses:
             match = True
 
             # get current available information -  verse string, verse number and chapter
-            verse_dictionary = build_dictionary_verse_query(verse)
+            verse_dictionary = build_dictionary_verse_query(exact_verse)
 
             # get chapter information
             book = session.query(Book).get(verse_dictionary["book_id"])
@@ -86,11 +91,13 @@ def search():
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # splits the verses per word
-            split_verse_into_words = verse.verse_string.split()
+            split_verse_into_words = exact_verse.verse_string.split()
 
             second_slipt_into_words = []
 
             for i in split_verse_into_words:
+
+
 
                 original_word = i
 
@@ -120,9 +127,11 @@ def search():
                 second_slipt_into_words.append(original_word)
 
             if not match:
+                index += 1
                 joinned_verse = " ".join(second_slipt_into_words)
                 markup_verse = Markup(joinned_verse)
                 completed_dictionary['verse_string'] = markup_verse
+                completed_dictionary['index'] = index
                 second_exact.append(completed_dictionary)
 
         return render_template('word_search_result.html', verses=exact, second_verses=second_exact, count=len(exact),

@@ -2,6 +2,10 @@ import spacy
 
 nlp = spacy.load('en_core_web_sm')
 
+def getSpacyDictionary(verse, count):
+    print(count)
+    
+    pass
 
 def process_verse(verse, verse_word):
     word = {}

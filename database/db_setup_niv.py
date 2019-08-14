@@ -34,7 +34,7 @@ class Verse(Base):
 
     id = Column(Integer, primary_key=True)
     verse_number = Column(String(10), nullable=False)
-    verse_string = Column(String(600), nullable=False)
+    verse_string = Column(String(1000), nullable=False)
     chapter_id = Column(Integer, ForeignKey('chapter.id'))
     chapter = relationship(Chapter)
 

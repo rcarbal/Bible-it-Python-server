@@ -39,7 +39,7 @@ def search():
         for exact_verse in verses:
 
             # pass the verse through SpaCy NLP
-            nlp_verse = process_verse(exact_verse.verse_string, query_param)
+            # nlp_verse = process_verse(exact_verse.verse_string, query_param)
 
             # get current available information -  verse string, verse number and chapter
             verse_dictionary = build_dictionary_verse_query(exact_verse)

@@ -8,21 +8,24 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import Verse, Book
+from nlp.bibleit_NLP import process_verse
 
 app = Flask(__name__)
 
 Base = declarative_base()
 
-engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=True)
+engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
 
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+
 @app.route('/')
 @app.route('/hello')
 def HelloWorld():
     return 'Hello World'
+
 
 @app.route('/word_search', methods=['GET', 'POST'])
 def search():
@@ -34,6 +37,9 @@ def search():
         index = 0
         # loop through verses result
         for exact_verse in verses:
+
+            # pass the verse through SpaCy NLP
+            nlp_verse = process_verse(exact_verse.verse_string, query_param)
 
             # get current available information -  verse string, verse number and chapter
             verse_dictionary = build_dictionary_verse_query(exact_verse)
@@ -145,4 +151,3 @@ if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0')
     # app.run(host=host, port=port)
-

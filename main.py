@@ -19,6 +19,10 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+@app.route('/')
+@app.route('/hello')
+def HelloWorld():
+    return 'Hello World'
 
 @app.route('/word_search', methods=['GET', 'POST'])
 def search():
@@ -136,9 +140,9 @@ def search():
 if __name__ == '__main__':
     print("Bible-it Server Started ==================================================>")
     app.secret_key = 'super_secret_key'
-    port = int(os.environ.get('PORT', 8000))
-    host = '127.0.0.1'
+    # port = int(os.environ.get('PORT', 8000))
+    # host = '127.0.0.1'
     app.debug = True
-    # app.run(host='0.0.0.0', port=5000)
-    app.run(host=host, port=port)
+    app.run(host='0.0.0.0')
+    # app.run(host=host, port=port)
 

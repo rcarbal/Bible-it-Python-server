@@ -1,19 +1,27 @@
 import spacy
+import pdb
 
 nlp = spacy.load('en_core_web_sm')
 
+
 def getSpacyDictionary(verse, count):
     print(count)
-    
+
+    nlp_verse = nlp_process_verse(verse)
     pass
 
-def process_verse(verse, verse_word):
-    word = {}
+
+def nlp_process_verse(verse):
+    string_pos = ""
+
     doc = nlp(u"{}".format(verse))
     for token in doc:
 
-        if token.text == verse_word:
-            word['word'] = verse_word
-            word['pos'] = token.pos_
+        word_hold = ""
+
+        word['word'] = token.text
+        word['pos'] = token.pos_
+
+        string_pos += ""
 
     return word

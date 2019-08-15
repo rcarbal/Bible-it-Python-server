@@ -8,7 +8,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import Verse, Book
-from nlp.bibleit_NLP import process_verse
 
 app = Flask(__name__)
 

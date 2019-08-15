@@ -42,3 +42,4 @@ def nlp_process_verse(verse):
     print("\n")
 
     return string_pos
+

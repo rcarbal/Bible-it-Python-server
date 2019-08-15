@@ -8,6 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import Verse, Book
+from utilities.word_process import remove_pos
 
 app = Flask(__name__)
 
@@ -49,8 +50,10 @@ def search():
             # get the book name (name) , section name (section.name)
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
-            # split the words in the verse
-            words = exact_verse.verse_string.split()
+            # split the words in the verse using *
+
+            remove_first_separator = remove_pos(exact_verse.verse_string)
+            words = remove_first_separator.split()
 
             # loop through the words and check
             for i in words:
@@ -68,7 +71,7 @@ def search():
                     word = word.replace('?', "")
                 if word == query_param:
                     index += 1
-                    complete_words = exact_verse.verse_string.replace(word, '<strong>' + word + '</strong>')
+                    complete_words = remove_first_separator.replace(word, '<strong>' + word + '</strong>')
                     new_words = Markup(complete_words)
                     completed_dictionary['verse_string'] = new_words
                     completed_dictionary['index'] = index
@@ -95,7 +98,8 @@ def search():
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # splits the verses per word
-            split_verse_into_words = exact_verse.verse_string.split()
+            remove_first_separator = remove_pos(exact_verse.verse_string)
+            split_verse_into_words = remove_first_separator.split()
 
             second_slipt_into_words = []
 
@@ -146,7 +150,7 @@ if __name__ == '__main__':
     print("Bible-it Server Started ==================================================>")
     app.secret_key = 'super_secret_key'
     # port = int(os.environ.get('PORT', 8000))
-    # host = '127.0.0.1'
+    host = '127.0.0.1'
     app.debug = True
-    app.run(host='0.0.0.0')
-    # app.run(host=host, port=port)
+    # app.run(host='0.0.0.0')
+    app.run(host=host, port=5000)

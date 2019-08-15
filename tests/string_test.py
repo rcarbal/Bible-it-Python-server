@@ -30,6 +30,11 @@ print("\n\n\n\n\n Processing Verse to NLP\n")
 
 print(string_pos)
 
+
+
+
+# ==========================================================================
+
 print("\n\n Processing NLP string\n")
 # undo string_pos
 

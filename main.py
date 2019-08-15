@@ -52,7 +52,7 @@ def search():
 
             # split the words in the verse using *
 
-            remove_first_separator = remove_pos(exact_verse.verse_string)
+            remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param)
             words = remove_first_separator.split()
 
             # loop through the words and check
@@ -98,7 +98,7 @@ def search():
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # splits the verses per word
-            remove_first_separator = remove_pos(exact_verse.verse_string)
+            remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param)
             split_verse_into_words = remove_first_separator.split()
 
             second_slipt_into_words = []

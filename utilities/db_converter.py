@@ -3,8 +3,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import Book, BibleSection, Chapter, Verse
-from nlp.bibleit_NLP import getSpacyDictionary
+from nlp.bibleit_NLP import getSpacyVerse
 from utilities.filereader_niv import get_book_from_bible, get_complete_bible
+
+import datetime
 
 Base = declarative_base()
 
@@ -46,6 +48,7 @@ def convert_verses_list_to_db(books):
     bible = get_complete_bible()
     verse_index_count = 0
 
+    print(datetime.datetime.now())
     for book in books:
         book = session.query(Book).filter_by(name=book).first()
 
@@ -67,11 +70,13 @@ def convert_verses_list_to_db(books):
                 parsed_versed = file_chapter_verses[verse]
 
                 # Convert verse into JSON  Spacy Break down
-                spacy_dict = getSpacyDictionary(parsed_versed, verse_index_count)
+                spacy_verse = getSpacyVerse(parsed_versed, verse_index_count)
 
                 verse_list.append(
-                    Verse(verse_number=verse, verse_string=parsed_versed, chapter_id=parsed_db_chapter_id))
+                    Verse(verse_number=verse, verse_string=spacy_verse, chapter_id=parsed_db_chapter_id))
                 verse_index_count += 1
+
+    print(datetime.datetime.now())
 
     return verse_list
 

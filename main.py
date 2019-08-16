@@ -10,6 +10,8 @@ from sqlalchemy.orm import sessionmaker
 from database.db_setup_niv import Verse, Book
 from utilities.word_process import remove_pos
 
+from PyDictionary import PyDictionary
+
 app = Flask(__name__)
 
 Base = declarative_base()
@@ -54,6 +56,12 @@ def search():
 
             remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param)
             words = remove_first_separator.split()
+
+            # query definition
+            definition = PyDictionary()
+            meaning = definition.meaning(query_param)
+            print(meaning)
+
 
             # loop through the words and check
             for i in words:

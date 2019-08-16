@@ -8,9 +8,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import Verse, Book
+from http_call.api.rapidapi.call_rapid_api import get_definition
 from utilities.word_process import remove_pos
-
-from PyDictionary import PyDictionary
 
 app = Flask(__name__)
 
@@ -24,14 +23,8 @@ session = DBSession()
 
 
 @app.route('/')
-@app.route('/hello')
-def HelloWorld():
-    return 'Hello World'
-
-
 @app.route('/word_search', methods=['GET', 'POST'])
 def search():
-
     query_param = None
     if request.method == 'POST':
 
@@ -81,8 +74,8 @@ def search():
                 if word == query_param:
                     index += 1
                     complete_words = remove_first_separator.replace(word, '<strong>' +
-                                                                    '<a href=javascript:connect("' + query_param
-                                                                    + '") data-toggle="modal" data-target="#exampleModalLong">' + word + '</a> '
+                                                                    '<a href="#" data-toggle="modal" data-target="'
+                                                                    '#exampleModalLong"' + '>' + word + '</a> '
                                                                     + '</strong>')
                     new_words = Markup(complete_words)
                     completed_dictionary['verse_string'] = new_words
@@ -157,6 +150,19 @@ def search():
                                word=query_param, second_count=len(second_exact))
     else:
         return render_template('search_word.html')
+
+
+@app.route('/api/word/definition', methods=['GET'])
+def word_definition():
+    query_param = None
+    if request.method == 'GET':
+
+        if 'word' in request.args:
+            query_param = request.args['word']
+
+    definition = get_definition(query_param)
+
+    return definition
 
 
 if __name__ == '__main__':

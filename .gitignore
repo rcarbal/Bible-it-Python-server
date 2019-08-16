@@ -1,3 +1,4 @@
 bibledatabase.db
 http/web/client/node_modules
 config/dev.py
+node_modules

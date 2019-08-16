@@ -31,8 +31,15 @@ def HelloWorld():
 
 @app.route('/word_search', methods=['GET', 'POST'])
 def search():
+
+    query_param = None
     if request.method == 'POST':
-        query_param = request.form['word']
+
+        if 'word' in request.form:
+            query_param = request.form['word']
+        elif 'word' in request.args:
+            query_param = request.args['word']
+
         verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
 
         exact = []
@@ -57,12 +64,6 @@ def search():
             remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param)
             words = remove_first_separator.split()
 
-            # query definition
-            definition = PyDictionary()
-            meaning = definition.meaning(query_param)
-            print(meaning)
-
-
             # loop through the words and check
             for i in words:
                 word = i
@@ -79,7 +80,10 @@ def search():
                     word = word.replace('?', "")
                 if word == query_param:
                     index += 1
-                    complete_words = remove_first_separator.replace(word, '<strong>' + word + '</strong>')
+                    complete_words = remove_first_separator.replace(word, '<strong>' +
+                                                                    '<a href=javascript:connect("' + query_param
+                                                                    + '") data-toggle="modal" data-target="#exampleModalLong">' + word + '</a> '
+                                                                    + '</strong>')
                     new_words = Markup(complete_words)
                     completed_dictionary['verse_string'] = new_words
                     completed_dictionary['index'] = index
@@ -136,7 +140,8 @@ def search():
 
                     if i != query_param:
                         match = False
-                        original_word = original_word.replace(original_word, '<strong>' + original_word + '</strong>')
+                        original_word = original_word.replace(original_word, '<strong>' + '<a href="#">' + original_word
+                                                              + '</a>' + '</strong>')
 
                 second_slipt_into_words.append(original_word)
 

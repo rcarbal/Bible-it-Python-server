@@ -1,10 +1,10 @@
 import requests
 from config.keys import get_keys
 
-keys = get_keys()
-
 
 def get_definition(word):
+    keys = get_keys()
+    print(keys);
     url = "https://wordsapiv1.p.rapidapi.com/words/{}/definitions".format(word)
 
     headers = {

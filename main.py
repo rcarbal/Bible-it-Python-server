@@ -26,6 +26,7 @@ session = DBSession()
 @app.route('/word_search', methods=['GET', 'POST'])
 def search():
     query_param = None
+
     if request.method == 'POST':
 
         if 'word' in request.form:
@@ -36,6 +37,7 @@ def search():
         verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
 
         exact = []
+        pos_exact = []
         index = 0
         # loop through verses result
         for exact_verse in verses:
@@ -54,7 +56,8 @@ def search():
 
             # split the words in the verse using *
 
-            remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param)
+            remove_first_separator, first_pos = remove_pos(exact_verse.verse_string, query_param)
+
             words = remove_first_separator.split()
 
             # loop through the words and check
@@ -81,6 +84,7 @@ def search():
                     completed_dictionary['verse_string'] = new_words
                     completed_dictionary['index'] = index
                     exact.append(completed_dictionary)
+                    pos_exact.append(first_pos)
 
         # Process Inexact results
         second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%'))
@@ -146,7 +150,7 @@ def search():
                 completed_dictionary['index'] = index
                 second_exact.append(completed_dictionary)
 
-        return render_template('word_search_result.html', verses=exact, second_verses=second_exact, count=len(exact),
+        return render_template('word_search_result.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact, count=len(exact),
                                word=query_param, second_count=len(second_exact))
     else:
         return render_template('search_word.html')

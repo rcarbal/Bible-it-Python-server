@@ -7,14 +7,8 @@ $(document).on('show.bs.modal', '.fade', function (e) {
     console.log(index);
 
     pos_list = pos_list.slice(1, pos_list.length -1);
-    pos_list = pos_list.replace(/''/, "");
-
-
-    pos_list = pos_list.split(",");
-    console.log(pos_list);
-
-
-    pos = pos_list[index - 1];
+    pos_replaced = pos_list.split(",");
+    pos = pos_replaced[index - 1];
 
     element = this.getElementsByClassName("modal-body")[0];
     element.innerHTML = "";
@@ -36,20 +30,25 @@ $(document).on('show.bs.modal', '.fade', function (e) {
        const arr = response.data;
 
        response.data.definitions.forEach((definition) => {
-        let liItem = document.createElement('li');
-        liItem.innerHTML = definition.definition;
-        ol.appendChild(liItem);
+            let liItem = document.createElement('li');
+            liItem.innerHTML = definition.definition;
+            ol.appendChild(liItem);
        });
     });
 
+    getSynonyms(word);
+
 });
 
-function connect(word){
-    axios.get("/api/word/definition?word=" + word)
-
+function getSynonyms(word){
+    axios.get("/api/word/synonym?word=" + word)
+    .then((response) => {
+        console.log(response);
+    });
 }
 
-function getWordInformation(){
+function connect(word){
+    axios.get("/api/word/definition?word=" + word);
 
 }
 

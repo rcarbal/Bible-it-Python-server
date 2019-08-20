@@ -8,7 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import Verse, Book
-from http_call.api.rapidapi.call_rapid_api import get_definition
+from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from utilities.word_process import remove_pos
 
 app = Flask(__name__)
@@ -150,7 +150,8 @@ def search():
                 completed_dictionary['index'] = index
                 second_exact.append(completed_dictionary)
 
-        return render_template('word_search_result.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact, count=len(exact),
+        return render_template('word_search_result.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact,
+                               count=len(exact),
                                word=query_param, second_count=len(second_exact))
     else:
         return render_template('search_word.html')
@@ -169,6 +170,19 @@ def word_definition():
     return definition
 
 
+@app.route('/api/word/synonym', methods=['GET'])
+def word_synonym():
+    query_param = None
+    if request.method == 'GET':
+
+        if 'word' in request.args:
+            query_param = request.args['word']
+
+    synonym = get_synonym(query_param)
+
+    return synonym
+
+
 if __name__ == '__main__':
     print("Bible-it Server Started ==================================================>")
     app.secret_key = 'super_secret_key'
@@ -176,4 +190,4 @@ if __name__ == '__main__':
     host = '127.0.0.1'
     app.debug = True
     # app.run(host='0.0.0.0')
-    app.run(host=host, port=5000)
+    app.run(host=host, port=6000)

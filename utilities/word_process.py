@@ -1,5 +1,5 @@
 
-def remove_pos(verse, word_search):
+def remove_pos(verse, word_search, second_parse=None):
     split_complete_string = verse.split("*")
     pos = ""
 
@@ -19,8 +19,12 @@ def remove_pos(verse, word_search):
 
         # Get word search POS
         compare = pos_word_split[0]
-        if word_search.strip() == compare.strip():
-            pos = pos_word_split[1]
+        if second_parse:
+            if word_search.strip() in compare.strip():
+                pos = pos_word_split[1]
+        else:
+            if word_search.strip() == compare.strip():
+                pos = pos_word_split[1]
 
         collected_verse_items.append(pos_word_split[0])
     joined_complete = "".join(collected_verse_items)

@@ -2,10 +2,18 @@ $(document).on('show.bs.modal', '.fade', function(e){
     var word = $(this).data('word');
     var pos_list = $(this).data('pos');
     var index = $(this).data('index');
+    var modal = $(this).data('modal');
 
-    pos_list = pos_list.slice(1, pos_list.length -1);
-    pos_replaced = pos_list.split(",");
-    pos = pos_replaced[index - 1];
+    var pos;
+
+    if (modal == "1"){
+      pos_list = pos_list.slice(1, pos_list.length -1);
+      pos_replaced = pos_list.split(",");
+      pos = pos_replaced[index - 1];
+    }
+    else if(modal == "2"){
+        pos = pos_list;
+    }
 
     element = this.getElementsByClassName("modal-body")[0];
     element.innerHTML = "";
@@ -57,6 +65,8 @@ $(document).on('show.bs.modal', '.fade', function(e){
 
 });
 
+// Retrieves Synonnyms
+
 function getSynonyms(word, callback){
     axios.get("/api/word/synonym?word=" + word)
     .then((response) => {
@@ -71,10 +81,5 @@ function getSynonyms(word, callback){
 
         callback(ol);
     });
-}
-
-function connect(word){
-    axios.get("/api/word/definition?word=" + word);
-
 }
 

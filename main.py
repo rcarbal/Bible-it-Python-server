@@ -107,10 +107,12 @@ def search():
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # splits the verses per word
-            remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param)
+            remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param, True)
             split_verse_into_words = remove_first_separator.split()
 
             second_slipt_into_words = []
+
+            main_word = None
 
             for i in split_verse_into_words:
 
@@ -137,7 +139,12 @@ def search():
 
                     if i != query_param:
                         match = False
-                        original_word = original_word.replace(original_word, '<strong>' + '<a href="#">' + original_word
+                        main_word = original_word
+                        original_word = original_word.replace(original_word, '<strong>' + '<a href="#" '
+                                                                                          'data-toggle="modal" '
+                                                                                          'data-target=" '
+                                                                                          '#exampleModalLong2"' + '>'
+                                                              + original_word
                                                               + '</a>' + '</strong>')
 
                 second_slipt_into_words.append(original_word)
@@ -148,6 +155,8 @@ def search():
                 markup_verse = Markup(joinned_verse)
                 completed_dictionary['verse_string'] = markup_verse
                 completed_dictionary['index'] = index
+                completed_dictionary['main_word'] = main_word
+                completed_dictionary['pos'] = pos
                 second_exact.append(completed_dictionary)
 
         return render_template('word_search_result.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact,

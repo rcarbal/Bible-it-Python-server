@@ -15,6 +15,8 @@
     </div>
 </div>
 
+{{second_verses[0]}}
+
 
 <br><br>
 
@@ -47,11 +49,11 @@
                             <h6 class="card-subtitle mb-2"> Verse: {{i.verse_number}}</h6>
                             <p class="card-text">
                                 {{ i.verse_string }}
-
-                            <!-- Modal -->
+                            </p>
+                                                   <!-- Modal -->
                                 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word="{{word}}"
-                                     data-pos="{{pos_exact}}" data-index="{{i.index}}">
+                                     data-pos="{{pos_exact}}" data-modal="1" data-index="{{i.index}}">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -71,7 +73,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </p>
                         </div>
 
                     </li>
@@ -110,6 +111,30 @@
                             <p class="card-text">
                                 {{ i.verse_string }}
                             </p>
+
+                                          <!-- Modal -->
+                                <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word="{{i.main_word}}"
+                                     data-pos="{{i.pos}}" data-modal="2" data-index="{{i.index}}">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle2">{{i.main_word}} Information</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
 
                     </li>

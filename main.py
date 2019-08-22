@@ -138,12 +138,14 @@ def search():
                         i = i.replace('?', "")
 
                     if i != query_param:
+                        ind = index + 1
                         match = False
                         main_word = original_word
                         original_word = original_word.replace(original_word, '<strong>' + '<a href="#" '
                                                                                           'data-toggle="modal" '
                                                                                           'data-target=" '
-                                                                                          '#exampleModalLong2"' + '>'
+                                                                                          '#exampleModalLong' + str(ind)
+                                                              + '"' + '> '
                                                               + original_word
                                                               + '</a>' + '</strong>')
 
@@ -199,4 +201,4 @@ if __name__ == '__main__':
     host = '127.0.0.1'
     app.debug = True
     # app.run(host='0.0.0.0')
-    app.run(host=host, port=6000)
+    app.run(host=host, port=5001)

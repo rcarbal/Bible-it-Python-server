@@ -15,7 +15,7 @@
     </div>
 </div>
 
-{{second_verses[0]}}
+{{second_verses[2]}}
 
 
 <br><br>
@@ -100,26 +100,24 @@
         <div id="collapseOne2" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample2">
             <div>
                 <ol class="list-group list-group-flush">
-                    {% for i in second_verses %}
+                    {% for b in second_verses %}
                     <li class="list-group-item">
                         <div class="card-body">
-                            <div class="float-right text-muted">{{i.index}}</div>
-                            <h6 class="card-subtitle mb-2">{{i.section_name}}</h6>
-                            <h6 class="card-subtitle mb-2">Book: {{i.book_name}}</h6>
-                            <h6 class="card-subtitle mb-2"> Chapter: {{i.chapter_number}}</h6>
-                            <h6 class="card-subtitle mb-2"> Verse: {{i.verse_number}}</h6>
+                            <div class="float-right text-muted">{{b.index}}</div>
+                            <h6 class="card-subtitle mb-2">{{b.section_name}}</h6>
+                            <h6 class="card-subtitle mb-2">Book: {{b.book_name}}</h6>
+                            <h6 class="card-subtitle mb-2"> Chapter: {{b.chapter_number}}</h6>
+                            <h6 class="card-subtitle mb-2"> Verse: {{b.verse_number}}</h6>
                             <p class="card-text">
-                                {{ i.verse_string }}
-                            </p>
-
-                                          <!-- Modal -->
-                                <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word="{{i.main_word}}"
-                                     data-pos="{{i.pos}}" data-modal="2" data-index="{{i.index}}">
+                                {{ b.verse_string }}
+                                          <!-- Modal 2 -->
+                                <div class="modal fade" id="exampleModalLong{{b.index}}" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word2="{{b.main_word}}"
+                                     data-pos="{{b.pos}}" data-modal="2" data-index="{{b.index}}">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle2">{{i.main_word}} Information</h5>
+                                                <h5 class="modal-title" id="exampleModalLongTitle2">{{b.main_word}} Information</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -135,6 +133,9 @@
                                         </div>
                                     </div>
                                 </div>
+                            </p>
+
+
                         </div>
 
                     </li>

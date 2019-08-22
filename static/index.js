@@ -1,8 +1,25 @@
 $(document).on('show.bs.modal', '.fade', function(e){
-    var word = $(this).data('word');
+
+    console.log('event');
+    console.log(e);
+
+    const context = this;
+    console.log(context);
+    var current_modal = this.getElementsByClassName('#fade');
+
+    var modal = $(this).data('modal');
+    var word;
+
+    if (modal == 2) {
+       word = $(this).data('word2');
+    } else {
+        word = $(this).data('word');
+    }
+
+
     var pos_list = $(this).data('pos');
     var index = $(this).data('index');
-    var modal = $(this).data('modal');
+
 
     var pos;
 
@@ -44,11 +61,14 @@ $(document).on('show.bs.modal', '.fade', function(e){
        // get modal div
        const arr = response.data;
 
-       response.data.definitions.forEach((definition) => {
-            let liItem = document.createElement('li');
-            liItem.innerHTML = definition.definition;
-            ol.appendChild(liItem);
-       });
+       if (arr.hasOwnProperty("definitions")){
+           response.data.definitions.forEach((definition) => {
+                let liItem = document.createElement('li');
+                liItem.innerHTML = definition.definition;
+                ol.appendChild(liItem);
+           });
+
+       }
     });
 
     // callback

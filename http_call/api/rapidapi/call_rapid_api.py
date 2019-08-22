@@ -16,6 +16,7 @@ def get_definition(word):
     res_text = response.text
     return res_text
 
+
 def get_synonym(word):
     keys = get_keys()
 

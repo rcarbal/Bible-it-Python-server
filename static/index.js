@@ -1,4 +1,4 @@
-$(document).on('show.bs.modal', '.fade', function(e){
+$(document).on('show.bs.modal', '.fade', function (e) {
 
     console.log('event');
     console.log(e);
@@ -11,7 +11,7 @@ $(document).on('show.bs.modal', '.fade', function(e){
     var word;
 
     if (modal == 2) {
-       word = $(this).data('word2');
+        word = $(this).data('word2');
     } else {
         word = $(this).data('word');
     }
@@ -23,12 +23,12 @@ $(document).on('show.bs.modal', '.fade', function(e){
 
     var pos;
 
-    if (modal == "1"){
-      pos_list = pos_list.slice(1, pos_list.length -1);
-      pos_replaced = pos_list.split(",");
-      pos = pos_replaced[index - 1];
+    if (modal == "1") {
+        pos_list = pos_list.slice(1, pos_list.length - 1);
+        pos_replaced = pos_list.split(",");
+        pos = pos_replaced[index - 1];
     }
-    else if(modal == "2"){
+    else if (modal == "2") {
         pos = pos_list;
     }
 
@@ -37,7 +37,7 @@ $(document).on('show.bs.modal', '.fade', function(e){
 
     // create the definition header
     let definitionHeader = document.createElement('h6');
-    definitionHeader.innerHTML = "-"+ pos + " " + word;
+    definitionHeader.innerHTML = "-" + pos + " " + word;
 
     // create <hr> tag
     let hrTag = document.createElement('hr');
@@ -56,20 +56,23 @@ $(document).on('show.bs.modal', '.fade', function(e){
     element.appendChild(synonymHeader);
 
     axios.get("/api/word/definition?word=" + word)
-    .then((response)=>{
+        .then((response) => {
 
-       // get modal div
-       const arr = response.data;
+            // get modal div
+            const arr = response.data;
 
-       if (arr.hasOwnProperty("definitions")){
-           response.data.definitions.forEach((definition) => {
-                let liItem = document.createElement('li');
-                liItem.innerHTML = definition.definition;
-                ol.appendChild(liItem);
-           });
+            if (arr.hasOwnProperty("definitions")) {
+                response.data.definitions.forEach((definition) => {
+                    let liItem = document.createElement('li');
+                    liItem.innerHTML = definition.definition;
+                    ol.appendChild(liItem);
+                });
 
-       }
-    });
+            }
+
+            // get synonym ordered list
+            getSynonyms(word, callback);
+        });
 
     // callback
     const callback = (synonymOrderedList) => {
@@ -77,29 +80,26 @@ $(document).on('show.bs.modal', '.fade', function(e){
 
     }
 
-    // get synonym ordered list
-    const synOl = getSynonyms(word, callback);
-
-//    element.appendChild(synOl);
+    //    element.appendChild(synOl);
 
 
 });
 
 // Retrieves Synonnyms
 
-function getSynonyms(word, callback){
+function getSynonyms(word, callback) {
     axios.get("/api/word/synonym?word=" + word)
-    .then((response) => {
-        let ol = document.createElement('ol');
+        .then((response) => {
+            let ol = document.createElement('ol');
 
-        response.data.synonyms.forEach((synonym) => {
-            let li = document.createElement('li');
-            li.innerHTML = synonym;
+            response.data.synonyms.forEach((synonym) => {
+                let li = document.createElement('li');
+                li.innerHTML = synonym;
 
-            ol.appendChild(li);
+                ol.appendChild(li);
+            });
+
+            callback(ol);
         });
-
-        callback(ol);
-    });
 }
 

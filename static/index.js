@@ -1,18 +1,17 @@
+let element = null;
+
 $(document).on('show.bs.modal', '.fade', function (e) {
-
-    console.log('event');
-    console.log(e);
-
-    const context = this;
-    console.log(context);
-    var current_modal = this.getElementsByClassName('#fade');
 
     var modal = $(this).data('modal');
     var word;
 
     if (modal == 2) {
+
+        // sets up the inexact word list
         word = $(this).data('word2');
     } else {
+
+        // sets up the exact word list
         word = $(this).data('word');
     }
 
@@ -39,6 +38,10 @@ $(document).on('show.bs.modal', '.fade', function (e) {
     let definitionHeader = document.createElement('h6');
     definitionHeader.innerHTML = "-" + pos + " " + word;
 
+     // create the definition h6 element
+     let headerEl = document.createElement('h6');
+     headerEl.innerHTML = "- Definitions"
+
     // create <hr> tag
     let hrTag = document.createElement('hr');
 
@@ -51,10 +54,29 @@ $(document).on('show.bs.modal', '.fade', function (e) {
     let ol = document.createElement('ol');
 
     element.appendChild(definitionHeader);
+    element.appendChild(headerEl);
     element.appendChild(ol);
     element.appendChild(hrTag);
     element.appendChild(synonymHeader);
 
+    // callback
+    const callback = (synonymOrderedList) => {
+        element.appendChild(synonymOrderedList)
+
+    }
+
+
+    // Call definitions urk
+    getDefinitions(word, callback)
+
+
+
+
+});
+
+
+// Retireves Definitions
+function getDefinitions(word) {
     axios.get("/api/word/definition?word=" + word)
         .then((response) => {
 
@@ -73,21 +95,9 @@ $(document).on('show.bs.modal', '.fade', function (e) {
             // get synonym ordered list
             getSynonyms(word, callback);
         });
-
-    // callback
-    const callback = (synonymOrderedList) => {
-        element.appendChild(synonymOrderedList)
-
-    }
-
-    //    element.appendChild(synOl);
-
-
-});
-
+}
 // Retrieves Synonnyms
-
-function getSynonyms(word, callback) {
+function getSynonyms(word) {
     axios.get("/api/word/synonym?word=" + word)
         .then((response) => {
             let ol = document.createElement('ol');
@@ -102,4 +112,6 @@ function getSynonyms(word, callback) {
             callback(ol);
         });
 }
+
+
 

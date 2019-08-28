@@ -9,6 +9,7 @@ from sqlalchemy.orm import sessionmaker
 
 from database.db_setup_niv import Verse, Book
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
+from http_call.api.meeriam.mw_api import get_mw_definition
 from utilities.word_process import remove_pos
 
 app = Flask(__name__)
@@ -176,7 +177,7 @@ def word_definition():
         if 'word' in request.args:
             query_param = request.args['word']
 
-    definition = get_definition(query_param)
+    definition = get_mw_definition(query_param)
 
     return definition
 
@@ -192,6 +193,18 @@ def word_synonym():
     synonym = get_synonym(query_param)
 
     return synonym
+
+
+def rapid_api_word_definitions():
+    query_param = None
+    if request.method == 'GET':
+
+        if 'word' in request.args:
+            query_param = request.args['word']
+
+    definition = get_definition(query_param)
+
+    return definition
 
 
 if __name__ == '__main__':

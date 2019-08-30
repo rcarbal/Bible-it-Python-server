@@ -95,27 +95,59 @@ function getDefinitions(word, defintionOderedList) {
                         defintionOderedList.appendChild(liItem);
                     });
                 });
-
-            
-
-            // get synonym ordered list
-            // getSynonyms(word, callback);
+            getSynonyms(word);
         });
 }
 // Retrieves Synonnyms
 function getSynonyms(word) {
     axios.get("/api/word/synonym?word=" + word)
         .then((response) => {
-            let ol = document.createElement('ol');
 
-            response.data.synonyms.forEach((synonym) => {
-                let li = document.createElement('li');
-                li.innerHTML = synonym;
+            // data is an array, loop through the array
+            data = response.data;
 
-                ol.appendChild(li);
-            });
+            for(i in data){
 
-            callback(ol);
+                // deep nested json, retrieve synonym array
+                let def = data[i]['def'][0]['sseq'];
+                 
+                // sseq property has multiple elements
+                for(x in def){
+
+                    let synonyms = def[x][0][1]['syn_list'];
+                    // loop through the synonyms
+                    for (y in synonyms){
+                        
+                        synonyms[y].forEach((root)=>{
+
+                            // append root to module
+                            let span = document.createElement("SPAN");
+                            span.innerHTML =', ';
+                            let anchor = document.createElement('a');
+                            anchor.setAttribute('href', '#');
+                            anchor.text = root['wd'];
+
+                            // span.appendChildan(anchor);
+                            element.appendChild(anchor);
+                            element.appendChild(span);
+
+                        });
+                    }
+                    
+                }
+            }
+
+            
+            // let ol = document.createElement('ol');
+
+            // response.data.synonyms.forEach((synonym) => {
+            //     let li = document.createElement('li');
+            //     li.innerHTML = synonym;
+
+            //     ol.appendChild(li);
+            // });
+
+            // callback(ol);
         });
 }
 

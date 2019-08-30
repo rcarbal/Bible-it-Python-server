@@ -67,7 +67,7 @@ $(document).on('show.bs.modal', '.fade', function (e) {
 
 
     // Call definitions urk
-    getDefinitions(word, callback)
+    getDefinitions(word,ol)
 
 
 
@@ -76,24 +76,30 @@ $(document).on('show.bs.modal', '.fade', function (e) {
 
 
 // Retireves Definitions
-function getDefinitions(word) {
+function getDefinitions(word, defintionOderedList) {
     axios.get("/api/word/definition?word=" + word)
         .then((response) => {
 
             // get modal div
             const arr = response.data;
 
-            if (arr.hasOwnProperty("definitions")) {
-                response.data.definitions.forEach((definition) => {
-                    let liItem = document.createElement('li');
-                    liItem.innerHTML = definition.definition;
-                    ol.appendChild(liItem);
+                arr.forEach((definition) => {
+
+                    // loop through the shortdefs
+                    let shortdef = definition.shortdef;
+
+                    shortdef.forEach((singelDef) => {
+                        // append single definition to the module                        
+                        let liItem = document.createElement('li');
+                        liItem.innerHTML = singelDef;
+                        defintionOderedList.appendChild(liItem);
+                    });
                 });
 
-            }
+            
 
             // get synonym ordered list
-            getSynonyms(word, callback);
+            // getSynonyms(word, callback);
         });
 }
 // Retrieves Synonnyms

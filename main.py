@@ -179,6 +179,10 @@ def word_definition():
 
     definition = get_mw_definition(query_param)
 
+    if definition:
+        # extract all the short definitions in
+        print("definitions defined")
+
     return definition
 
 

@@ -1,4 +1,5 @@
 import sys
+
 sys.path.insert(0, '/vagrant/Bible-it-Server')
 import utilities
 import db_setup_niv
@@ -94,8 +95,6 @@ if __name__ == '__main__':
     # Base.metadata.create_all(engine)
     # DBSession = sessionmaker(bind=engine)
     # session = DBSession()
-
-    
 
     engine = create_engine('sqlite:///bibledatabase.db')
     Base.metadata.create_all(engine)

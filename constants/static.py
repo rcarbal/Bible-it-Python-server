@@ -12,3 +12,23 @@ BIBLE = [
         'Philemon', 'Hebrews','James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude', 'Revelation'
     ]}
 ]
+
+POS = [
+["INTJ","interjection"],
+["NOUN","noun"],
+["ADP","adposition"],
+["VERB","verb"],
+["NUM","numeral"],
+["PUNCT","punctuation"],
+["PART","particle"],
+["X","other"],
+["PRON","pronoun"],
+["ADJ","adjective"],
+["CCONJ","coordinating conjunction"],
+["ADV","adverb"],
+["SPACE","whitespace"],
+["AUX","auxiliary"],
+["DET","determiner"],
+["PROPN","proper noun"],
+["SYM","symbol"]
+]

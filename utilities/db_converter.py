@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from database.db_setup_niv import Book, BibleSection, Chapter, Verse
+from database.db_classes_niv import Book, BibleSection, Chapter, Verse
 from nlp.bibleit_NLP import getSpacyVerse
 from utilities.filereader_niv import get_book_from_bible, get_complete_bible
 

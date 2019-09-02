@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from database.db_setup_niv import Verse, Book
+from database.db_classes_niv import Verse, Book
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.word_process import remove_pos
@@ -56,7 +56,7 @@ def search():
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # split the words in the verse using *
-
+            # removes the pos from the string
             remove_first_separator, first_pos = remove_pos(exact_verse.verse_string, query_param)
 
             words = remove_first_separator.split()
@@ -84,6 +84,7 @@ def search():
                     new_words = Markup(complete_words)
                     completed_dictionary['verse_string'] = new_words
                     completed_dictionary['index'] = index
+                    completed_dictionary['pos'] = first_pos
                     exact.append(completed_dictionary)
                     pos_exact.append(first_pos)
 
@@ -108,6 +109,7 @@ def search():
             completed_dictionary = {**verse_dictionary, **build_dictionary_book_query(book)}
 
             # splits the verses per word
+            # removes the pos from the query param
             remove_first_separator, pos = remove_pos(exact_verse.verse_string, query_param, True)
             split_verse_into_words = remove_first_separator.split()
 

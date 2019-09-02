@@ -1,3 +1,8 @@
+from database.databse_connection import DatabaseConnect
+from database.db_classes_niv import Verse
+from utilities.word_process import retrieve_all_pos_in_verse
+
+
 def build_dictionary_verse_query(verse):
     verse_dictionary = {
         'verse_number': verse.verse_number,
@@ -14,3 +19,22 @@ def build_dictionary_book_query(book):
         'section_name': book.section.name
     }
     return book_dictionary
+
+
+def retrieve_all_pos():
+    database = DatabaseConnect()
+    verses = database.session.query(Verse).all()
+
+    # retrieve all the pos in the verses into a list
+    list_pos = []
+    for verse in verses:
+        all_pos_in_verse = retrieve_all_pos_in_verse(verse.verse_string)
+        list_pos.extend(all_pos_in_verse)
+
+    # use Frozenset to remove duplicates
+    fset = frozenset(list_pos)
+    for  f in fset:
+        print('["{}",""],'.format(f))
+
+
+retrieve_all_pos()

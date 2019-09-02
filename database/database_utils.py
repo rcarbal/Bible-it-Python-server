@@ -35,6 +35,3 @@ def retrieve_all_pos():
     fset = frozenset(list_pos)
     for  f in fset:
         print('["{}",""],'.format(f))
-
-
-retrieve_all_pos()

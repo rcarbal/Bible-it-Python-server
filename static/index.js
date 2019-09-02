@@ -64,24 +64,30 @@ $(document).on('show.bs.modal', '.fade', function (e) {
 
 
 // Retrieves Definitions
-function getDefinitions(word, defintionOderedList) {
+function getDefinitions(word, defintionOderedList, pos) {
     axios.get("/api/word/definition?word=" + word)
         .then((response) => {
+
+            console.log("Getting Definitions");
 
             // get modal div
             const arr = response.data;
 
                 arr.forEach((definition) => {
 
-                    // loop through the shortdefs
-                    let shortdef = definition.shortdef;
+                    let fl = definition.fl;
 
-                    shortdef.forEach((singelDef) => {
-                        // append single definition to the module                        
-                        let liItem = document.createElement('li');
-                        liItem.innerHTML = singelDef;
-                        defintionOderedList.appendChild(liItem);
-                    });
+                    if (fl.toLowerCase() == pos.toLowerCase()){
+                        // loop through the shortdefs
+                        let shortdef = definition.shortdef;
+
+                        shortdef.forEach((singelDef) => {
+                            // append single definition to the module                        
+                            let liItem = document.createElement('li');
+                            liItem.innerHTML = singelDef;
+                            defintionOderedList.appendChild(liItem);
+                        });
+                    };
                 });
             getSynonyms(word);
         });

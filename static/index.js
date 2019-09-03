@@ -1,5 +1,14 @@
 let element = null;
 
+const POS = {
+    "INTJ":"interjection","NOUN":"noun","ADP":"adposition",
+    "VERB":"verb","NUM":"numeral",
+    "PUNCT":"punctuation","PART":"particle","X":"other",
+    "PRON":"pronoun","ADJ":"adjective","CCONJ":"coordinating conjunction",
+    "ADV":"adverb","SPACE":"whitespace","AUX":"auxiliary",
+    "DET":"determiner","PROPN":"proper noun","SYM":"symbol"
+}
+
 $(document).on('show.bs.modal', '.fade', function (e) {
 
     var modal = $(this).data('modal');
@@ -72,28 +81,37 @@ function getDefinitions(word, defintionOderedList, pos) {
 
             // get modal div
             const arr = response.data;
+            let posValue = POS[pos];
 
                 arr.forEach((definition) => {
+                    
+                    // this contains full lowercase string expression
+                    // such as 'adverb', use this to find the POS value 
+                    let fl = definition.fl.toLowerCase();
+                    let pattern = new RegExp("(^|\\W)" + posValue + "($|\\W)");
+                    let posMatched = fl.match(pattern);
 
-                    let fl = definition.fl;
+                        if (posMatched) {
 
-                    if (fl.toLowerCase() == pos.toLowerCase()){
-                        // loop through the shortdefs
-                        let shortdef = definition.shortdef;
-
-                        shortdef.forEach((singelDef) => {
-                            // append single definition to the module                        
-                            let liItem = document.createElement('li');
-                            liItem.innerHTML = singelDef;
-                            defintionOderedList.appendChild(liItem);
-                        });
-                    };
+                            // if (fl.includes(value.toLowerCase())){
+                            if (fl.toLowerCase().match()){
+                            // loop through the shortdefs
+                                let shortdef = definition.shortdef;
+        
+                                shortdef.forEach((singelDef) => {
+                                    // append single definition to the module                        
+                                    let liItem = document.createElement('li');
+                                    liItem.innerHTML = singelDef;
+                                    defintionOderedList.appendChild(liItem);
+                                });
+                            };
+                        }
                 });
-            getSynonyms(word);
+            getSynonyms(word, posValue);
         });
 }
 // Retrieves Synonnyms
-function getSynonyms(word) {
+function getSynonyms(word, pos) {
     axios.get("/api/word/synonym?word=" + word)
         .then((response) => {
 
@@ -104,6 +122,15 @@ function getSynonyms(word) {
 
                 // deep nested json, retrieve synonym array
                 let def = data[i]['def'][0]['sseq'];
+                let dataPos = data[i]['fl'];
+                let pattern = new RegExp("(^|\\W)" + pos.toLowerCase() + "($|\\W)");
+                let posMatched = dataPos.match(pattern);
+                if (!posMatched){
+                    break;
+                }
+
+                console.log(dataPos);
+                
                  
                 // sseq property has multiple elements
                 for(x in def){

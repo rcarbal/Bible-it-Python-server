@@ -22,7 +22,7 @@ def build_dictionary_book_query(book):
 
 
 def retrieve_all_pos():
-    database = DatabaseConnect()
+    database = DatabaseConnect(database='sqlite:///bibledatabase.db?check_same_thread=False')
     verses = database.session.query(Verse).all()
 
     # retrieve all the pos in the verses into a list

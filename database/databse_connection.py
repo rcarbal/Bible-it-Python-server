@@ -2,15 +2,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-Base = declarative_base()
-engine = create_engine('sqlite:///bibledatabase.db?check_same_thread=False', echo=False)
-Base.metadata.create_all(engine)
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
-
 
 class DatabaseConnect(object):
-    def __init__(self):
+    def __init__(self, database):
+        Base = declarative_base()
+        engine = create_engine(database, echo=False)
+        Base.metadata.create_all(engine)
+        DBSession = sessionmaker(bind=engine)
+        session = DBSession()
         self._session = session
 
     @property

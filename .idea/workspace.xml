@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http_call/api/meeriam/mw_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/http_call/api/meeriam/mw_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/filereader_niv.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/filereader_niv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search_word.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search_word.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/word_search_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/word_search_result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -217,6 +216,11 @@
           <line>13</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>205</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -228,22 +232,8 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="pos" />
+        <watch expression="request" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>word_search</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>compare</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>

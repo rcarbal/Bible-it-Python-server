@@ -152,8 +152,11 @@ function getSynonyms(word, pos) {
                             let span = document.createElement("SPAN");
                             span.innerHTML = ', ';
                             let anchor = document.createElement('a');
-                            anchor.setAttribute('href', '#');
                             anchor.text = synData;
+                            anchor.setAttribute('href',
+                             `/word_search?word=${synData}`);
+                            
+
                             element.appendChild(anchor);
                             element.appendChild(span);
 
@@ -184,9 +187,12 @@ function getSynonyms(word, pos) {
                                 let span = document.createElement("SPAN");
                                 span.innerHTML = ', ';
                                 let anchor = document.createElement('a');
-                                anchor.setAttribute('href', '#');
                                 anchor.text = root['wd'];
-
+                                anchor.setAttribute('href',
+                                  `/word_search?word=${root['wd']}`);
+                                
+                                
+ 
                                 let patternSyn = new RegExp("(^|\\W)" + root['wd'] + "($|\\W)");
                                 let synMatched = complete_bible.match(patternSyn);
 
@@ -203,6 +209,5 @@ function getSynonyms(word, pos) {
             }
         });
 }
-
 
 

@@ -1,7 +1,7 @@
 import os
 
 
-def get_dev_keys():
+def get_prod_keys():
     print("Inside Production")
     keys = {
         'rapid_key': os.environ['RAPID_KEY'],

@@ -4,7 +4,7 @@ import json
 # Reads data from json file found in /bible-json
 
 def get_complete_bible():
-    with open('../bible-json/NIV.json') as json_file:
+    with open('bible-json/NIV.json') as json_file:
         data = json.load(json_file)
         return data
 

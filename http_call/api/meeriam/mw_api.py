@@ -1,5 +1,6 @@
 import requests
 from config.keys import get_keys
+import json
 
 
 def get_mw_definition(word):
@@ -20,5 +21,5 @@ def get_mw_synonym(word):
                                                                                             ,keys['mw_thesaurus_key'])
 
     response = requests.request("GET", url)
-    res_text = response.text
-    return res_text
+    res_json = json.loads(response.text)
+    return res_json

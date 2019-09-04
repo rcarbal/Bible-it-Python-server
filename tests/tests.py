@@ -14,12 +14,6 @@ class TestBibleitResults(unittest.TestCase):
         # database = DatabaseConnect(database='sqlite:///{}?check_same_thread=False'.format(db_path))
         # verses = database.session.query(Verse).all()
 
-        data = None
-        with open('../bible-json/NIV.json') as json_file:
-            data = json.load(json_file)
-
-        bible_string = json.dumps(data)
-
         self.assertTrue("god" in bible_string)
 
 

@@ -1,6 +1,7 @@
 from database.databse_connection import DatabaseConnect
 from database.db_classes_niv import Verse
 from utilities.word_process import retrieve_all_pos_in_verse
+import json
 
 
 def build_dictionary_verse_query(verse):
@@ -33,5 +34,11 @@ def retrieve_all_pos():
 
     # use Frozenset to remove duplicates
     fset = frozenset(list_pos)
-    for  f in fset:
+    for f in fset:
         print('["{}",""],'.format(f))
+
+
+def get_bible_string():
+    data = None
+    bible_string = json.dumps(data)
+    return bible_string

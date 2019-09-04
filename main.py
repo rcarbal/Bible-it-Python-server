@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 import os
 
 from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
@@ -10,7 +11,10 @@ from sqlalchemy.orm import sessionmaker
 from database.db_classes_niv import Verse, Book
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
+from utilities.filereader_niv import get_complete_bible
 from utilities.word_process import remove_pos
+
+BIBLE_STRING = ""
 
 app = Flask(__name__)
 
@@ -193,8 +197,12 @@ def word_synonym():
             query_param = request.args['word']
 
     synonym = get_mw_synonym(query_param)
+    bible = {"bible_string": BIBLE_STRING}
+    synonym.insert(0, bible)
 
-    return synonym
+    complete = json.dumps(synonym)
+
+    return complete
 
 
 def rapid_api_word_definitions():
@@ -211,6 +219,7 @@ def rapid_api_word_definitions():
 
 if __name__ == '__main__':
     print("Bible-it Server Started ==================================================>")
+    BIBLE_STRING = get_complete_bible()
     app.secret_key = 'super_secret_key'
     # port = int(os.environ.get('PORT', 8000))
     host = '127.0.0.1'

@@ -39,8 +39,8 @@ class Verse(Base):
     chapter = relationship(Chapter)
 
 
-# def run_main():
-#     engine = create_engine('sqlite:///bibledatabase.db')
-#     Base.metadata.create_all(engine)
-#     DBSession = sessionmaker(bind=engine)
-#     session = DBSession()
+def instance():
+    engine = create_engine('sqlite:///bibledatabase.db')
+    Base.metadata.create_all(engine)
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()

@@ -15,7 +15,3 @@ class DatabaseConnect(object):
     @property
     def session(self):
         return self._session
-
-
-if __name__ == '__main__':
-    pass

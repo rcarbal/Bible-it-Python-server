@@ -2,13 +2,13 @@ import sys
 
 sys.path.insert(0, '/vagrant/Bible-it-Server')
 import utilities
-import db_setup_niv
+import db_classes_niv
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from db_setup_niv import BibleSection, Book, Verse, Chapter
+from db_classes_niv import BibleSection, Book, Verse, Chapter
 from utilities.db_converter import convert_section_list_to_book_db, convert_book_list_to_db, convert_verses_list_to_db
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books
 from utilities.matcher import match_books_to_section
@@ -79,12 +79,12 @@ def get_verses():
 
 
 def run_command():
-    db_setup_niv.run_main()
+    db_classes_niv.instance()
 
     # 2Qepxniw-setup-database
     command = input("Command: ")
 
-    if command == '2Qepxniw-setup-database':
+    if command == 'a':
         print("Setting Up Database NIV")
         setup_bible_db()
 

@@ -63,9 +63,7 @@ def convert_verses_list_to_db(books):
             file_chapter_verses = book_in_file[chapter]
             parsed_db_chapter_id = find_db_chapter_from_parse(db_chapters_in_book, chapter)
 
-
             for verse in file_chapter_verses:
-
                 # verse String
                 parsed_versed = file_chapter_verses[verse]
 

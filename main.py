@@ -4,7 +4,7 @@ import os
 
 from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
 from flask import Flask, request, render_template, Markup
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, desc, asc
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -42,7 +42,8 @@ def search():
     elif 'word' in request.args:
         query_param = request.args['word']
 
-    verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
+    if __name__ == '__main__':
+        verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
 
     exact = []
     pos_exact = []

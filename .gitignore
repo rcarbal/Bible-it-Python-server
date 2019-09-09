@@ -1,4 +1,5 @@
-bibledatabase.db
 http/web/client/node_modules
 node_modules
 .env
+database/bibledatabase.db
+tests/bibledatabase.db

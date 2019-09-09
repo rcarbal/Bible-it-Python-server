@@ -1,3 +1,4 @@
+import pdb
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -50,13 +51,14 @@ def convert_verses_list_to_db(books):
 
     print(datetime.datetime.now())
     for book in books:
-        book = session.query(Book).filter_by(name=book).first()
+        # pdb.set_trace()
+        book_retreived = session.query(Book).filter_by(name=book).first()
 
         # All book chapters in file.
-        book_in_file = get_book_from_bible(bible, book.name)
+        book_in_file = get_book_from_bible(bible, book_retreived.name)
 
         # All Book Chapters in the database
-        db_chapters_in_book = session.query(Chapter).filter_by(book_id=book.id).all()
+        db_chapters_in_book = session.query(Chapter).filter_by(book_id=book_retreived.id).all()
 
         for chapter in book_in_file:
             # Chapter in the file with verses

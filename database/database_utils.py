@@ -42,3 +42,5 @@ def get_bible_string():
     data = None
     bible_string = json.dumps(data)
     return bible_string
+
+# Returns Books in order

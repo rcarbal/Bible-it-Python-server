@@ -8,11 +8,13 @@ from sqlalchemy import create_engine, desc, asc
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from database.db_classes_niv import Verse, Book
+from database.db_classes_niv import Verse, Book, Chapter
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.filereader_niv import get_complete_bible
 from utilities.word_process import remove_pos
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 BIBLE_STRING = ""
 
@@ -42,8 +44,8 @@ def search():
     elif 'word' in request.args:
         query_param = request.args['word']
 
-    if __name__ == '__main__':
-        verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%'))
+    verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%')).\
+        join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())
 
     exact = []
     pos_exact = []
@@ -97,7 +99,8 @@ def search():
                 pos_exact.append(first_pos)
 
     # Process Inexact results
-    second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%'))
+    second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%')).\
+        join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())
 
     second_exact = []
     match = True

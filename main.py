@@ -97,6 +97,7 @@ def search():
                 completed_dictionary['pos'] = first_pos
                 exact.append(completed_dictionary)
                 pos_exact.append(first_pos)
+                break
 
     # Process Inexact results
     second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%')).\
@@ -174,6 +175,7 @@ def search():
             completed_dictionary['main_word'] = main_word
             completed_dictionary['pos'] = pos
             second_exact.append(completed_dictionary)
+            continue
 
     return render_template('word_search_result.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact,
                            count=len(exact),

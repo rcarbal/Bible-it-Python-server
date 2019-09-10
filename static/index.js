@@ -11,63 +11,73 @@ const POS = {
 
 $(document).on('show.bs.modal', '.fade', function (e) {
 
+    console.log("Inside Modal");
+
     var modal = $(this).data('modal');
     var word;
 
-    if (modal == 2) {
+    if (modal == 1 || modal == 2) {
 
-        // sets up the inexact word list
-        word = $(this).data('word2');
+        if (modal == 2) {
+
+            // sets up the inexact word list
+            word = $(this).data('word2');
+        } else {
+
+            // sets up the exact word list
+            word = $(this).data('word');
+        }
+
+
+        var pos_list = $(this).data('pos');
+        var pos = pos_list
+
+        element = this.getElementsByClassName("modal-body")[0];
+        element.innerHTML = "";
+
+        // create the definition header
+        let definitionHeader = document.createElement('h6');
+        definitionHeader.innerHTML = "-" + pos + " " + word;
+
+        // create the definition h6 element
+        let headerEl = document.createElement('h6');
+        headerEl.innerHTML = "- Definitions"
+
+        // create <hr> tag
+        let hrTag = document.createElement('hr');
+
+
+        // create the synonym header
+        let synonymHeader = document.createElement('h6');
+        synonymHeader.innerHTML = "- Synonyms Found in the bible NIV"
+
+        // create ordered list
+        let ol = document.createElement('ol');
+
+        element.appendChild(definitionHeader);
+        element.appendChild(headerEl);
+        element.appendChild(ol);
+        element.appendChild(hrTag);
+        element.appendChild(synonymHeader);
+
+        // callback
+        const callback = (synonymOrderedList) => {
+            element.appendChild(synonymOrderedList)
+
+        }
+        // Call definitions urk
+        getDefinitions(word, ol, pos)
     } else {
+        let section = $(this).data('section');
+        let book = $(this).data('book');
+        let chapter = $(this).data('chapter');
+        let verse = $(this).data('verse');
 
-        // sets up the exact word list
-        word = $(this).data('word');
+        console.log(section);
+        console.log(book);
+        console.log(chapter);
+        console.log(verse);
     }
-
-
-    var pos_list = $(this).data('pos');
-    var pos = pos_list
-
-    element = this.getElementsByClassName("modal-body")[0];
-    element.innerHTML = "";
-
-    // create the definition header
-    let definitionHeader = document.createElement('h6');
-    definitionHeader.innerHTML = "-" + pos + " " + word;
-
-    // create the definition h6 element
-    let headerEl = document.createElement('h6');
-    headerEl.innerHTML = "- Definitions"
-
-    // create <hr> tag
-    let hrTag = document.createElement('hr');
-
-
-    // create the synonym header
-    let synonymHeader = document.createElement('h6');
-    synonymHeader.innerHTML = "- Synonyms Found in the bible NIV"
-
-    // create ordered list
-    let ol = document.createElement('ol');
-
-    element.appendChild(definitionHeader);
-    element.appendChild(headerEl);
-    element.appendChild(ol);
-    element.appendChild(hrTag);
-    element.appendChild(synonymHeader);
-
-    // callback
-    const callback = (synonymOrderedList) => {
-        element.appendChild(synonymOrderedList)
-
-    }
-
-
-    // Call definitions urk
-    getDefinitions(word, ol, pos)
-
-
-
 
 });
 
@@ -154,8 +164,8 @@ function getSynonyms(word, pos) {
                             let anchor = document.createElement('a');
                             anchor.text = synData;
                             anchor.setAttribute('href',
-                             `/word_search?word=${synData}`);
-                            
+                                `/word_search?word=${synData}`);
+
 
                             element.appendChild(anchor);
                             element.appendChild(span);
@@ -189,10 +199,10 @@ function getSynonyms(word, pos) {
                                 let anchor = document.createElement('a');
                                 anchor.text = root['wd'];
                                 anchor.setAttribute('href',
-                                  `/word_search?word=${root['wd']}`);
-                                
-                                
- 
+                                    `/word_search?word=${root['wd']}`);
+
+
+
                                 let patternSyn = new RegExp("(^|\\W)" + root['wd'] + "($|\\W)");
                                 let synMatched = complete_bible.match(patternSyn);
 

@@ -1,6 +1,6 @@
 {% include "header.html" %}
 
-<div class="jumbotron vertical-center">
+<div class="jumbotron jumbotron-fluid vertical-center">
     <div class="container">
         <h1 class="display-4">Bible-it word search:</h1>
         <div class="lead">
@@ -27,7 +27,7 @@
         <div class="card-header" id="headingOne">
             <h2 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
+                        aria-expanded="true" aria-controls="collapseOne">
                     <div>Exact Search Results: {{count}}</div>
                 </button>
             </h2>
@@ -47,29 +47,61 @@
                             <p class="card-text">
                                 {{ i.verse_string }}
                             </p>
-                                                   <!-- Modal -->
-                                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word="{{word}}"
-                                     data-pos="{{i.pos}}" data-modal="1" data-index="{{i.index}}">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">{{word}} Information</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
+                            <!-- Modal Exact word info-->
+                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word="{{word}}"
+                                 data-pos="{{i.pos}}" data-modal="1" data-index="{{i.index}}">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">{{word}} Information</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
 
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <!-- Modal Exact read Chapter -->
+                            <div class="modal fade" id="readChapter" tabindex="-1" role="dialog"
+                                 aria-labelledby="readChapterTitle" aria-hidden="true"
+                                 data-section="{{i.section_name}}" data-book="{{i.book_name}}"
+                                 data-chapter="{{i.chapter_number}}" data-verse="{{i.verse_number}}"
+                            >
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="readChapterTitle">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                            </button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-outline-info btn-sm float-right" data-toggle="modal"
+                                    data-target="#readChapter">
+                                Read chapter
+                            </button>
                         </div>
 
                     </li>
@@ -88,7 +120,7 @@
         <div class="card-header" id="headingtwo">
             <h2 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
-                    aria-expanded="true" aria-controls="collapseOne2">
+                        aria-expanded="true" aria-controls="collapseOne2">
                     <div>Inexact Search Results: {{second_count}}</div>
                 </button>
             </h2>
@@ -107,31 +139,37 @@
                             <h6 class="card-subtitle mb-2"> Verse: {{b.verse_number}}</h6>
                             <p class="card-text">
                                 {{ b.verse_string }}
-                                          <!-- Modal 2 -->
-                                <div class="modal fade" id="exampleModalLong{{b.index}}" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word2="{{b.main_word}}"
-                                     data-pos="{{b.pos}}" data-modal="2" data-index="{{b.index}}">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle2">{{b.main_word}} Information</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
+                                <!-- Modal 2 Inexact word info -->
+                            </p>
+                            <div class="modal fade" id="exampleModalLong{{b.index}}" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word2="{{b.main_word}}"
+                                 data-pos="{{b.pos}}" data-modal="2" data-index="{{b.index}}">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle2">{{b.main_word}}
+                                                Information</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
 
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                            </p>
+                            </div>
 
+                            <button type="button" class="btn btn-outline-info btn-sm float-right" data-toggle="modal"
+                                    data-target="#exampleModalLong">
+                                Read chapter
+                            </button>
 
                         </div>
 

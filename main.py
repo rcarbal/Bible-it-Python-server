@@ -44,7 +44,7 @@ def search():
     elif 'word' in request.args:
         query_param = request.args['word']
 
-    verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%')).\
+    verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%')). \
         join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())
 
     exact = []
@@ -100,7 +100,7 @@ def search():
                 break
 
     # Process Inexact results
-    second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%')).\
+    second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%')). \
         join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())
 
     second_exact = []
@@ -212,6 +212,34 @@ def word_synonym():
     return complete
 
 
+@app.route('/api/chapter', methods=['GET'])
+def get_chapter():
+    book = None
+    chapter = None
+    verse = None
+
+    if request.method == 'GET':
+        req_args = request.args
+        if 'book' in req_args and 'chapter' in req_args and 'verse' in req_args:
+            book = req_args['book']
+            chapter = req_args['chapter']
+            verse = req_args['verse']
+
+        # retrieve the chapter from the database
+        chapter = session.query(Verse).filter_by(chapter_id=chapter).\
+            join(Chapter)
+
+        for c in chapter:
+
+            print(c)
+            print()
+
+
+    return "Inside chapter route"
+
+
+# On last test rapid api was not returning response
+# API is on hold
 def rapid_api_word_definitions():
     query_param = None
     if request.method == 'GET':

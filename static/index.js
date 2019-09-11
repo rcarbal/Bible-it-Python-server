@@ -86,6 +86,8 @@ $(document).on('show.bs.modal', '.fade', function (e) {
         console.log(bookId);
         console.log(chapter);
         console.log(verse);
+
+        getChapter(bookId, chapter, verse);
     }
 
 });
@@ -226,6 +228,13 @@ function getSynonyms(word, pos) {
                     }
                 }
             }
+        });
+}
+
+function getChapter(bookId, chapter, verse){
+    axios.get(`/api/chapter?book=${bookId}&chapter=${chapter}&verse=${verse}`)
+        .then((response)=>{
+            console.log(response[data]);
         });
 }
 

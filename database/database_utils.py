@@ -8,6 +8,7 @@ def build_dictionary_verse_query(verse):
     verse_dictionary = {
         'verse_number': verse.verse_number,
         'chapter_number': verse.chapter.chapter,
+        'chapter_id': verse.chapter_id,
         'book_id': verse.chapter.book_id
     }
 
@@ -42,5 +43,3 @@ def get_bible_string():
     data = None
     bible_string = json.dumps(data)
     return bible_string
-
-# Returns Books in order

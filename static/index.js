@@ -28,9 +28,16 @@ $(document).on('show.bs.modal', '.fade', function (e) {
             word = $(this).data('word');
         }
 
-
+        // Gets the POS
         var pos_list = $(this).data('pos');
-        var pos = pos_list
+
+        // Officiial
+        var pos;
+        if(pos_list == 'PROPN'){
+            pos = 'NOUN';
+        }else{
+            pos = pos_list;
+        }
 
         element = this.getElementsByClassName("modal-body")[0];
         element.innerHTML = "";
@@ -70,11 +77,13 @@ $(document).on('show.bs.modal', '.fade', function (e) {
     } else {
         let section = $(this).data('section');
         let book = $(this).data('book');
+        let bookId = $(this).data('book_id');
         let chapter = $(this).data('chapter');
         let verse = $(this).data('verse');
 
         console.log(section);
         console.log(book);
+        console.log(bookId);
         console.log(chapter);
         console.log(verse);
     }

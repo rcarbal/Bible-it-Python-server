@@ -13,10 +13,20 @@ from utilities.utilities import get_project_root
 
 class TestBibleitResults(unittest.TestCase):
 
-    def test_random_stuff(self):
-        x = range(1,68)
-        for n in x:
-            print(n)
+    def test_retrieve_all_chapter(self):
+        # connect to database
+        root = get_project_root()
+        db_path = os.path.join(root, 'database\\bibledatabase.db')
+        database = DatabaseConnect(database='sqlite:///{}?check_same_thread=False'.format(db_path))
+        database_session = database.session
+
+        # get search by chapter
+        results = database_session.query(Verse).filter_by(chapter_id=234).\
+            join(Chapter)
+
+        # loop through all that results that all verse id's equals 1
+        for r in results:
+            self.assertTrue(r.chapter.book.name == 'Genesis')
 
     def test_retrieve_niv_books(self):
         complete_bible = get_complete_bible()

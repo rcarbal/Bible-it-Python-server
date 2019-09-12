@@ -1,3 +1,4 @@
+// 9:10am
 let element = null;
 
 const POS = {
@@ -44,7 +45,7 @@ $(document).on('show.bs.modal', '.fade', function (e) {
 
         // create the definition header
         let definitionHeader = document.createElement('h6');
-        definitionHeader.innerHTML = "-" + pos + " " + word + " " + index;
+        definitionHeader.innerHTML = "-" + pos + " " + word;
 
         // create the definition h6 element
         let headerEl = document.createElement('h6');

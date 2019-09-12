@@ -89,7 +89,7 @@ def search():
                 index += 1
                 complete_words = remove_first_separator.replace(word, '<strong>' +
                                                                 '<a href="#" data-toggle="modal" data-target="'
-                                                                '#exampleModalLong"' + '>' + word + '</a> '
+                                                                '#exampleModalLong' + str(index) + '"' + '>' + word + '</a> '
                                                                 + '</strong>')
                 new_words = Markup(complete_words)
                 completed_dictionary['verse_string'] = new_words

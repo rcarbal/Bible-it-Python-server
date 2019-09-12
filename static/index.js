@@ -16,6 +16,8 @@ $(document).on('show.bs.modal', '.fade', function (e) {
 
     if (modal == 1 || modal == 2) {
 
+        const index = $(this).data('index');
+
         if (modal == 2) {
 
             // sets up the inexact word list
@@ -42,7 +44,7 @@ $(document).on('show.bs.modal', '.fade', function (e) {
 
         // create the definition header
         let definitionHeader = document.createElement('h6');
-        definitionHeader.innerHTML = "-" + pos + " " + word;
+        definitionHeader.innerHTML = "-" + pos + " " + word + " " + index;
 
         // create the definition h6 element
         let headerEl = document.createElement('h6');
@@ -65,11 +67,6 @@ $(document).on('show.bs.modal', '.fade', function (e) {
         element.appendChild(hrTag);
         element.appendChild(synonymHeader);
 
-        // callback
-        const callback = (synonymOrderedList) => {
-            element.appendChild(synonymOrderedList)
-
-        }
         // Call definitions urk
         getDefinitions(word, ol, pos)
     } else {

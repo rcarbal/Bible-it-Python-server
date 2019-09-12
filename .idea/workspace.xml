@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/word_search_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/word_search_result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Unittests for test_calendar.TestCalendar.test_get_year_range_7000_years_ago">
     <configuration name="database_setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestBibleitResults.test_random_stuff" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_calendar.TestCalendar.test_calendar_years" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,7 +104,21 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestBibleitResults.test_random_stuff&quot;" />
+      <option name="_new_target" value="&quot;test_calendar.TestCalendar.test_calendar_years&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_calendar.TestCalendar.test_get_year_range_7000_years_ago" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Bible-it-Server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_calendar.TestCalendar.test_get_year_range_7000_years_ago&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -123,27 +136,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestBibleitResults.test_retrieve_books_in_order" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Bible-it-Server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestBibleitResults.test_retrieve_books_in_order&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_calendar.TestCalendar.test_get_year_range_7000_years_ago" />
+        <item itemvalue="Python tests.Unittests for test_calendar.TestCalendar.test_calendar_years" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.database_setup" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_all_chapter" />
-        <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_random_stuff" />
-        <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_books_in_order" />
       </list>
     </recent_temporary>
   </component>
@@ -207,6 +206,16 @@
           <url>file://$PROJECT_DIR$/utilities/db_converter.py</url>
           <line>75</line>
           <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bi_classes/biblecalendar.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bi_classes/biblecalendar.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

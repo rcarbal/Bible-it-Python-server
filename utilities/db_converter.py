@@ -66,6 +66,12 @@ def convert_verses_list_to_db(books):
             parsed_db_chapter_id = find_db_chapter_from_parse(db_chapters_in_book, chapter)
 
             for verse in file_chapter_verses:
+
+                verse_number = None
+                if len(verse) == 1:
+                    verse_number = '0{}'.format(verse)
+                else:
+                    verse_number = verse
                 # verse String
                 parsed_versed = file_chapter_verses[verse]
 
@@ -73,7 +79,7 @@ def convert_verses_list_to_db(books):
                 spacy_verse = getSpacyVerse(parsed_versed, verse_index_count)
 
                 verse_list.append(
-                    Verse(verse_number=verse, verse_string=spacy_verse, chapter_id=parsed_db_chapter_id))
+                    Verse(verse_number=verse_number, verse_string=spacy_verse, chapter_id=parsed_db_chapter_id))
                 verse_index_count += 1
 
     print(datetime.datetime.now())

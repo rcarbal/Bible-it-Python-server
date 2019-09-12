@@ -23,7 +23,10 @@ def remove_pos(verse, word_search, second_parse=None):
                 pos = pos_word_split[1]
         else:
             if word_search.strip() == compare.strip():
-                pos = pos_word_split[1]
+                if word_search == "":
+                    pos = ""
+                else:
+                    pos = pos_word_split[1]
 
         collected_verse_items.append(pos_word_split[0])
     joined_complete = "".join(collected_verse_items)

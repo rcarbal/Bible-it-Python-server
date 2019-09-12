@@ -226,20 +226,24 @@ def get_chapter():
             verse = req_args['verse']
 
         # retrieve the chapter from the database
-        chapter = session.query(Verse).filter_by(chapter_id=chapter).\
-            join(Chapter)
+        verses = session.query(Verse).filter_by(chapter_id=chapter). \
+            join(Chapter).order_by(Verse.verse_number.asc())
 
-        for c in chapter:
+        readable_verses = []
 
-            print(c)
-            print()
+        for v in verses:
+            # convert raw verse data to readable verses
+            # get current available information -  verse string, verse number and chapter
+            print(v.verse_number)
+            remove_first_separator, first_pos = remove_pos(v.verse_string, "")
 
-
-    return "Inside chapter route"
+            readable_verses.append(remove_first_separator)
+        json_string = json.dumps(readable_verses)
+        return json_string
 
 
 # On last test rapid api was not returning response
-# API is on hold
+# API is on hold.
 def rapid_api_word_definitions():
     query_param = None
     if request.method == 'GET':

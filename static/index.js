@@ -11,8 +11,6 @@ const POS = {
 
 $(document).on('show.bs.modal', '.fade', function (e) {
 
-    console.log("Inside Modal");
-
     var modal = $(this).data('modal');
     var word;
 
@@ -81,13 +79,14 @@ $(document).on('show.bs.modal', '.fade', function (e) {
         let chapter = $(this).data('chapter');
         let verse = $(this).data('verse');
 
-        console.log(section);
-        console.log(book);
-        console.log(bookId);
-        console.log(chapter);
-        console.log(verse);
+        // get the modal
+        element = this.getElementsByClassName("modal-body")[0];
+        element.innerHTML = "";
+        // create the list
+        let ol = document.createElement('ol');
+        element.appendChild(ol)
 
-        getChapter(bookId, chapter, verse);
+        getChapter(bookId, chapter, verse, ol);
     }
 
 });
@@ -97,8 +96,6 @@ $(document).on('show.bs.modal', '.fade', function (e) {
 function getDefinitions(word, defintionOderedList, pos) {
     axios.get("/api/word/definition?word=" + word)
         .then((response) => {
-
-            console.log("Getting Definitions");
 
             // get modal div
             const arr = response.data;
@@ -162,7 +159,6 @@ function getSynonyms(word, pos) {
 
                     for (let i = 1; i <= data.length; i++) {
                         const synData = data[i];
-                        console.log(synData);
 
                         // check that synonym is the bible
                         let patternSyn = new RegExp("(^|\\W)" + synData + "($|\\W)");
@@ -231,10 +227,21 @@ function getSynonyms(word, pos) {
         });
 }
 
-function getChapter(bookId, chapter, verse){
+function getChapter(bookId, chapter, verse, ol){
     axios.get(`/api/chapter?book=${bookId}&chapter=${chapter}&verse=${verse}`)
-        .then((response)=>{
-            console.log(response[data]);
+        .then((response)=>{            
+
+            // loop through all the verses and add them tho the ordered list
+            const verses = response['data']
+
+            for (verse in verses){
+                const verseString = verses[verse];
+
+                let li = document.createElement('li');
+                li.innerHTML = verseString;
+                ol.appendChild(li);
+            }
+
         });
 }
 

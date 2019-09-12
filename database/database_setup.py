@@ -1,22 +1,19 @@
 import sys
 import pdb
 # fo use on windows pycharm
-# from database import db_classes_niv
-# from database.db_classes_niv import BibleSection, Verse
+from database import db_classes_niv
+from database.db_classes_niv import BibleSection, Verse
 
 # for use on linux
-import db_classes_niv
-from db_classes_niv import BibleSection, Book, Verse, Chapter
+# import db_classes_niv
+# from db_classes_niv import BibleSection, Book, Verse, Chapter
 
 sys.path.insert(0, '/vagrant/Bible-it-Server')
 import utilities
 
-
-
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
 
 from utilities.db_converter import convert_section_list_to_book_db, convert_book_list_to_db, convert_verses_list_to_db
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books

@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/bibledatabase.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/word_search_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/word_search_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/db_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/db_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/word_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/word_process.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +59,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="database_setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Bible-it-Server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database/database_setup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,20 +115,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestBibleitResults.test_results_from_db" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Bible-it-Server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestBibleitResults.test_results_from_db&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for tests.TestBibleitResults.test_retrieve_all_chapter" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,10 +146,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.database_setup" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_all_chapter" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_random_stuff" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_books_in_order" />
-        <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_results_from_db" />
       </list>
     </recent_temporary>
   </component>
@@ -199,6 +209,11 @@
           <line>18</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utilities/db_converter.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -210,9 +225,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="completed_dictionary" />
-        <watch expression="exact" />
-        <watch expression="index" />
+        <watch expression="readable_verses" />
       </configuration>
     </watches-manager>
   </component>

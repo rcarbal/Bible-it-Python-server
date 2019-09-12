@@ -159,7 +159,7 @@ def search():
                     original_word = original_word.replace(original_word, '<strong>' + '<a href="#" '
                                                                                       'data-toggle="modal" '
                                                                                       'data-target=" '
-                                                                                      '#exampleModalLong' + str(ind)
+                                                                                      '#exampleModalInexact' + str(ind)
                                                           + '"' + '> '
                                                           + original_word
                                                           + '</a>' + '</strong>')
@@ -215,18 +215,18 @@ def word_synonym():
 @app.route('/api/chapter', methods=['GET'])
 def get_chapter():
     book = None
-    chapter = None
+    chapter_id = None
     verse = None
 
     if request.method == 'GET':
         req_args = request.args
         if 'book' in req_args and 'chapter' in req_args and 'verse' in req_args:
             book = req_args['book']
-            chapter = req_args['chapter']
+            chapter_id = req_args['chapter']
             verse = req_args['verse']
 
         # retrieve the chapter from the database
-        verses = session.query(Verse).filter_by(chapter_id=chapter). \
+        verses = session.query(Verse).filter_by(chapter_id=chapter_id). \
             join(Chapter).order_by(Verse.verse_number.asc())
 
         readable_verses = []

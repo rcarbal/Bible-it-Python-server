@@ -74,7 +74,7 @@
                             </div>
 
                             <!-- Modal Exact read Chapter -->
-                            <div class="modal fade" id="readChapter" tabindex="-1" role="dialog"
+                            <div class="modal fade" id="readChapter{{i.index}}" tabindex="-1" role="dialog"
                                  aria-labelledby="readChapterTitle" aria-hidden="true"
                                  data-section="{{i.section_name}}" data-book="{{i.book_name}}"
                                  data-chapter="{{i.chapter_id}}" data-verse="{{i.verse_number}}"
@@ -106,7 +106,7 @@
                             <!--End of Modal-->
 
                             <button type="button" class="btn btn-outline-info btn-sm float-right" data-toggle="modal"
-                                    data-target="#readChapter">
+                                    data-target="#readChapter{{i.index}}">
                                 Read chapter
                             </button>
                         </div>
@@ -151,7 +151,7 @@
                                 {{ b.verse_string }}
                                 <!-- Modal 2 Inexact word info -->
                             </p>
-                            <div class="modal fade" id="exampleModalLong{{b.index}}" tabindex="-1" role="dialog"
+                            <div class="modal fade" id="exampleModalInexact{{b.index}}" tabindex="-1" role="dialog"
                                  aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word2="{{b.main_word}}"
                                  data-pos="{{b.pos}}" data-modal="2" data-index="{{b.index}}">
                                 <div class="modal-dialog" role="document">

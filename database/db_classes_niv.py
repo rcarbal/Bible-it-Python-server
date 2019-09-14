@@ -1,6 +1,6 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, create_engine
+from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -44,12 +44,3 @@ class Years(Base):
 
     id = Column(Integer, primary_key=True)
     year = Column(Integer, nullable=False)
-
-
-engine = create_engine(database='sqlite:///bibledatabase.db?check_same_thread=False')
-Base.metadata.create_all(engine)
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
-
-if __name__ == '__main__':
-    pass

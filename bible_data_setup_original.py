@@ -21,10 +21,6 @@ from utilities.filereader_niv import get_complete_bible, get_all_bible_books
 from utilities.matcher import match_books_to_section, get_bible_period, get_civilization
 from utilities.utilities import get_years_from_list, years_convert_to_db_object
 
-
-
-
-
 Base = declarative_base()
 
 

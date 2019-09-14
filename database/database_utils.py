@@ -1,5 +1,6 @@
-from bible_db_setup import Verse
+
 from database.databse_connection import DatabaseConnect
+from database.db_classes_niv import Verse
 from utilities.word_process import retrieve_all_pos_in_verse
 import json
 

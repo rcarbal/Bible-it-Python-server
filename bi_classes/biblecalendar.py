@@ -35,3 +35,18 @@ class BibleCalendar(object):
             current = current - 1
 
         return years
+
+    @staticmethod
+    def convert_int_to_cal_year(int_dates_list):
+        return_dates = []
+
+        if int_dates_list is not None:
+            for i in int_dates_list:
+                if i.year < 0:
+                    remove_negativity = i.year * -1
+                    return_dates.append("{} BC".format(remove_negativity))
+
+                elif i.year > 0:
+                    return_dates.append("{} AD".format(i.year))
+
+        return return_dates

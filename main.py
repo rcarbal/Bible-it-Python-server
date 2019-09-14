@@ -7,8 +7,9 @@ from sqlalchemy import create_engine, desc, asc
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+from bi_classes.biblecalendar import BibleCalendar
 from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
-from database.db_classes_niv import Verse, Chapter, Book
+from database.db_classes_niv import Verse, Chapter, Book, Years
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.filereader_niv import get_complete_bible
@@ -89,7 +90,8 @@ def search():
                 index += 1
                 complete_words = remove_first_separator.replace(word, '<strong>' +
                                                                 '<a href="#" data-toggle="modal" data-target="'
-                                                                '#exampleModalLong' + str(index) + '"' + '>' + word + '</a> '
+                                                                '#exampleModalLong' + str(
+                    index) + '"' + '>' + word + '</a> '
                                                                 + '</strong>')
                 new_words = Markup(complete_words)
                 completed_dictionary['verse_string'] = new_words
@@ -180,6 +182,16 @@ def search():
     return render_template('word_search_result.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact,
                            count=len(exact),
                            word=query_param, second_count=len(second_exact))
+
+
+@app.route('/timeline', methods=['GET'])
+def timeline():
+    # retrieve database years
+    years = session.query(Years).all()
+
+    cal = BibleCalendar()
+    converted_to_bable_dates = cal.convert_int_to_cal_year(int_dates_list=years)
+    return render_template('timeline.html', years=converted_to_bable_dates)
 
 
 @app.route('/api/word/definition', methods=['GET'])

@@ -2,13 +2,13 @@
 import json
 import os
 
-from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
 from flask import Flask, request, render_template, Markup
 from sqlalchemy import create_engine, desc, asc
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from database.db_classes_niv import Verse, Book, Chapter
+from bible_db_setup import Verse, Chapter, Book
+from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.filereader_niv import get_complete_bible
@@ -260,6 +260,6 @@ if __name__ == '__main__':
     print("Bible-it Server Started ==================================================>")
     BIBLE_STRING = get_complete_bible('./bible-json/NIV.json')
     app.secret_key = 'super_secret_key'
-    port = int(os.environ.get("PORT", 5001))
+    port = int(os.environ.get("PORT", 9090))
     app.debug = True
     app.run(host='0.0.0.0', port=port)

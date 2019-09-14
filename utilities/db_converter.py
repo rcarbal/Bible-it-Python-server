@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from database.db_classes_niv import Book, BibleSection, Chapter, Verse
+from database.db_years import Years
 from nlp.bibleit_NLP import getSpacyVerse
 from utilities.filereader_niv import get_book_from_bible, get_complete_bible
 
@@ -11,7 +12,7 @@ import datetime
 
 Base = declarative_base()
 
-engine = create_engine('sqlite:///bibledatabase.db')
+engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()

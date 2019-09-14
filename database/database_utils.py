@@ -1,5 +1,5 @@
+from bible_db_setup import Verse
 from database.databse_connection import DatabaseConnect
-from database.db_classes_niv import Verse
 from utilities.word_process import retrieve_all_pos_in_verse
 import json
 
@@ -23,7 +23,7 @@ def build_dictionary_book_query(book):
     return book_dictionary
 
 
-def retrieve_all_pos():
+def retrieve_all_pos_utils():
     database = DatabaseConnect(database='sqlite:///bibledatabase.db?check_same_thread=False')
     verses = database.session.query(Verse).all()
 

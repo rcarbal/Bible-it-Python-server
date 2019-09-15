@@ -52,6 +52,16 @@ class Years(Base):
     year = Column(Integer, nullable=False)
 
 
+class Civilization(Base):
+    __tablename__ = 'civilizations'
+
+    id = Column(Integer, primary_key=True)
+    position = Column(Integer, nullable=False)
+    name = Column(String, nullable=False)
+    first_year = Column(Integer, ForeignKey('years.id'), nullable=False)
+    last_year = Column(Integer, ForeignKey('years.id'), nullable=False)
+
+
 engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
@@ -93,6 +103,32 @@ def add_years_to_db():
     session.add_all(years_db_object)
     session.commit()
     print("Years added to database")
+
+    setup_db_bible_general_periods()
+
+
+def setup_db_bible_general_periods():
+    civil_arr = []
+
+    # retrieved all the data for the period
+    bible_periods = get_bible_period()
+
+    # loop through all period data and get the id of the years
+    # to construct a Civilazition object
+    for bp in bible_periods:
+        # retrieve the first year and check databse
+        first_year = bp['first_year']
+        first_year_result = session.query(Years).filter(Years.year == first_year).one()
+        # retrieve the second year and check the date
+        second_year = bp['second_year']
+        second_year_result = session.query(Years).filter(Years.year == second_year).one()
+
+        if first_year_result.year == first_year and second_year_result.year == second_year:
+            civil_arr.append(Civilization(position=bp.position,
+                                          name=bp.name,
+                                          first_year=first_year_result.id,
+                                          second_year=second_year_result.id))
+
 
 
 def add_bible_sections_to_db():
@@ -248,4 +284,5 @@ def run_command():
 
 
 if __name__ == '__main__':
-    run_command()
+    # run_command()
+    setup_db_bible_general_periods()

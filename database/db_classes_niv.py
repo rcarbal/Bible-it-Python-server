@@ -44,3 +44,13 @@ class Years(Base):
 
     id = Column(Integer, primary_key=True)
     year = Column(Integer, nullable=False)
+
+
+class Civilization(Base):
+    __tablename__ = 'civilizations'
+
+    id = Column(Integer, primary_key=True)
+    position = Column(Integer, nullable=False)
+    name = Column(String, nullable=False)
+    first_year = Column(Integer, ForeignKey('years.id'), nullable=False)
+    last_year = Column(Integer, ForeignKey('years.id'), nullable=False)

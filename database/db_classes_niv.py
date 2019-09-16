@@ -46,8 +46,8 @@ class Years(Base):
     year = Column(Integer, nullable=False)
 
 
-class Civilization(Base):
-    __tablename__ = 'civilizations'
+class GeneralBiblePeriods(Base):
+    __tablename__ = 'bible_periods'
 
     id = Column(Integer, primary_key=True)
     position = Column(Integer, nullable=False)

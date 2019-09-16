@@ -42,11 +42,39 @@ class BibleCalendar(object):
 
         if int_dates_list is not None:
             for i in int_dates_list:
+                y = {}
                 if i.year < 0:
                     remove_negativity = i.year * -1
-                    return_dates.append("{} BC".format(remove_negativity))
+                    y['year'] = "{} BC".format(remove_negativity)
+                    y['id'] = i.id
+                    return_dates.append(y)
 
                 elif i.year > 0:
-                    return_dates.append("{} AD".format(i.year))
+                    y['year'] = "{} AD".format(i.year)
+                    y['id'] = i.id
+                    return_dates.append(y)
 
         return return_dates
+
+    @staticmethod
+    def append_bperiods_to_years(years, bible_periods):
+        complete = []
+        periods = {}
+
+        # extract all the civilization data
+        for c in bible_periods:
+            periods[str(c.position)] = c
+
+        # loop through the years and get any period that has reference to that year
+        for y in years:
+            year_id = y['id']
+
+            # check all the periods for reference to year
+            for p in periods:
+                period = periods[p]
+                if period.first_year == year_id:
+                    y['period'] =  period.name
+                    complete.append(y)
+
+
+        return complete

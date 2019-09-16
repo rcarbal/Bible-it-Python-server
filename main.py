@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 
 from bi_classes.biblecalendar import BibleCalendar
 from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
-from database.db_classes_niv import Verse, Chapter, Book, Years
+from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.filereader_niv import get_complete_bible
@@ -189,9 +189,17 @@ def timeline():
     # retrieve database years
     years = session.query(Years).all()
 
+    # get years
     cal = BibleCalendar()
-    converted_to_bable_dates = cal.convert_int_to_cal_year(int_dates_list=years)
-    return render_template('timeline.html', years=converted_to_bable_dates)
+    converted_to_bible_dates = cal.convert_int_to_cal_year(int_dates_list=years)
+
+    # get periods
+    periods = session.query(GeneralBiblePeriods).all()
+
+    years_and_periods = cal.append_bperiods_to_years(years=converted_to_bible_dates, bible_periods=periods)
+
+    #
+    return render_template('timeline.html', years=years_and_periods)
 
 
 @app.route('/api/word/definition', methods=['GET'])

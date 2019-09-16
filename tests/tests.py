@@ -3,8 +3,10 @@ import unittest
 import json
 
 from sqlalchemy import func
+
+from bi_classes.biblecalendar import BibleCalendar
 from database.databse_connection import DatabaseConnect
-from database.db_classes_niv import Verse, Chapter, Book, Years, Civilization
+from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods
 from utilities.filereader_niv import get_all_bible_books, get_complete_bible
 from utilities.matcher import get_bible_period
 from utilities.utilities import get_project_root
@@ -20,7 +22,7 @@ class TestBibleitResults(unittest.TestCase):
         database_session = database.session
 
         # get search by chapter
-        results = database_session.query(Verse).filter_by(chapter_id=234).\
+        results = database_session.query(Verse).filter_by(chapter_id=234). \
             join(Chapter)
 
         # loop through all that results that all verse id's equals 1
@@ -86,14 +88,32 @@ class TestBibleitResults(unittest.TestCase):
             last_year_results = database.session.query(Years).filter(Years.year == last_year).one()
 
             if first_year_result.year == first_year and last_year_results.year == last_year:
-                civil_arr.append(Civilization(position=bp['position'],
-                                              name=bp['name'],
-                                              first_year=first_year_result.id,
-                                              last_year=last_year_results.id))
+                civil_arr.append(GeneralBiblePeriods(position=bp['position'],
+                                                     name=bp['name'],
+                                                     first_year=first_year_result.id,
+                                                     last_year=last_year_results.id))
 
         # check that list is not empty
         self.assertTrue(len(civil_arr) > 4)
 
+    def test_retrieve_periods(self):
+        root = get_project_root()
+        db_path = os.path.join(root, 'database\\bibledatabase.db')
+        database = DatabaseConnect(database='sqlite:///{}?check_same_thread=False'.format(db_path))
+        # retrieve database years
+        years = database.session.query(Years).all()
+
+        # get years
+        cal = BibleCalendar()
+        converted_to_bible_dates = cal.convert_int_to_cal_year(int_dates_list=years)
+
+        # get Periods
+        b_periods = database.session.query(GeneralBiblePeriods).all()
+
+        # add civilization to year
+        times = cal.append_bperiods_to_years(years=converted_to_bible_dates, bible_periods=b_periods)
+
+        self.assertTrue(len(times) > 0)
 
 
 if __name__ == '__main__':

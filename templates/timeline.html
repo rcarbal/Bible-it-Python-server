@@ -1,14 +1,17 @@
 {% include "header.html" %}
 
-<div class="row">
-    <div class="col-md-6 offset-md-3">
+<div class="row mt-5">
+    <div class="col-md-6 offset-md-3 mt-5">
         <h4>Bible Timeline</h4>
         <ul class="timeline">
             {% for y in years %}
-            <li>
-                <h5>{{y}}</h5>
-                <ul>
-                    
+            <li class="mt-2">
+                <h5>{{y.year}}</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Bible Period:      </strong>{{y.period}}
+                    </li>
+
                 </ul>
             </li>
             {% endfor %}

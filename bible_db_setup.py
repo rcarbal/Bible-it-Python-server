@@ -52,8 +52,8 @@ class Years(Base):
     year = Column(Integer, nullable=False)
 
 
-class Civilization(Base):
-    __tablename__ = 'civilizations'
+class GeneralBiblePeriods(Base):
+    __tablename__ = 'bible_periods'
 
     id = Column(Integer, primary_key=True)
     position = Column(Integer, nullable=False)
@@ -123,10 +123,10 @@ def setup_db_bible_general_periods():
         last_year_results = session.query(Years).filter(Years.year == last_year).one()
 
         if first_year_result.year == first_year and last_year_results.year == last_year:
-            civil_arr.append(Civilization(position=bp['position'],
-                                          name=bp['name'],
-                                          first_year=first_year_result.id,
-                                          last_year=last_year_results.id))
+            civil_arr.append(GeneralBiblePeriods(position=bp['position'],
+                                                 name=bp['name'],
+                                                 first_year=first_year_result.id,
+                                                 last_year=last_year_results.id))
 
     # save to database
     session.add_all(civil_arr)
@@ -286,4 +286,6 @@ def run_command():
 
 
 if __name__ == '__main__':
-    run_command()
+    # run_command()
+    add_years_to_db()
+    setup_db_bible_general_periods()

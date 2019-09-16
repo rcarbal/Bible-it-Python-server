@@ -286,6 +286,4 @@ def run_command():
 
 
 if __name__ == '__main__':
-    # run_command()
-    add_years_to_db()
-    setup_db_bible_general_periods()
+    run_command()

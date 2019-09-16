@@ -49,7 +49,7 @@ GENERAL_BIBLICAL_PERIODS = [
     },
     {
         'position': 9,
-        'name': '',
+        'name': 'Pos-exilic period',
         'first_year': -539,
         'last_year': -400
     }

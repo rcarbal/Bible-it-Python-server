@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bible_data_setup_original.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bible_db_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/bible_db_setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/bibledatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/bibledatabase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/db_classes_niv.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/db_classes_niv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/timeline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/periods.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/periods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/bibledatabase.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for tests.TestBibleitResults.test_check_civilization_object">
+  <component name="RunManager" selected="Python.bible_db_setup">
     <configuration name="bible_db_setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,9 +148,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bible_db_setup" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_check_civilization_object" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_get_years_from_db" />
-        <item itemvalue="Python.bible_db_setup" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_books_in_order" />
         <item itemvalue="Python.main" />
       </list>

@@ -70,6 +70,7 @@ session = DBSession()
 
 def setup_bible_db():
     add_years_to_db()
+    setup_db_bible_general_periods()
     add_bible_sections_to_db()
     add_books_to_db()
     add_chapters_to_db()
@@ -104,8 +105,6 @@ def add_years_to_db():
     session.commit()
     print("Years added to database")
 
-    setup_db_bible_general_periods()
-
 
 def setup_db_bible_general_periods():
     civil_arr = []
@@ -120,15 +119,18 @@ def setup_db_bible_general_periods():
         first_year = bp['first_year']
         first_year_result = session.query(Years).filter(Years.year == first_year).one()
         # retrieve the second year and check the date
-        second_year = bp['second_year']
-        second_year_result = session.query(Years).filter(Years.year == second_year).one()
+        last_year = bp['last_year']
+        last_year_results = session.query(Years).filter(Years.year == last_year).one()
 
-        if first_year_result.year == first_year and second_year_result.year == second_year:
-            civil_arr.append(Civilization(position=bp.position,
-                                          name=bp.name,
+        if first_year_result.year == first_year and last_year_results.year == last_year:
+            civil_arr.append(Civilization(position=bp['position'],
+                                          name=bp['name'],
                                           first_year=first_year_result.id,
-                                          second_year=second_year_result.id))
+                                          last_year=last_year_results.id))
 
+    # save to database
+    session.add_all(civil_arr)
+    session.commit()
 
 
 def add_bible_sections_to_db():
@@ -284,5 +286,4 @@ def run_command():
 
 
 if __name__ == '__main__':
-    # run_command()
-    setup_db_bible_general_periods()
+    run_command()

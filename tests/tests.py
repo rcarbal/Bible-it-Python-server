@@ -115,6 +115,33 @@ class TestBibleitResults(unittest.TestCase):
 
         self.assertTrue(len(times) > 0)
 
+    def test_retrieve_civilizations(self):
+        root = get_project_root()
+        db_path = os.path.join(root, 'database\\bibledatabase.db')
+        database = DatabaseConnect(database='sqlite:///{}?check_same_thread=False'.format(db_path))
+        # retrieve database years
+        years = database.session.query(Years).all()
+
+        # retrieve database of years
+        cal = BibleCalendar()
+        converted_to_bible_dates = cal.convert_int_to_cal_year(int_dates_list=years)
+
+        # get Periods
+        b_periods = database.session.query(GeneralBiblePeriods).all()
+
+        # add civilization to year
+        times = cal.append_bperiods_to_years(years=converted_to_bible_dates, bible_periods=b_periods)
+
+        single_time_extrated = times[0]
+        key_found = None
+
+        if 'civ' in single_time_extrated:
+            key_found = True
+        else:
+            key_found = False
+
+        self.assertTrue(key_found)
+
 
 if __name__ == '__main__':
     unittest.main()

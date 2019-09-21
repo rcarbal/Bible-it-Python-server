@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bible_db_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/bible_db_setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/bibledatabase.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bi_classes/biblecalendar.py" beforeDir="false" afterPath="$PROJECT_DIR$/bi_classes/biblecalendar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/timeline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +118,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestBibleitResults.test_get_years_from_db" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests.TestBibleitResults.test_retrieve_civilizations" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -126,7 +128,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestBibleitResults.test_get_years_from_db&quot;" />
+      <option name="_new_target" value="&quot;tests.TestBibleitResults.test_retrieve_civilizations&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -147,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_civilizations" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_periods" />
         <item itemvalue="Python.bible_db_setup" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_check_civilization_object" />
-        <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_get_years_from_db" />
       </list>
     </recent_temporary>
   </component>

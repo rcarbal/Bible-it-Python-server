@@ -8,6 +8,10 @@ from nlp.bibleit_NLP import getSpacyVerse
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books, get_book_from_bible
 from utilities.matcher import get_bible_period, get_civilization, match_books_to_section
 
+'''
+Main database setup script to be run in vagrant environment.
+'''
+
 Base = declarative_base()
 
 

@@ -2,6 +2,11 @@ from pathlib import Path
 
 from database.db_classes_niv import Years
 
+"""
+Arrange database information DATA UTILS
+Parse databae query information DATA UTILS
+"""
+
 
 def get_project_root() -> Path:
     """Returns project root folder."""

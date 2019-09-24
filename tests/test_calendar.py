@@ -17,11 +17,13 @@ class TestCalendar(unittest.TestCase):
 
     def test_get_year_range_7000_years_ago(self):
         calendar = BibleCalendar()
-        current_year = datetime.now().year
-        list_of_700_years = calendar.get_desc_years_from(year=7000)
-        earliest_year = list_of_700_years[-1]
+        list_of_700_years = calendar.get_desc_years_from(year=-4004)
+        # convert the years into Year database object
+        list_of_year_database_objects = convert_int_years_to_db_objects(list_of_700_years)
+        last_year = list_of_700_years[0]
+        first_year = list_of_700_years.pop()
 
-        self.assertTrue(-4980 == earliest_year)
+        self.assertTrue(first_year == -4004 and last_year == 2019)
 
 
 if __name__ == '__main__':

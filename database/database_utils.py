@@ -4,6 +4,11 @@ from database.db_classes_niv import Verse
 from utilities.word_process import retrieve_all_pos_in_verse
 import json
 
+"""
+Sorts through json objects to convert to objects that will be used for db objects 'DATABASE UTIL'
+Retrieves all the POS from the the database verse 'NLP'
+"""
+
 
 def build_dictionary_verse_query(verse):
     verse_dictionary = {

@@ -4,9 +4,18 @@
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bi_classes/biblecalendar.py" beforeDir="false" afterPath="$PROJECT_DIR$/bi_classes/biblecalendar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bible_db_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/bible_db_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/bibledatabase.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/databse_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/databse_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/db_classes_niv.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/db_classes_niv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/db_years.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/verse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/timeline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_calendar.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_calendar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/db_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/db_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/utilities.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Unittests for test_calendar.TestCalendar.test_get_year_range_7000_years_ago">
     <configuration name="bible_db_setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestBibleitResults.test_check_civilization_object" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_calendar.TestCalendar.test_get_year_range_7000_years_ago" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,7 +123,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestBibleitResults.test_check_civilization_object&quot;" />
+      <option name="_new_target" value="&quot;test_calendar.TestCalendar.test_get_year_range_7000_years_ago&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -148,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_calendar.TestCalendar.test_get_year_range_7000_years_ago" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_civilizations" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_retrieve_periods" />
         <item itemvalue="Python.bible_db_setup" />
-        <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_check_civilization_object" />
       </list>
     </recent_temporary>
   </component>
@@ -209,8 +218,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utilities/db_converter.py</url>
-          <line>76</line>
+          <line>80</line>
           <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_calendar.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

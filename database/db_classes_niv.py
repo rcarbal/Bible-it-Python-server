@@ -4,6 +4,10 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+'''
+SQLAlchemy classes to be used in main script file so to not run into Spacy windows compiler error
+'''
+
 
 class BibleSection(Base):
     __tablename__ = 'section'

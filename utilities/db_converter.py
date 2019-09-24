@@ -17,6 +17,10 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+'''
+Converts JSON file data to database onjects.  DATABASE UTILS
+Database query information parser.  DATA UTILS
+'''
 
 def convert_section_list_to_book_db(old_testament, new_testament):
     old = session.query(BibleSection).filter_by(name="Old Testament").first()

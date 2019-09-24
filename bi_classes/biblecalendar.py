@@ -17,11 +17,10 @@ class BibleCalendar(object):
     def get_desc_years_from(year):
         years = []
         current = datetime.now().year
-        desc_years = range(year)
+        desc_years = range(year, current+1)
 
         # loop backwards
         for i in desc_years:
-
             # convert to biblical year
             if current > 0:
                 # year = '{} AD'.format(current)
@@ -33,7 +32,6 @@ class BibleCalendar(object):
 
             # remove 1 year from current
             current = current - 1
-
         return years
 
     @staticmethod

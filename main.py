@@ -201,6 +201,10 @@ def timeline():
     #
     return render_template('timeline.html', years=years_and_periods)
 
+@app.route('/timelinetest', methods=['GET'])
+def timelinetest():
+    return render_template('timeline.html')
+
 
 @app.route('/api/word/definition', methods=['GET'])
 def word_definition():

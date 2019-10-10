@@ -19,11 +19,14 @@ class TestCalendar(unittest.TestCase):
         calendar = BibleCalendar()
         list_of_700_years = calendar.get_desc_years_from(year=-4004)
         # convert the years into Year database object
-        list_of_year_database_objects = convert_int_years_to_db_objects(list_of_700_years)
         last_year = list_of_700_years[0]
         first_year = list_of_700_years.pop()
 
         self.assertTrue(first_year == -4004 and last_year == 2019)
+
+    def convert_all_years_into_db_objects(self):
+        calendar = BibleCalendar()
+        list_of_700_years = calendar.get_desc_years_from(year=-4004)
 
 
 if __name__ == '__main__':

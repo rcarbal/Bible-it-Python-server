@@ -47,3 +47,9 @@ def years_convert_to_db_object(sorted_years):
 
     return db_years
 
+
+def convert_year_to_db(years_list):
+    db_list = []
+
+    return db_list
+

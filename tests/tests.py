@@ -9,7 +9,7 @@ from database.databse_connection import DatabaseConnect
 from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods
 from utilities.filereader_niv import get_all_bible_books, get_complete_bible
 from utilities.matcher import get_bible_period
-from utilities.utilities import get_project_root
+from utilities.utilities import get_project_root, convert_year_to_db
 
 
 class TestBibleitResults(unittest.TestCase):
@@ -141,6 +141,21 @@ class TestBibleitResults(unittest.TestCase):
             key_found = False
 
         self.assertTrue(key_found)
+
+    def convert_years_to_db_items(self):
+        # get a list of all the years
+        calendar = BibleCalendar()
+        list_of_700_years = calendar.get_desc_years_from(year=-4004)
+
+        # convert years into db items
+        convert_year_to_db(years_list=list_of_700_years)
+
+        # check that the list length is the same as the length of the yeear list
+        year_list_length = len(list_of_700_years)
+
+        db_list_length = len(convert_year_to_db())
+
+        self.assertTrue(year_list_length == db_list_length)
 
 
 if __name__ == '__main__':

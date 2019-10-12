@@ -73,7 +73,7 @@ session = DBSession()
 
 
 def setup_bible_db():
-    add_years_to_db()
+    add_period_years_to_db()
     setup_db_bible_general_periods()
     add_bible_sections_to_db()
     add_books_to_db()
@@ -82,7 +82,8 @@ def setup_bible_db():
 
 
 # methods to setup database
-def add_years_to_db():
+# Adds only the years as they relate to periods.
+def add_period_years_to_db():
     print("Initiate Save Years to database")
     # get all the years
     all_years = []

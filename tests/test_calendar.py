@@ -24,6 +24,13 @@ class TestCalendar(unittest.TestCase):
 
         self.assertTrue(first_year == -4004 and last_year == 2019)
 
+        list_of_700_years.reverse();
+
+        revered_first = list_of_700_years[0]
+        reversed_last = list_of_700_years.pop()
+
+        self.assertTrue(revered_first == -4003 and reversed_last == 2019)
+
     def convert_all_years_into_db_objects(self):
         calendar = BibleCalendar()
         list_of_700_years = calendar.get_desc_years_from(year=-4004)

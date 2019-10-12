@@ -19,6 +19,8 @@ class BibleCalendar(object):
         current = datetime.now().year
         desc_years = range(year, current+1)
 
+
+
         # loop backwards
         for i in desc_years:
             # convert to biblical year

@@ -4,6 +4,7 @@ from calendar import TextCalendar
 from datetime import datetime
 
 from bi_classes.biblecalendar import BibleCalendar
+from utilities.utilities import convert_year_to_db
 
 
 class TestCalendar(unittest.TestCase):
@@ -31,9 +32,20 @@ class TestCalendar(unittest.TestCase):
 
         self.assertTrue(revered_first == -4003 and reversed_last == 2019)
 
-    def convert_all_years_into_db_objects(self):
+    def test_convert_all_years_into_db_objects(self):
+        # get a list of all the years
         calendar = BibleCalendar()
         list_of_700_years = calendar.get_desc_years_from(year=-4004)
+
+        # convert years into db items
+        list_of_db_items = convert_year_to_db(years_list=list_of_700_years)
+
+        # check that the list length is the same as the length of the year list
+        year_list_length = len(list_of_700_years)
+
+        db_list_length = len(list_of_db_items)
+
+        self.assertTrue(year_list_length == db_list_length)
 
 
 if __name__ == '__main__':

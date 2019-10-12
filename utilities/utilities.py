@@ -51,5 +51,9 @@ def years_convert_to_db_object(sorted_years):
 def convert_year_to_db(years_list):
     db_list = []
 
+    # loop through list of years
+    for year in years_list:
+        db_list.append(Years(year=year))
+
     return db_list
 

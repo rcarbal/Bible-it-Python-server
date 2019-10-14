@@ -4,9 +4,11 @@ from sqlalchemy import Column, ForeignKey, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 
+from bi_classes.biblecalendar import BibleCalendar
 from nlp.bibleit_NLP import getSpacyVerse
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books, get_book_from_bible
 from utilities.matcher import get_bible_period, get_civilization, match_books_to_section
+from utilities.utilities import convert_year_to_db
 
 '''
 Main database setup script to be run in vagrant environment.
@@ -74,38 +76,25 @@ session = DBSession()
 
 def setup_bible_db():
     add_period_years_to_db()
-    setup_db_bible_general_periods()
-    add_bible_sections_to_db()
-    add_books_to_db()
-    add_chapters_to_db()
-    add_verses_to_db()
+    # setup_db_bible_general_periods()
+    # add_bible_sections_to_db()
+    # add_books_to_db()
+    # add_chapters_to_db()
+    # add_verses_to_db()
 
 
 # methods to setup database
 # Adds only the years as they relate to periods.
 def add_period_years_to_db():
     print("Initiate Save Years to database")
-    # get all the years
-    all_years = []
-    bible_period = get_bible_period()
+    # get a list of all the years
+    calendar = BibleCalendar()
+    list_of_700_years = calendar.get_desc_years_from(year=-4004)
 
-    general_biblical_periods = get_years_from_list(collection=bible_period)
-    all_years.extend(general_biblical_periods)
+    # convert years into db items
+    years_db_object = convert_year_to_db(years_list=list_of_700_years)
+    years_db_object.reverse()
 
-    civilization = get_civilization()
-
-    civilizations = get_years_from_list(collection=civilization)
-    all_years.extend(civilizations)
-
-    # remove duplicates
-    no_duplicates = list(dict.fromkeys(all_years))
-
-    # sort the years from oldest to newest
-    sorted_years = sorted(no_duplicates, key=int, reverse=False)
-    print(sorted_years)
-
-    # save timeline data to database
-    years_db_object = years_convert_to_db_object(sorted_years=sorted_years)
     session.add_all(years_db_object)
     session.commit()
     print("Years added to database")

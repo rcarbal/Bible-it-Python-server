@@ -64,8 +64,8 @@ class GeneralBiblePeriods(Base):
     id = Column(Integer, primary_key=True)
     position = Column(Integer, nullable=False)
     name = Column(String, nullable=False)
-    first_year = Column(Integer, ForeignKey('years.id'), nullable=False)
-    last_year = Column(Integer, ForeignKey('years.id'), nullable=False)
+    first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
 
 
 engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
@@ -76,11 +76,11 @@ session = DBSession()
 
 def setup_bible_db():
     add_period_years_to_db()
-    # setup_db_bible_general_periods()
-    # add_bible_sections_to_db()
-    # add_books_to_db()
-    # add_chapters_to_db()
-    # add_verses_to_db()
+    setup_db_bible_general_periods()
+    add_bible_sections_to_db()
+    add_books_to_db()
+    add_chapters_to_db()
+    add_verses_to_db()
 
 
 # methods to setup database
@@ -119,8 +119,8 @@ def setup_db_bible_general_periods():
         if first_year_result.year == first_year and last_year_results.year == last_year:
             civil_arr.append(GeneralBiblePeriods(position=bp['position'],
                                                  name=bp['name'],
-                                                 first_year=first_year_result.id,
-                                                 last_year=last_year_results.id))
+                                                 first_year_id=first_year_result.id,
+                                                 last_year_id=last_year_results.id))
 
     # save to database
     session.add_all(civil_arr)

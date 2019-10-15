@@ -56,5 +56,5 @@ class GeneralBiblePeriods(Base):
     id = Column(Integer, primary_key=True)
     position = Column(Integer, nullable=False)
     name = Column(String, nullable=False)
-    first_year = Column(Integer, ForeignKey('years.id'), nullable=False)
-    last_year = Column(Integer, ForeignKey('years.id'), nullable=False)
+    first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)

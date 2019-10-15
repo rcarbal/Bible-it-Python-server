@@ -72,7 +72,7 @@ class BibleCalendar(object):
             # check all the periods for reference to year
             for p in periods:
                 period = periods[p]
-                if period.first_year == year_id:
+                if period.first_year_id == year_id:
                     y['period'] = period.name
                     complete.append(y)
 

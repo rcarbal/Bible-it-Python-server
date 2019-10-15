@@ -201,9 +201,12 @@ def timeline():
     #
     return render_template('timeline.html', years=years_and_periods)
 
+
 @app.route('/timelinetest', methods=['GET'])
 def timelinetest():
-    return render_template('timeline.html')
+    # get historical periods
+    years = session.query(Years).all()
+    return render_template('timeline.html', years=years)
 
 
 @app.route('/api/word/definition', methods=['GET'])

@@ -142,7 +142,16 @@ class TestBibleitResults(unittest.TestCase):
 
         self.assertTrue(key_found)
 
+    # retrieve all the years from the database
+    def test_retrieve_all_database_yeasts(self):
+        root = get_project_root()
+        db_path = os.path.join(root, 'database\\bibledatabase.db')
+        database = DatabaseConnect(database='sqlite:///{}?check_same_thread=False'.format(db_path))
+        # retrieve database years
+        years = database.session.query(Years).all()
 
+        for year in years:
+            print(year.year)
 
 
 if __name__ == '__main__':

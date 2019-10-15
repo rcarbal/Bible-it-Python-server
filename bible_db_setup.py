@@ -67,6 +67,9 @@ class GeneralBiblePeriods(Base):
     first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
 
+class HistoricalPeriods(Base):
+    __tablename__ = ''
+
 
 engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
 Base.metadata.create_all(engine)
@@ -125,6 +128,10 @@ def setup_db_bible_general_periods():
     # save to database
     session.add_all(civil_arr)
     session.commit()
+
+def add_historical_periods():
+    print("Setting up Historical periods")
+
 
 
 def add_bible_sections_to_db():

@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship, sessionmaker
 from bi_classes.biblecalendar import BibleCalendar
 from nlp.bibleit_NLP import getSpacyVerse
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books, get_book_from_bible
-from utilities.matcher import get_bible_period, get_civilization, match_books_to_section
+from utilities.matcher import get_bible_period, get_civilization, match_books_to_section, get_main_historical_periods
 from utilities.utilities import convert_year_to_db
 
 '''
@@ -67,8 +67,14 @@ class GeneralBiblePeriods(Base):
     first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
 
+
 class HistoricalPeriods(Base):
-    __tablename__ = ''
+    __tablename__ = 'historical_periods'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
 
 
 engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
@@ -80,6 +86,7 @@ session = DBSession()
 def setup_bible_db():
     add_period_years_to_db()
     setup_db_bible_general_periods()
+    add_historical_periods()
     add_bible_sections_to_db()
     add_books_to_db()
     add_chapters_to_db()
@@ -129,9 +136,24 @@ def setup_db_bible_general_periods():
     session.add_all(civil_arr)
     session.commit()
 
+
 def add_historical_periods():
     print("Setting up Historical periods")
+    periods = get_main_historical_periods()
 
+    periods_list = []
+    for p in periods:
+        info = periods[p]
+
+        # get first_year id
+        first_year = session.query(Years).filter(Years.year == info['first_year']).first().id
+        last_year = session.query(Years).filter(Years.year == info['last_year']).first().id
+
+        periods_list.append(HistoricalPeriods(name=p, first_year_id=first_year, last_year_id=last_year))
+
+    # save to database
+    session.add_all(periods_list)
+    session.commit()
 
 
 def add_bible_sections_to_db():

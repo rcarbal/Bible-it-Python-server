@@ -11,6 +11,6 @@ HISTORICAL_PERIODS = {
 
     'modern': {
         'first_year': 1500,
-        'last_year': None
+        'last_year': 2019
     }
 }

@@ -20,11 +20,17 @@
     </div>
     {% for i in years %}
 
-    <div>
-        {{i.year}}
+    <div class="row">
+        <div class="col-5" id="hist-{{i.year}}"></div>
+        <div class="year col-1">
+            {{i.year}}
+        </div>
+        <div class="col-5" id="bible-{{i.year}}"></div>
+       
     </div>
 
     {% endfor %}
+
 
 <!--    <div class="row">-->
 <!--        <div class="col-5 sec sec-start hist-pad">-->
@@ -123,4 +129,8 @@
         
 </section>
 
+<script type="text/javascript" src="{{ url_for('static', filename='timeline.js') }}"></script>
+<script>
+setupHistoricalPeriods('{{main_history}}');
+</script>
 {% include "footer.html" %}

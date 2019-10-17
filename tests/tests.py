@@ -6,9 +6,9 @@ from sqlalchemy import func
 
 from bi_classes.biblecalendar import BibleCalendar
 from database.databse_connection import DatabaseConnect
-from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods
+from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods, HistoricalPeriods
 from utilities.filereader_niv import get_all_bible_books, get_complete_bible
-from utilities.matcher import get_bible_period
+from utilities.matcher import get_bible_period, get_main_historical_periods
 from utilities.utilities import get_project_root, convert_year_to_db
 
 
@@ -152,6 +152,25 @@ class TestBibleitResults(unittest.TestCase):
 
         for year in years:
             print(year.year)
+
+    def test_setup_historical_periods(self):
+        print("Setting up Historical periods")
+        root = get_project_root()
+        db_path = os.path.join(root, 'database\\bibledatabase.db')
+        database = DatabaseConnect(database='sqlite:///{}?check_same_thread=False'.format(db_path))
+        periods = get_main_historical_periods()
+
+        periods_list = []
+        for p in periods:
+            info = periods[p]
+
+            # get first_year id
+            first_year = database.session.query(Years).filter(Years.year == info['first_year']).first().id
+            last_year = database.session.query(Years).filter(Years.year == info['last_year']).first().id
+
+            periods_list.append(HistoricalPeriods(name=p, first_year_id=first_year, last_year_id=last_year))
+
+        self.assertTrue(len(periods_list) > 0)
 
 
 if __name__ == '__main__':

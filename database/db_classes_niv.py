@@ -58,3 +58,12 @@ class GeneralBiblePeriods(Base):
     name = Column(String, nullable=False)
     first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+
+
+class HistoricalPeriods(Base):
+    __tablename__ = 'historical_periods'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)

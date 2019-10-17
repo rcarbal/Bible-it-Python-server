@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker
 
 from bi_classes.biblecalendar import BibleCalendar
 from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
-from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods
+from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods, HistoricalPeriods
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.filereader_niv import get_complete_bible
@@ -203,10 +203,28 @@ def timeline():
 
 
 @app.route('/timelinetest', methods=['GET'])
-def timelinetest():
+def timeline_test():
     # get historical periods
     years = session.query(Years).all()
-    return render_template('timeline.html', years=years)
+
+    # get historical period
+    historical_periods = session.query(HistoricalPeriods).all()
+
+    historical_period_list = []
+    for h in historical_periods:
+        first_year = session.query(Years).filter(Years.id == h.first_year_id).first().year
+        last_year = session.query(Years).filter(Years.id == h.last_year_id).first().year
+        # setup custom json for the timeline.js file
+        period = {
+            'name': h.name,
+            'first_year': first_year,
+            'last_year': last_year
+        }
+        historical_period_list.append(period)
+
+    historical_json = json.dumps(historical_period_list)
+
+    return render_template('timeline.html', years=years, main_history=historical_json)
 
 
 @app.route('/api/word/definition', methods=['GET'])

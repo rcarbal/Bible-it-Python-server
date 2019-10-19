@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bible_db_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/bible_db_setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/historical_periods.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/historical_periods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/db_classes_niv.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/db_classes_niv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/timeline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/timeline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/matcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/matcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/periods.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/periods.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -1,4 +1,4 @@
-GENERAL_BIBLICAL_PERIODS = [
+GENERAL_BIBLICAL_PERIODS = {
     # Periods of the Bible from Adams synchronological chart
 
     # The Anti Diluvian Period
@@ -10,22 +10,21 @@ GENERAL_BIBLICAL_PERIODS = [
     #     'last_year': -2348
     # },
 
-    {
-        'position': 1,
+    '1': {
         'name': 'The Patriarchal Age',
         'first_year': -4004,
         'last_year': -1491
     },
 
-    {
-        'position': 2,
+    '2': {
+
         'name': 'The Mosaic Age',
         'first_year': -1491,
         'last_year': 33
     },
 
-    {
-        'position' : 3,
+    '3': {
+
         'name': 'The Christian Era',
         'first_year': 33,
         'last_year': 2019
@@ -85,4 +84,4 @@ GENERAL_BIBLICAL_PERIODS = [
     #     'first_year': -539,
     #     'last_year': -400
     # }
-]
+}

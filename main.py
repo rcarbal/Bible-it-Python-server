@@ -224,6 +224,9 @@ def timeline_test():
 
     historical_json = json.dumps(historical_period_list)
 
+    # retrieve main biblical periods
+    
+
     return render_template('timeline.html', years=years, main_history=historical_json)
 
 

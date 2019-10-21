@@ -225,9 +225,22 @@ def timeline_test():
     historical_json = json.dumps(historical_period_list)
 
     # retrieve main biblical periods
-    
+    main_biblical_periods_list = []
+    bible_periods = session.query(GeneralBiblePeriods).all()
 
-    return render_template('timeline.html', years=years, main_history=historical_json)
+    for b in bible_periods:
+        first_year = session.query(Years).filter(Years.id == b.first_year_id).first().year
+        last_year = session.query(Years).filter(Years.id == b.last_year_id).first().year
+        # setup custom json for the timeline.js file
+        period = {
+            'name': b.name,
+            'first_year': first_year,
+            'last_year': last_year
+        }
+        main_biblical_periods_list.append(period)
+    bible_json = json.dumps(main_biblical_periods_list)
+
+    return render_template('timeline.html', years=years, main_history=historical_json, main_bible=bible_json)
 
 
 @app.route('/api/word/definition', methods=['GET'])

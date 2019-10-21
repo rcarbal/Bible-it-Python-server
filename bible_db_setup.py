@@ -76,6 +76,19 @@ class HistoricalPeriods(Base):
     first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
 
+class BiblbicalFigures(Base):
+    __tablename__ = 'biblical_figures'
+
+    id = Column(Integer, primary_key=True)
+    gender = Column(String, nullable=True)
+    name = Column(String, nullable=False)
+    born = Column(Integer, ForeignKey('years.id'), nullable=False)
+    died = Column(Integer, ForeignKey('years.id'), nullable=False)
+    father = Column(Integer, nullable=True)
+    mother = Column(Integer, nullable=True)
+    sons = Column(Integer, nullable=True)
+    daughters = Column(Integer, nullable=True)
+
 
 engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
 Base.metadata.create_all(engine)

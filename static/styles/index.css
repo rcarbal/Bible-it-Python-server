@@ -12,6 +12,7 @@
 .sec-stop {
     border-bottom: solid;
     padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .hist-pad {

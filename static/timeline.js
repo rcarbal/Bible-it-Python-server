@@ -5,9 +5,9 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods){
     // place the correct historical period on the timeline.
     for (h in correctHistoricalPeriods){
         // loop through all the years
-        periodType = "history";
+        let periodType = "history";
         addClassesToYear(correctHistoricalPeriods[h]['first_year'], 
-            correctHistoricalPeriods[h]['last_year'], correctHistoricalPeriods[h]['name'], periodType);
+            correctHistoricalPeriods[h]['last_year'] - 1, correctHistoricalPeriods[h]['name'], periodType);
         
     }
 
@@ -15,7 +15,11 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods){
     const correctBiblicalPeriods = JSON.parse(biblicaPeriods.replace(/&#34;/g,'"'));
 
     for (b in correctBiblicalPeriods){
-        
+        const firstYear = correctBiblicalPeriods[b]['first_year'];
+        const lastYear =  correctBiblicalPeriods[b]['last_year'] - 1;
+        const name = correctBiblicalPeriods[b]['name']; 
+        const period = 'biblical'
+        addClassesToYear(firstYear, lastYear, name, period);
     }
 }
 
@@ -26,6 +30,9 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
     if (periodType == "history"){
         type = "hist-";
         paddingType = "hist-pad";
+    } else {
+        type = 'bible-';
+        paddingType = 'bible-pad';
     }
 
     // find the years element

@@ -1,3 +1,4 @@
+from constants.biblibal_figures import BIBLICAL_FIGURES
 from constants.civilizations import CIVILIZATIONS
 from constants.historical_periods import HISTORICAL_PERIODS
 from constants.periods import GENERAL_BIBLICAL_PERIODS
@@ -18,3 +19,7 @@ def get_bible_period():
 
 def get_main_historical_periods():
     return HISTORICAL_PERIODS
+
+
+def get_biblical_figures():
+    return BIBLICAL_FIGURES

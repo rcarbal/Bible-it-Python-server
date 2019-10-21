@@ -9,7 +9,8 @@ from sqlalchemy.orm import sessionmaker
 
 from bi_classes.biblecalendar import BibleCalendar
 from database.database_utils import build_dictionary_verse_query, build_dictionary_book_query
-from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods, HistoricalPeriods
+from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods, HistoricalPeriods, \
+    BiblibicalFigures
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.filereader_niv import get_complete_bible
@@ -240,7 +241,32 @@ def timeline_test():
         main_biblical_periods_list.append(period)
     bible_json = json.dumps(main_biblical_periods_list)
 
-    return render_template('timeline.html', years=years, main_history=historical_json, main_bible=bible_json)
+    # retrieve biblical figures
+    biblical_figures_list = []
+    biblical_figures = session.query(BiblibicalFigures).all()
+
+    for bf in biblical_figures:
+        name = bf.name
+        birth = session.query(Years).filter(Years.id == bf.born_id).first().year
+        death = session.query(Years).filter(Years.id == bf.died_id).first().year
+        gender = bf.gender
+
+        figure = {
+            'name': name,
+            'birth': birth,
+            'death': death,
+            'gender': gender
+        }
+
+        biblical_figures_list.append(figure)
+
+    figure_json = json.dumps(biblical_figures_list)
+
+    return render_template('timeline.html',
+                           years=years,
+                           main_history=historical_json,
+                           main_bible=bible_json,
+                           figures=figure_json)
 
 
 @app.route('/api/word/definition', methods=['GET'])

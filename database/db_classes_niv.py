@@ -67,3 +67,18 @@ class HistoricalPeriods(Base):
     name = Column(String, nullable=False)
     first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+
+class BiblibicalFigures(Base):
+    __tablename__ = 'biblical_figures'
+
+    id = Column(Integer, primary_key=True)
+    gender = Column(String, nullable=True)
+    name = Column(String, nullable=False)
+    born_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    died_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    father = Column(Integer, nullable=True)
+    mother = Column(Integer, nullable=True)
+    sons = Column(Integer, nullable=True)
+    daughters = Column(Integer, nullable=True)
+    lifespan = Column(Integer, nullable=True)
+

@@ -7,7 +7,8 @@ from sqlalchemy.orm import relationship, sessionmaker
 from bi_classes.biblecalendar import BibleCalendar
 from nlp.bibleit_NLP import getSpacyVerse
 from utilities.filereader_niv import get_complete_bible, get_all_bible_books, get_book_from_bible
-from utilities.matcher import get_bible_period, get_civilization, match_books_to_section, get_main_historical_periods
+from utilities.matcher import get_bible_period, get_civilization, match_books_to_section, get_main_historical_periods, \
+    get_biblical_figures
 from utilities.utilities import convert_year_to_db
 
 '''
@@ -76,18 +77,20 @@ class HistoricalPeriods(Base):
     first_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     last_year_id = Column(Integer, ForeignKey('years.id'), nullable=False)
 
-class BiblbicalFigures(Base):
+
+class BiblibicalFigures(Base):
     __tablename__ = 'biblical_figures'
 
     id = Column(Integer, primary_key=True)
     gender = Column(String, nullable=True)
     name = Column(String, nullable=False)
-    born = Column(Integer, ForeignKey('years.id'), nullable=False)
-    died = Column(Integer, ForeignKey('years.id'), nullable=False)
+    born_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    died_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     father = Column(Integer, nullable=True)
     mother = Column(Integer, nullable=True)
     sons = Column(Integer, nullable=True)
     daughters = Column(Integer, nullable=True)
+    lifespan = Column(Integer, nullable=True)
 
 
 engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=False', echo=False)
@@ -104,6 +107,7 @@ def setup_bible_db():
     add_books_to_db()
     add_chapters_to_db()
     add_verses_to_db()
+    add_biblical_figures()
 
 
 # methods to setup database
@@ -212,6 +216,32 @@ def add_verses_to_db():
     session.add_all(verses)
     session.commit()
     print("Committed Verses Database")
+
+
+def add_biblical_figures():
+    print("Adding biblical figures")
+    figures = get_biblical_figures()
+
+    figures_list = []
+    for f in figures:
+        gender = f['gender']
+        name = f['name']
+        born = f['year_born']
+        died = f['year_died']
+        years_lived = f['total_years']
+
+        # get first_year id
+        born_id = session.query(Years).filter(Years.year == born).first().id
+        died_id = session.query(Years).filter(Years.year == died).first().id
+
+        figures_list.append(BiblibicalFigures(gender=gender,
+                                              name=name,
+                                              born_id=born_id,
+                                              died_id=died_id,
+                                              lifespan=years_lived))
+
+    session.add_all(figures_list)
+    session.commit()
 
 
 def convert_section_list_to_book_db(old_testament, new_testament):

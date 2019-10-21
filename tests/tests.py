@@ -6,9 +6,10 @@ from sqlalchemy import func
 
 from bi_classes.biblecalendar import BibleCalendar
 from database.databse_connection import DatabaseConnect
-from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods, HistoricalPeriods
+from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePeriods, HistoricalPeriods, \
+    BiblibicalFigures
 from utilities.filereader_niv import get_all_bible_books, get_complete_bible
-from utilities.matcher import get_bible_period, get_main_historical_periods
+from utilities.matcher import get_bible_period, get_main_historical_periods, get_biblical_figures
 from utilities.utilities import get_project_root, convert_year_to_db
 
 
@@ -171,6 +172,34 @@ class TestBibleitResults(unittest.TestCase):
             periods_list.append(HistoricalPeriods(name=p, first_year_id=first_year, last_year_id=last_year))
 
         self.assertTrue(len(periods_list) > 0)
+
+    def test_get_biblical_figures(self):
+        print("Adding biblical figures")
+        root = get_project_root()
+        db_path = os.path.join(root, 'database\\bibledatabase.db')
+        database = DatabaseConnect(database='sqlite:///{}?check_same_thread=False'.format(db_path))
+        figures = get_biblical_figures()
+
+        figures_list = []
+
+        for f in figures:
+            gender = f['gender']
+            name = f['name']
+            born = f['year_born']
+            died = f['year_died']
+            years_lived = f['total_years']
+
+            # get first_year id
+            born_id = database.session.query(Years).filter(Years.year == born).first().id
+            died_id = database.session.query(Years).filter(Years.year == died).first().id
+
+            figures_list.append(BiblibicalFigures(gender=gender,
+                                                  name=name,
+                                                  born_id=born_id,
+                                                  died_id=died_id,
+                                                  lifespan=years_lived))
+
+        self.assertTrue(len(figures_list) > 0)
 
 
 if __name__ == '__main__':

@@ -24,3 +24,7 @@
     padding-left: 1px;
     padding-right: 5px;
 }
+
+.bible-fig {
+    width: calc(100% / 7);
+}

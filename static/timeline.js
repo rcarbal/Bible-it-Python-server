@@ -1,4 +1,4 @@
-function setupHistoricalPeriods(historicalPeriods, biblicaPeriods){
+function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
     // remove escape characters
     const correctHistoricalPeriods = JSON.parse(historicalPeriods.replace(/&#34;/g,'"'));
 
@@ -20,6 +20,18 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods){
         const name = correctBiblicalPeriods[b]['name']; 
         const period = 'biblical'
         addClassesToYear(firstYear, lastYear, name, period);
+    }
+
+    // place the biblical figures in the timeline
+    const correctFigures = JSON.parse(figures.replace(/&#34;/g,'"'));
+
+    for (c in correctFigures){
+        const name = correctFigures[c]['name'];
+        const birth = correctFigures[c]['birth'];
+        const death = correctFigures[c]['death'];
+        const period = 'biblical';
+
+        addBiblicalFiguresToTimeline(name, birth, death, period);
     }
 }
 
@@ -66,4 +78,53 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
     }
     let emptyElement = document.createElement('div');
     emptyElement.textContent = 'PERIOD';
+}
+
+function addBiblicalFiguresToTimeline(name, birth, death, period){
+    let type;
+
+    if (period == 'biblical'){
+        type = 'bible-'
+    }
+
+    // find the first year
+    let firstYearElement = document.getElementById(`${type}${birth}`);
+    let figureStart = document.createElement("div");
+    figureStart.textContent = name;
+    figureStart.classList.add("sec");
+    figureStart.classList.add("sec-start");
+    figureStart.classList.add("bible-fig");
+    firstYearElement.appendChild(figureStart);
+
+    // fing the second last year
+    let lastYearElement = document.getElementById(`${type}${death}`);
+    let figureEnd = document.createElement("div");
+    figureEnd.textContent = `${name}'s death`;
+    figureEnd.classList.add('sec');
+    figureEnd.classList.add('sec-stop');
+    figureEnd.classList.add('bible-fig');
+    lastYearElement.appendChild(figureEnd);
+
+    // loop through to complete timeline's lifespan
+    let initialYear = birth;
+
+    console.log("Printing Years");
+    for(i = birth; i < death; i++){
+        
+        if (i == 0){
+            initialYear++;
+            continue;
+        }
+
+        // find the years between
+        let yearElement = document.getElementById(`${type}${initialYear}`);
+        let figureElement = document.createElement("div");
+        figureElement.classList.add('sec');
+        figureElement.classList.add('bible-fig');
+        yearElement.appendChild(figureElement);
+
+        // yearElement.classList.add(paddingType);
+
+        initialYear++;
+    }
 }

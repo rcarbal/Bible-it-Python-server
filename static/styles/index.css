@@ -6,23 +6,19 @@
 
 .sec-start {
     border-top: solid;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .sec-stop {
-    border-bottom: solid;
-    padding-bottom: 5px;
     margin-bottom: 5px;
+    border-bottom: solid;
 }
 
 .hist-pad {
-    padding-right: 1px;
-    padding-left: 5px;
 }
 
 .bible-pad {
-    padding-left: 1px;
-    padding-right: 5px;
+    margin-left: 2px;
 }
 
 .bible-fig {

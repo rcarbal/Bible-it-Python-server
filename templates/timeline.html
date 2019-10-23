@@ -7,13 +7,13 @@
 
 <section class="timeline text-center">
     <div class="row">
-            <div class="col-5">
+            <div class="col">
                 Historical
             </div>
-            <div class="year col-1">
+            <div class="year col-1 border border-primary">
                 Years
             </div>
-            <div class="col col-5">
+            <div class="col">
                 Biblical
             </div>
 
@@ -21,11 +21,11 @@
     {% for i in years %}
 
     <div class="row">
-        <div class="col-5" id="hist-{{i.year}}"></div>
-        <div class="year col-1">
+        <div class="col" id="hist-{{i.year}}"></div>
+        <div class="year col-1 border border-primary">
             {{i.year}}
         </div>
-        <div class="col-5" id="bible-{{i.year}}"></div>
+        <div class="col" id="bible-{{i.year}}"></div>
        
     </div>
 
@@ -133,6 +133,6 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename='timeline.js') }}"></script>
 <script>
-setupHistoricalPeriods('{{main_history}}', '{{main_bible}}', '{{figures}}');
+ setupHistoricalPeriods('{{main_history}}', '{{main_bible}}', '{{figures}}');
 </script>
 {% include "footer.html" %}

@@ -36,6 +36,7 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
 }
 
 function addClassesToYear(firstYear, lastYear, period, periodType){
+    console.log("Adding Classes");
     let type;
     let paddingType;
 

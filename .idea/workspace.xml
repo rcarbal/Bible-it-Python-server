@@ -4,9 +4,7 @@
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/timeline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/timeline.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

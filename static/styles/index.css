@@ -21,6 +21,10 @@
     margin-left: 2px;
 }
 
+.height-bible {
+    height: 100%;
+}
+
 .bible-fig {
     width: calc(100% / 7);
 }

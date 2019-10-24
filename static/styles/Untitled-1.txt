@@ -1,0 +1,34 @@
+ // remove escape characters
+    const correctHistoricalPeriods = JSON.parse(historicalPeriods.replace(/&#34;/g,'"'));
+
+    // place the correct historical period on the timeline.
+    for (h in correctHistoricalPeriods){
+        // loop through all the years
+        let periodType = "history";
+        addClassesToYear(correctHistoricalPeriods[h]['first_year'], 
+            correctHistoricalPeriods[h]['last_year'] - 1, correctHistoricalPeriods[h]['name'], periodType);
+        
+    }
+
+    // place the correct biblical periods in the timeline
+    const correctBiblicalPeriods = JSON.parse(biblicaPeriods.replace(/&#34;/g,'"'));
+
+    for (b in correctBiblicalPeriods){
+        const firstYear = correctBiblicalPeriods[b]['first_year'];
+        const lastYear =  correctBiblicalPeriods[b]['last_year'] - 1;
+        const name = correctBiblicalPeriods[b]['name']; 
+        const period = 'biblical'
+        //addClassesToYear(firstYear, lastYear, name, period);
+    }
+
+    // place the biblical figures in the timeline
+    const correctFigures = JSON.parse(figures.replace(/&#34;/g,'"'));
+
+    for (c in correctFigures){
+        const name = correctFigures[c]['name'];
+        const birth = correctFigures[c]['birth'];
+        const death = correctFigures[c]['death'];
+        const period = 'biblical';
+
+        //addBiblicalFiguresToTimeline(name, birth, death, period);
+    }

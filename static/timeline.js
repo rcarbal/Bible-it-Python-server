@@ -138,6 +138,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     columnToUse.classList.add("p-0");
     columnToUse.classList.add("sec");
     columnToUse.classList.add("sec-start");
+    columnToUse.classList.add("ml-1");
     columnToUse.textContent = name;
 
     //loop through all the current biblical figures years
@@ -159,6 +160,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         lifeSpanColumn.classList.add("col-1");
         lifeSpanColumn.classList.add("sec");
         lifeSpanColumn.classList.add("height-bible");
+        lifeSpanColumn.classList.add("ml-1");
         rowOfLoop.appendChild(lifeSpanColumn);
     }
 }

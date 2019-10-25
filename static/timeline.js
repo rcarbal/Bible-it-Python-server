@@ -134,6 +134,24 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         COLOMNS.addAYearColumn(birth);
     }
 
+    // fingd the last year last year of timeline
+    let lastYearElement = document.getElementById(`${type}${death}${row}`);
+    let figureEnd = document.createElement("div");
+    figureEnd.textContent = `${name}'s death`;
+    figureEnd.classList.add("col-1");
+    figureEnd.classList.add("p-0");
+    figureEnd.classList.add("ml-1");
+    figureEnd.classList.add('sec');
+    figureEnd.classList.add('sec-stop');
+    lastYearElement.appendChild(figureEnd);
+
+    // Add an epty column under death column
+    console.log("add empty");
+    let emptyColumn = document.createElement("div");
+    emptyColumn.classList.add("col-1");
+    let nextRowAfterDeathRow = document.getElementById(`${type}${death + 1}${row}`);
+    nextRowAfterDeathRow.appendChild(emptyColumn);
+
     // Now that you have the columns to use add the properties
     columnToUse.classList.add("p-0");
     columnToUse.classList.add("sec");
@@ -152,7 +170,6 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
             continue;
         }
         // Get the year columns within a years row
-        let yearColomn = COLOMNS.years[`${i}`];
         let rowOfLoop = document.getElementById(`${type}${i}${row}`);
 
         // need to add a column

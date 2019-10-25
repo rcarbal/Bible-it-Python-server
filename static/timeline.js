@@ -1,4 +1,7 @@
+let COLOMNS;
+
 function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
+    COLOMNS = new ColumnChecker(-4004, 2019);
     // place historical periods
     addHistoricalPeriods(historicalPeriods);
 
@@ -14,10 +17,8 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
         const death = correctFigures[c]['death'];
         const period = 'biblical';
 
-        //addBiblicalFiguresToTimeline(name, birth, death, period);
+        addBiblicalFiguresToTimeline(name, birth, death, period);
     }
-
-    //let columnChecker = new ColumnChecker(-4004, -4002);
 }
 
 function addHistoricalPeriods(historicalPeriods){
@@ -49,17 +50,24 @@ function addHistoricalPeriods(historicalPeriods){
 function addClassesToYear(firstYear, lastYear, period, periodType){
     let type;
     let paddingType;
+    let row;
 
     if (periodType == "history"){
         type = "hist-";
         paddingType = "hist-pad";
+        row = "";
+    } else if(periodType == "bible-figures"){
+        type = 'bible-';
+        paddingType = 'bible-pad';
+        row = "-row"
     } else {
         type = 'bible-';
         paddingType = 'bible-pad';
+        row = "";
     }
 
     // find the years element
-    let firstYearElement = document.getElementById(`${type}${firstYear}`);
+    let firstYearElement = document.getElementById(`${type}${firstYear}${row}`);
     let eraTitle = document.createElement("div");
     eraTitle.textContent = period;
     let firstChild = firstYearElement.firstChild;
@@ -102,71 +110,55 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
 
 function addBiblicalFiguresToTimeline(name, birth, death, period){
     let type;
+    let row;
 
     if (period == 'biblical'){
-        type = 'bible-'
+        type = 'bible-';
+        row = '-row';
     }
 
-    // find the first year
-    let firstYearElement = document.getElementById(`${type}${birth}`);
-    // add a row to the first year
+    // Get the year column information
+    let firstYearColumn = COLOMNS.years[`${birth}`];
 
-    let firstrow = document.createElement("div");
-    firstrow.classList.add("row");
-    firstYearElement.appendChild(firstrow);
+    // find the first year row that will hold all the columns
+    let firstYearRow = document.getElementById(`${type}${birth}${row}`);
+    let columnToUse;
+    
+    // add the number of necessary columns.
+    for (let i = firstYearColumn; i < firstYearColumn + 1; i++){
+        
+        let birthColumn = document.createElement("div");
+        birthColumn.classList.add("col-1");
+        firstYearRow.appendChild(birthColumn);
+        columnToUse = birthColumn;
+        COLOMNS.addAYearColumn(birth);
+    }
 
-    // add the birth column
-    let birthColumn = document.createElement("div");
-    birthColumn.classList.add("col-1");
-    birthColumn.classList.add("p-0");
-    birthColumn.classList.add("sec");
-    birthColumn.classList.add("sec-start");
-    birthColumn.textContent = name;
-    firstrow.appendChild(birthColumn);
+    // Now that you have the columns to use add the properties
+    columnToUse.classList.add("p-0");
+    columnToUse.classList.add("sec");
+    columnToUse.classList.add("sec-start");
+    columnToUse.textContent = name;
 
+    //loop through all the current biblical figures years
+    let yearToStartLoop = birth + 1;
 
-    // let figureStart = document.createElement("div");
-    // figureStart.textContent = name;
-    // figureStart.classList.add("sec");
-    // figureStart.classList.add("sec-start");
-    // figureStart.classList.add("bible-fig");
-    // firstYearElement.appendChild(figureStart);
-
-    // // fing the second last year
-    // let lastYearElement = document.getElementById(`${type}${death}`);
-    // let figureEnd = document.createElement("div");
-    // figureEnd.textContent = `${name}'s death`;
-    // figureEnd.classList.add('sec');
-    // figureEnd.classList.add('sec-stop');
-    // figureEnd.classList.add('bible-fig');
-    // lastYearElement.appendChild(figureEnd);
-
-    // loop through to complete timeline's lifespan
-
-    let initialYear = birth;
-
-    for(i = birth; i < death; i++){
+    for(i = yearToStartLoop; i < death; i++){
+        console.log("test loop");
         
         if (i == 0){
             initialYear++;
             continue;
         }
+        // Get the year columns within a years row
+        let yearColomn = COLOMNS.years[`${i}`];
+        let rowOfLoop = document.getElementById(`${type}${i}${row}`);
 
-        // // find the years between
-        // let yearElement = document.getElementById(`${type}${initialYear}`);
-        // let row = document.createElement("div");
-        // row.classList.add("row");
-        // row.classList.add("height-bible");
-        // row.id = `${type}${initialYear}-row`;
-        // yearElement.appendChild(row);
-
-        // // add figure column
-        // let column = document.createElement("div");
-        // column.classList.add("col-1");
-        // column.classList.add("sec");
-        // row.appendChild(column);
-
-
-        initialYear++;
+        // need to add a column
+        let lifeSpanColumn = document.createElement("div");
+        lifeSpanColumn.classList.add("col-1");
+        lifeSpanColumn.classList.add("sec");
+        lifeSpanColumn.classList.add("height-bible");
+        rowOfLoop.appendChild(lifeSpanColumn);
     }
 }

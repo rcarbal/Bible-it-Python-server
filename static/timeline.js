@@ -1,16 +1,40 @@
 function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
-   // remove escape characters
-   const correctHistoricalPeriods = JSON.parse(historicalPeriods.replace(/&#34;/g,'"'));
-       // place the correct historical period on the timeline.
-    for (h in correctHistoricalPeriods){
-        // loop through all the years
-        let firstYear = correctHistoricalPeriods[h]['first_year'];
-        let lastYear = correctHistoricalPeriods[h]['last_year'] - 1;
-        let period = correctHistoricalPeriods[h]['name'];
-        let periodType = "history";
-        addClassesToYear(firstYear, lastYear, period, periodType);
-    }
+    // place historical periods
+    addHistoricalPeriods(historicalPeriods);
+
     // place the correct biblical periods in the timeline
+    addBiblicalPeriods(biblicaPeriods);
+    
+    // place the biblical figures in the timeline
+    const correctFigures = JSON.parse(figures.replace(/&#34;/g,'"'));
+
+    for (c in correctFigures){
+        const name = correctFigures[c]['name'];
+        const birth = correctFigures[c]['birth'];
+        const death = correctFigures[c]['death'];
+        const period = 'biblical';
+
+        //addBiblicalFiguresToTimeline(name, birth, death, period);
+    }
+
+    //let columnChecker = new ColumnChecker(-4004, -4002);
+}
+
+function addHistoricalPeriods(historicalPeriods){
+    // remove escape characters
+    const correctHistoricalPeriods = JSON.parse(historicalPeriods.replace(/&#34;/g,'"'));
+        // place the correct historical period on the timeline.
+     for (h in correctHistoricalPeriods){
+         // loop through all the years
+         let firstYear = correctHistoricalPeriods[h]['first_year'];
+         let lastYear = correctHistoricalPeriods[h]['last_year'] - 1;
+         let period = correctHistoricalPeriods[h]['name'];
+         let periodType = "history";
+         addClassesToYear(firstYear, lastYear, period, periodType);
+     }
+ }
+
+ function addBiblicalPeriods(biblicaPeriods){
     const correctBiblicalPeriods = JSON.parse(biblicaPeriods.replace(/&#34;/g,'"'));
 
     for (b in correctBiblicalPeriods){
@@ -20,23 +44,9 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
             const period = 'biblical'
             addClassesToYear(firstYear, lastYear, name, period);
     }
-
-        // place the biblical figures in the timeline
-        const correctFigures = JSON.parse(figures.replace(/&#34;/g,'"'));
-
-        for (c in correctFigures){
-            const name = correctFigures[c]['name'];
-            const birth = correctFigures[c]['birth'];
-            const death = correctFigures[c]['death'];
-            const period = 'biblical';
-    
-            addBiblicalFiguresToTimeline(name, birth, death, period);
-        }
 }
 
 function addClassesToYear(firstYear, lastYear, period, periodType){
-    
-    console.log("Adding Classes");
     let type;
     let paddingType;
 
@@ -50,7 +60,16 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
 
     // find the years element
     let firstYearElement = document.getElementById(`${type}${firstYear}`);
-    firstYearElement.textContent = period;
+    let eraTitle = document.createElement("div");
+    eraTitle.textContent = period;
+    let firstChild = firstYearElement.firstChild;
+
+    if (firstChild == null){
+        firstYearElement.appendChild(eraTitle);
+    } else {
+        firstYearElement.insertBefore(eraTitle, firstChild);
+    }
+
     let lastYearElement = document.getElementById(`${type}${lastYear}`);
 
     // add classes to element
@@ -60,7 +79,7 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
     // loop through all years and add classes
     let initialYear = firstYear;
 
-    console.log("Printing Years");
+   
     for(i = firstYear; i < lastYear + 1; i++){
         // console.log(initialYear);
         // console.log(i);
@@ -126,7 +145,6 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
 
     let initialYear = birth;
 
-    console.log("Printing Years");
     for(i = birth; i < death; i++){
         
         if (i == 0){
@@ -134,18 +152,19 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
             continue;
         }
 
-        // find the years between
-        let yearElement = document.getElementById(`${type}${initialYear}`);
-        let row = document.createElement("div");
-        row.classList.add("row");
-        row.classList.add("height-bible");
-        yearElement.appendChild(row);
+        // // find the years between
+        // let yearElement = document.getElementById(`${type}${initialYear}`);
+        // let row = document.createElement("div");
+        // row.classList.add("row");
+        // row.classList.add("height-bible");
+        // row.id = `${type}${initialYear}-row`;
+        // yearElement.appendChild(row);
 
-        // add figure column
-        let column = document.createElement("div");
-        column.classList.add("col-1");
-        column.classList.add("sec");
-        row.appendChild(column);
+        // // add figure column
+        // let column = document.createElement("div");
+        // column.classList.add("col-1");
+        // column.classList.add("sec");
+        // row.appendChild(column);
 
 
         initialYear++;

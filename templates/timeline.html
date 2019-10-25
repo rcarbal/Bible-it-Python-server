@@ -25,7 +25,9 @@
         <div class="year col-1 border border-primary">
             {{i.year}}
         </div>
-        <div class="col" id="bible-{{i.year}}"></div>
+        <div class="col" id="bible-{{i.year}}">
+            <div class="row" id="bible-{{i.year}}-row">row2</div>
+        </div>
        
     </div>
 
@@ -131,7 +133,9 @@
         
 </section>
 
-<script type="text/javascript" src="{{ url_for('static', filename='timeline.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename='timeline.js') }}"></script> -->
+<script src="/static/timeline.js" charset="utf-8"></script>
+<script src="/static/column.js" charset="utf-8"></script>
 <script>
  setupHistoricalPeriods('{{main_history}}', '{{main_bible}}', '{{figures}}');
 </script>

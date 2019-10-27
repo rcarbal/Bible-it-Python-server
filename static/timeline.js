@@ -131,7 +131,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         birthColumn.classList.add("col-1");
         firstYearRow.appendChild(birthColumn);
         columnToUse = birthColumn;
-        COLOMNS.addAYearColumn(birth);
+        COLOMNS.addChildToBiblicalRow(birth, birthColumn);
     }
 
     // fingd the last year last year of timeline
@@ -146,10 +146,8 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     lastYearElement.appendChild(figureEnd);
 
     // Add an epty column under death column
-    console.log("add empty");
     let emptyColumn = document.createElement("div");
     emptyColumn.classList.add("col-1");
-    console.log("Added death clip");
     emptyColumn.classList.add("death-clip");
     emptyColumn.classList.add("ml-1");
     let nextRowAfterDeathRow = document.getElementById(`${type}${death + 1}${row}`);
@@ -166,7 +164,6 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     let yearToStartLoop = birth + 1;
 
     for(i = yearToStartLoop; i < death; i++){
-        console.log("test loop");
         
         if (i == 0){
             initialYear++;

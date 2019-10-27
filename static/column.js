@@ -21,7 +21,7 @@ class ColumnChecker{
             // find element
             let element = document.getElementById(`bible-${i}-row`);
             if (element.hasChildNodes() == false){
-                this.years[`${i}`] = 0
+                this.years[`${i}`] = []
             } else {
                 console.log(element.hasChildNodes());
                 console.log(`Found Child NODES at ${i}`)
@@ -30,10 +30,7 @@ class ColumnChecker{
         }
     }
     
-    addAYearColumn(year){
-        let yearToAddTo = this.years[`${year}`];
-        let updatedYearToAdd = yearToAddTo + 1;
-        this.years[`${year}`] = updatedYearToAdd;
-        console.log();
+    addChildToBiblicalRow(year, childNode){
+        this.years[`${year}`].push(childNode);
     }
 }

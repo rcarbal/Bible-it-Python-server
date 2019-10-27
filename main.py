@@ -186,24 +186,6 @@ def search():
 
 
 @app.route('/timeline', methods=['GET'])
-def timeline():
-    # retrieve database years
-    years = session.query(Years).all()
-
-    # get years
-    cal = BibleCalendar()
-    converted_to_bible_dates = cal.convert_int_to_cal_year(int_dates_list=years)
-
-    # get periods
-    periods = session.query(GeneralBiblePeriods).all()
-
-    years_and_periods = cal.append_bperiods_to_years(years=converted_to_bible_dates, bible_periods=periods)
-
-    #
-    return render_template('timeline.html', years=years_and_periods)
-
-
-@app.route('/timelinetest', methods=['GET'])
 def timeline_test():
     # get historical periods
     years = session.query(Years).all()

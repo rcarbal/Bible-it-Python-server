@@ -37,3 +37,13 @@
     border-style: dotted;
     margin-left: 15px;
 }
+
+.bible-row {
+    display: flex;
+}
+
+.death-clip {
+    height: 35px;
+    background: black;
+    clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+}

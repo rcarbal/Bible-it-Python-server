@@ -149,6 +149,9 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     console.log("add empty");
     let emptyColumn = document.createElement("div");
     emptyColumn.classList.add("col-1");
+    console.log("Added death clip");
+    emptyColumn.classList.add("death-clip");
+    emptyColumn.classList.add("ml-1");
     let nextRowAfterDeathRow = document.getElementById(`${type}${death + 1}${row}`);
     nextRowAfterDeathRow.appendChild(emptyColumn);
 

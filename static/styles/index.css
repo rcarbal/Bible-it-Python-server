@@ -42,8 +42,14 @@
     display: flex;
 }
 
-.death-clip {
+.clip-death {
     height: 35px;
     background: black;
     clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.clip-trans {
+    height: 35px;
+    background: black;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
 }

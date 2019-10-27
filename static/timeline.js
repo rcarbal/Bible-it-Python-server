@@ -144,14 +144,16 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     figureEnd.classList.add('sec');
     figureEnd.classList.add('sec-stop');
     lastYearElement.appendChild(figureEnd);
+    COLOMNS.addChildToBiblicalRow(death, figureEnd);
 
     // Add an epty column under death column
     let emptyColumn = document.createElement("div");
     emptyColumn.classList.add("col-1");
-    emptyColumn.classList.add("death-clip");
+    emptyColumn.classList.add("clip-death");
     emptyColumn.classList.add("ml-1");
     let nextRowAfterDeathRow = document.getElementById(`${type}${death + 1}${row}`);
     nextRowAfterDeathRow.appendChild(emptyColumn);
+    COLOMNS.addChildToBiblicalRow(death + 1, emptyColumn);
 
     // Now that you have the columns to use add the properties
     columnToUse.classList.add("p-0");
@@ -172,12 +174,38 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         // Get the year columns within a years row
         let rowOfLoop = document.getElementById(`${type}${i}${row}`);
 
-        // need to add a column
-        let lifeSpanColumn = document.createElement("div");
-        lifeSpanColumn.classList.add("col-1");
-        lifeSpanColumn.classList.add("sec");
-        lifeSpanColumn.classList.add("height-bible");
-        lifeSpanColumn.classList.add("ml-1");
-        rowOfLoop.appendChild(lifeSpanColumn);
+        // get the last the last child column
+        const child = COLOMNS.getYear(i);
+        let lastChild;
+        let isDeathColumn;
+
+        if (child.length > 0){
+            lastChild = child.pop();
+        }
+
+        // check if last child is death column
+        if (lastChild != undefined){
+            isDeathColumn = lastChild.classList.contains("clip-death");
+            console.log(isDeathColumn);
+        }
+
+        // if first column is death-clip
+
+        if(isDeathColumn){
+            let transColumn = document.createElement("div");
+            transColumn.classList.add("col-1");
+            transColumn.classList.add("clip-trans")
+            rowOfLoop.appendChild(transColumn);
+            COLOMNS.addChildToBiblicalRow(i, transColumn);
+        }else{
+            // need to add a column
+            let lifeSpanColumn = document.createElement("div");
+            lifeSpanColumn.classList.add("col-1");
+            lifeSpanColumn.classList.add("sec");
+            lifeSpanColumn.classList.add("height-bible");
+            lifeSpanColumn.classList.add("ml-1");
+            rowOfLoop.appendChild(lifeSpanColumn);
+            COLOMNS.addChildToBiblicalRow(i, lifeSpanColumn);
+        }
     }
 }

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -76,6 +76,8 @@ class BiblibicalFigures(Base):
     name = Column(String, nullable=False)
     born_id = Column(Integer, ForeignKey('years.id'), nullable=False)
     died_id = Column(Integer, ForeignKey('years.id'), nullable=False)
+    is_born_estimated = Column(Boolean, nullable=True)
+    is_death_estimated = Column(Boolean, nullable=True)
     father = Column(Integer, nullable=True)
     mother = Column(Integer, nullable=True)
     sons = Column(Integer, nullable=True)

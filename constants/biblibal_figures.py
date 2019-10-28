@@ -3,6 +3,8 @@ NAME = 'name'
 BORN = 'year_born'
 DIED = 'year_died'
 TOTAL = 'total_years'
+BIRTH_ESTIMATED = 'is_born_estimated'
+DEATH_ESTIMATED = 'is_death_estimated'
 
 
 BIBLICAL_FIGURES = [
@@ -186,4 +188,157 @@ BIBLICAL_FIGURES = [
         DIED: -1689,
         TOTAL: 147
     },
+
+    {
+        GENDER: 'male',
+        NAME: 'Perez',
+        DEATH_ESTIMATED: True,
+        BORN: -1715,
+        DIED: -1636,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Hezron',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1655,
+        DIED: -1573,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Ram',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1580,
+        DIED: -1500,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Amminadab',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1511,
+        DIED: -1443,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Nahshon',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1450,
+        DIED: -1363,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Salmon',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1373,
+        DIED: -1288,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Boaz',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1296,
+        DIED: -1232,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Obed',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1232,
+        DIED: -1158,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Jesse',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1170,
+        DIED: -1076,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'David',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1085,
+        DIED: -1015,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Solomon',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -1033,
+        DIED: -975,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Rehoboam',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -995,
+        DIED: -955,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Abijah',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -963,
+        DIED: -938,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Asa',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -943,
+        DIED: -914,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Jehoshaphat',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -920,
+        DIED: -887,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Jehoram',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -895,
+        DIED: -835,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Uzziah',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -840,
+        DIED: -787,
+    },
+
 ]

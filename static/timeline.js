@@ -109,6 +109,7 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
 }
 
 function addBiblicalFiguresToTimeline(name, birth, death, period){
+    console.log(name);
     let type;
     let row;
 
@@ -146,7 +147,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     lastYearElement.appendChild(figureEnd);
     COLOMNS.addChildToBiblicalRow(death, figureEnd);
 
-    // Add an epty column under death column
+    // Add div that will contain the death and trans clip divs
     let emptyColumn = document.createElement("div");
     emptyColumn.classList.add("col-1");
     emptyColumn.classList.add("clip-death");
@@ -178,6 +179,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         const child = COLOMNS.getYear(i);
         let lastChild;
         let isDeathColumn;
+        let isTransClip;
 
         if (child.length > 0){
             lastChild = child.pop();
@@ -185,18 +187,28 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
 
         // check if last child is death column
         if (lastChild != undefined){
-            isDeathColumn = lastChild.classList.contains("clip-death");
-            console.log(isDeathColumn);
+            
+            // check if it is a deathclip
+            if (lastChild.classList.contains("clip-death")){
+                isDeathColumn = lastChild.classList.contains("clip-death");
+            } else if (lastChild.classList.contains("clip-trans")){
+                isTransClip = lastChild.classList.contains("clip-trans");
+            }
         }
 
         // if first column is death-clip
-
         if(isDeathColumn){
             let transColumn = document.createElement("div");
             transColumn.classList.add("col-1");
             transColumn.classList.add("clip-trans")
             rowOfLoop.appendChild(transColumn);
             COLOMNS.addChildToBiblicalRow(i, transColumn);
+        }else if(isTransClip){
+            let deathColumn = document.createElement("div");
+            deathColumn.classList.add("col-1");
+            deathColumn.classList.add("clip-death")
+            rowOfLoop.appendChild(deathColumn);
+            COLOMNS.addChildToBiblicalRow(i, deathColumn);
         }else{
             // need to add a column
             let lifeSpanColumn = document.createElement("div");

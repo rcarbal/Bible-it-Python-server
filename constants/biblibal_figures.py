@@ -113,7 +113,7 @@ BIBLICAL_FIGURES = [
     {
         GENDER: 'male',
         NAME: 'Eber',
-        BORN: -2181,
+        BORN: -2281,
         DIED: -1717,
         TOTAL: 464
     },
@@ -140,6 +140,50 @@ BIBLICAL_FIGURES = [
         BORN: -2185,
         DIED: -1955,
         TOTAL: 230
-    }
+    },
+    {
+        GENDER: 'male',
+        NAME: 'Nahor',
+        BORN: -2155,
+        DIED: -2007,
+        TOTAL: 148
+    },
+    {
+        GENDER: 'male',
+        NAME: 'Terah',
+        BORN: -2126,
+        DIED: -1921,
+        TOTAL: 205
+    },
+    {
+        GENDER: 'male',
+        NAME: 'Abraham',
+        BORN: -1996,
+        DIED: -1821,
+        TOTAL: 175
+    },
 
+    {
+        GENDER: 'male',
+        NAME: 'Isaac',
+        BORN: -1886,
+        DIED: -1706,
+        TOTAL: 180
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Jacob',
+        BORN: -1836,
+        DIED: -1689,
+        TOTAL: 147
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Judah',
+        BORN: -1768,
+        DIED: -1689,
+        TOTAL: 147
+    },
 ]

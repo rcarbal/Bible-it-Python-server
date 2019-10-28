@@ -1,11 +1,30 @@
 .death-clip {
-    height: 35px;
-    background: black;
     clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%);
+    
 }
 
 .trans-clip {
-    height: 35px;
-    background: black;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+    
+}
+
+.slanted-box{
+    height: 100px;
+    width: 100px;
+}
+
+.hello1{
+    background: aquamarine;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    z-index: 2;
+}
+
+.hello2{
+    background: blue;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    z-index: 1;
 }

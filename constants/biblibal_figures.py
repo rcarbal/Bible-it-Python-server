@@ -341,4 +341,183 @@ BIBLICAL_FIGURES = [
         DIED: -787,
     },
 
+    {
+        GENDER: 'male',
+        NAME: 'Jotham',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -795,
+        DIED: -750,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Ahaz',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -757,
+        DIED: -726,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Hezekiah',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -733,
+        DIED: -697,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Manasseh',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -707,
+        DIED: -670,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Amon',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -678,
+        DIED: -640,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Josiah',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -646,
+        DIED: -597,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Jeconiah',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -610,
+        DIED: -555,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Shealtiel',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -571,
+        DIED: -534,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Zerubbabel',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -542,
+        DIED: -501,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Abiud',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -512,
+        DIED: -458,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Eliakim',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -466,
+        DIED: -413,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Azor',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -422,
+        DIED: -360,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Zadok',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -366,
+        DIED: -310,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Akim',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -317,
+        DIED: -261,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Eliud',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -258,
+        DIED: -203,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Eleazar',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -212,
+        DIED: -153,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Matthan',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -163,
+        DIED: -97,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Jacob',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -106,
+        DIED: -48,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Joseph',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: -55,
+        DIED: -1,
+    },
+
+    {
+        GENDER: 'male',
+        NAME: 'Jesus Christ',
+        BIRTH_ESTIMATED: True,
+        DEATH_ESTIMATED: True,
+        BORN: 1,
+        DIED: 33,
+    },
 ]

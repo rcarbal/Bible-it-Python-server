@@ -230,7 +230,6 @@ def add_biblical_figures():
         name = f['name']
         born = f['year_born']
         died = f['year_died']
-        years_lived = f['total_years']
 
         # get first_year id
         born_id = session.query(Years).filter(Years.year == born).first().id
@@ -239,8 +238,7 @@ def add_biblical_figures():
         figures_list.append(BiblibicalFigures(gender=gender,
                                               name=name,
                                               born_id=born_id,
-                                              died_id=died_id,
-                                              lifespan=years_lived))
+                                              died_id=died_id))
 
     session.add_all(figures_list)
     session.commit()

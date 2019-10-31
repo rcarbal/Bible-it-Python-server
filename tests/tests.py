@@ -187,7 +187,6 @@ class TestBibleitResults(unittest.TestCase):
             name = f['name']
             born = f['year_born']
             died = f['year_died']
-            years_lived = f['total_years']
 
             # get first_year id
             born_id = database.session.query(Years).filter(Years.year == born).first().id
@@ -196,8 +195,7 @@ class TestBibleitResults(unittest.TestCase):
             figures_list.append(BiblibicalFigures(gender=gender,
                                                   name=name,
                                                   born_id=born_id,
-                                                  died_id=died_id,
-                                                  lifespan=years_lived))
+                                                  died_id=died_id))
 
         self.assertTrue(len(figures_list) > 0)
 

@@ -185,7 +185,7 @@ BIBLICAL_FIGURES = [
         GENDER: 'male',
         NAME: 'Judah',
         BORN: -1768,
-        DIED: -1689,
+        DIED: -1666,
         TOTAL: 147
     },
 
@@ -509,7 +509,7 @@ BIBLICAL_FIGURES = [
         BIRTH_ESTIMATED: True,
         DEATH_ESTIMATED: True,
         BORN: -55,
-        DIED: -1,
+        DIED: 12,
     },
 
     {

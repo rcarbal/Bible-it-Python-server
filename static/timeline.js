@@ -118,6 +118,11 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         row = '-row';
     }
 
+
+    if (name === "Joseph"){
+        console.log("Found Joseph");
+    }
+
     // Get the year column information
     let firstYearColumn = COLOMNS.years[`${birth}`];
 
@@ -152,7 +157,16 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     emptyColumn.classList.add("col-1");
     emptyColumn.classList.add("clip-death");
     emptyColumn.classList.add("ml-1");
-    let nextRowAfterDeathRow = document.getElementById(`${type}${death + 1}${row}`);
+
+    // setup the correct year for transition between -1 ans 1
+    let forDeathColumn;
+    if (death + 1 < 0 || death + 1 > 0){
+        forDeathColumn = death + 1;
+    } else {
+        forDeathColumn = 1
+    }
+
+    let nextRowAfterDeathRow = document.getElementById(`${type}${forDeathColumn}${row}`);
     nextRowAfterDeathRow.appendChild(emptyColumn);
     COLOMNS.addChildToBiblicalRow(death + 1, emptyColumn);
 
@@ -169,7 +183,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     for(i = yearToStartLoop; i < death; i++){
         
         if (i == 0){
-            initialYear++;
+            // initialYear++;
             continue;
         }
         // Get the year columns within a years row

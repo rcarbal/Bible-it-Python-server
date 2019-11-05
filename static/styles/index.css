@@ -42,14 +42,31 @@
     display: flex;
 }
 
+.slanted-box{
+    padding-right:0;
+    padding-left:0;
+}
+
 .clip-death {
-    height: 35px;
-    background: black;
-    clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0 100%);
 }
 
 .clip-trans {
-    height: 35px;
-    background: black;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+}
+
+.hello1 {
+    background: aquamarine;
+    position: absolute;
+    width: inherit;
+    height: 35px;
+    z-index: 2;
+}
+
+.hello2 {
+    background: blue;
+    width: inherit;
+    height: 35px;
+    position: absolute;
+    z-index: 1;
 }

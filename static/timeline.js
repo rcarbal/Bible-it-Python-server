@@ -146,17 +146,30 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     figureEnd.textContent = `${name}'s death`;
     figureEnd.classList.add("col-1");
     figureEnd.classList.add("p-0");
-    figureEnd.classList.add("ml-1");
+    // figureEnd.classList.add("ml-1");
     figureEnd.classList.add('sec');
     figureEnd.classList.add('sec-stop');
     lastYearElement.appendChild(figureEnd);
     COLOMNS.addChildToBiblicalRow(death, figureEnd);
 
-    // Add div that will contain the death and trans clip divs
+    // Add div slanted box that will contain the fill and death clips
     let emptyColumn = document.createElement("div");
     emptyColumn.classList.add("col-1");
-    emptyColumn.classList.add("clip-death");
-    emptyColumn.classList.add("ml-1");
+    emptyColumn.classList.add("slanted-box");
+
+    // add the death clip and fill cliop
+    let deathClip = document.createElement("div");
+    deathClip.classList.add("clip-death");
+    deathClip.classList.add("hello1");
+
+    let fillClip = document.createElement("div");
+    fillClip.classList.add("clip-trans");
+    fillClip.classList.add("hello2");
+
+    emptyColumn.appendChild(deathClip);
+    emptyColumn.appendChild(fillClip);
+
+
 
     // setup the correct year for transition between -1 ans 1
     let forDeathColumn;
@@ -174,7 +187,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     columnToUse.classList.add("p-0");
     columnToUse.classList.add("sec");
     columnToUse.classList.add("sec-start");
-    columnToUse.classList.add("ml-1");
+    // columnToUse.classList.add("ml-1");
     columnToUse.textContent = name;
 
     //loop through all the current biblical figures years
@@ -229,7 +242,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
             lifeSpanColumn.classList.add("col-1");
             lifeSpanColumn.classList.add("sec");
             lifeSpanColumn.classList.add("height-bible");
-            lifeSpanColumn.classList.add("ml-1");
+            // lifeSpanColumn.classList.add("ml-1");
             rowOfLoop.appendChild(lifeSpanColumn);
             COLOMNS.addChildToBiblicalRow(i, lifeSpanColumn);
         }

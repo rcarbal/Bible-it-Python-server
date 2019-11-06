@@ -22,7 +22,9 @@
 }
 
 .height-bible {
-    height: 30px;
+    height: auto;
+    min-height: 30px;
+}
 }
 
 .bible-fig {

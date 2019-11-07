@@ -1,7 +1,10 @@
 let COLOMNS;
+let NEXT_COLOR;
 
 function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
     COLOMNS = new ColumnChecker(-4004, 2019);
+    NEXT_COLOR = new FigureColors();
+
     // place historical periods
     addHistoricalPeriods(historicalPeriods);
 
@@ -111,25 +114,34 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
 function addBiblicalFiguresToTimeline(name, birth, death, period){
     let type;
     let row;
-    let color;
+    let color; 
+    
+    let nextColor = NEXT_COLOR.getColor();
 
-    if (name == 'Adam'){
-        color = 'col1-color';
-    }
-    else if (name == "Seth"){
-        color = 'col2-color';
-    } 
-    else if(name == 'Enosh'){
-        color = 'col3-color';
-    }
-    else if (name == 'Kenan'){
-        color = "col4-color";
-    }
-    else if(name == 'Mahalalel'){
-        color = "col5-color";
+    if (name == "Jesus Christ"){
+        color = 'col-jesus';
     }
     else {
-        color = "no-color";
+
+        switch(nextColor) {
+            case '#3318CC':
+            color = 'col1-color';
+            break;
+            case '#675F99':
+                color = 'col2-color';
+            break;
+            case '#3884F':
+                color = 'col3-color';
+                break;
+            case '#FFC478':
+                color = 'col4-color';
+                break;
+            case '#CC6418':
+                color = 'col5-color';
+                break;
+            default:
+                color = 'no-color';
+        }
     }
 
     if (period == 'biblical'){
@@ -187,10 +199,10 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
 
     // Add color to timeline
     // add color to first
-    firstColColor = COLOMNS.getYear(birth);
-    console.log(`Columns for year ${name}: birth ${birth}`)
-    console.log(firstColColor);
-    console.log("\n");
+    // firstColColor = COLOMNS.getYear(birth);
+    // console.log(`Columns for year ${name}: birth ${birth}`)
+    // console.log(firstColColor);
+    // console.log("\n");
 
     // add color to last
 

@@ -109,18 +109,32 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
 }
 
 function addBiblicalFiguresToTimeline(name, birth, death, period){
-    console.log(name);
     let type;
     let row;
+    let color;
+
+    if (name == 'Adam'){
+        color = 'col1-color';
+    }
+    else if (name == "Seth"){
+        color = 'col2-color';
+    } 
+    else if(name == 'Enosh'){
+        color = 'col3-color';
+    }
+    else if (name == 'Kenan'){
+        color = "col4-color";
+    }
+    else if(name == 'Mahalalel'){
+        color = "col5-color";
+    }
+    else {
+        color = "no-color";
+    }
 
     if (period == 'biblical'){
         type = 'bible-';
         row = '-row';
-    }
-
-
-    if (name === "Joseph"){
-        console.log("Found Joseph");
     }
 
     // Get the year column information
@@ -135,6 +149,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         
         let birthColumn = document.createElement("div");
         birthColumn.classList.add("col-1");
+        birthColumn.classList.add(color);
         firstYearRow.appendChild(birthColumn);
         columnToUse = birthColumn;
         COLOMNS.addChildToBiblicalRow(birth, birthColumn);
@@ -146,6 +161,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     figureEnd.textContent = `${name}'s death`;
     figureEnd.classList.add("col-1");
     figureEnd.classList.add("p-0");
+    figureEnd.classList.add(color);
     // figureEnd.classList.add("ml-1");
     figureEnd.classList.add('sec');
     figureEnd.classList.add('sec-stop');
@@ -168,6 +184,15 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
 
     emptyColumn.appendChild(deathClip);
     emptyColumn.appendChild(fillClip);
+
+    // Add color to timeline
+    // add color to first
+    firstColColor = COLOMNS.getYear(birth);
+    console.log(`Columns for year ${name}: birth ${birth}`)
+    console.log(firstColColor);
+    console.log("\n");
+
+    // add color to last
 
 
 
@@ -242,6 +267,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
             lifeSpanColumn.classList.add("col-1");
             lifeSpanColumn.classList.add("sec");
             lifeSpanColumn.classList.add("height-bible");
+            lifeSpanColumn.classList.add(color);
             // lifeSpanColumn.classList.add("ml-1");
             rowOfLoop.appendChild(lifeSpanColumn);
             COLOMNS.addChildToBiblicalRow(i, lifeSpanColumn);

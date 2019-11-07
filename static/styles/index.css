@@ -22,7 +22,7 @@
 }
 
 .height-bible {
-    height: 30px;
+   min-height: 35px;
 }
 
 .bible-fig {
@@ -69,4 +69,23 @@
     height: 35px;
     position: absolute;
     z-index: 1;
+}
+
+.col1-color {
+    background: #3318CC;
+}
+
+.col2-color {
+    background: #675F99;
+}
+
+.col3-color {
+    background: #3884FF;
+}
+
+.col4-color {
+    background: #FFC478;
+}
+.col5-color {
+    background: #CC6418;
 }

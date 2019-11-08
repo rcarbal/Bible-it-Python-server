@@ -1,7 +1,7 @@
 let COLOMNS;
 let NEXT_COLOR;
 
-function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
+function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures) {
     COLOMNS = new ColumnChecker(-4004, 2019);
     NEXT_COLOR = new FigureColors();
 
@@ -10,11 +10,11 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
 
     // place the correct biblical periods in the timeline
     addBiblicalPeriods(biblicaPeriods);
-    
-    // place the biblical figures in the timeline
-    const correctFigures = JSON.parse(figures.replace(/&#34;/g,'"'));
 
-    for (c in correctFigures){
+    // place the biblical figures in the timeline
+    const correctFigures = JSON.parse(figures.replace(/&#34;/g, '"'));
+
+    for (c in correctFigures) {
         const name = correctFigures[c]['name'];
         const birth = correctFigures[c]['birth'];
         const death = correctFigures[c]['death'];
@@ -24,42 +24,42 @@ function setupHistoricalPeriods(historicalPeriods, biblicaPeriods, figures){
     }
 }
 
-function addHistoricalPeriods(historicalPeriods){
+function addHistoricalPeriods(historicalPeriods) {
     // remove escape characters
-    const correctHistoricalPeriods = JSON.parse(historicalPeriods.replace(/&#34;/g,'"'));
-        // place the correct historical period on the timeline.
-     for (h in correctHistoricalPeriods){
-         // loop through all the years
-         let firstYear = correctHistoricalPeriods[h]['first_year'];
-         let lastYear = correctHistoricalPeriods[h]['last_year'] - 1;
-         let period = correctHistoricalPeriods[h]['name'];
-         let periodType = "history";
-         addClassesToYear(firstYear, lastYear, period, periodType);
-     }
- }
-
- function addBiblicalPeriods(biblicaPeriods){
-    const correctBiblicalPeriods = JSON.parse(biblicaPeriods.replace(/&#34;/g,'"'));
-
-    for (b in correctBiblicalPeriods){
-            const firstYear = correctBiblicalPeriods[b]['first_year'];
-            const lastYear =  correctBiblicalPeriods[b]['last_year'] - 1;
-            const name = correctBiblicalPeriods[b]['name']; 
-            const period = 'biblical'
-            addClassesToYear(firstYear, lastYear, name, period);
+    const correctHistoricalPeriods = JSON.parse(historicalPeriods.replace(/&#34;/g, '"'));
+    // place the correct historical period on the timeline.
+    for (h in correctHistoricalPeriods) {
+        // loop through all the years
+        let firstYear = correctHistoricalPeriods[h]['first_year'];
+        let lastYear = correctHistoricalPeriods[h]['last_year'] - 1;
+        let period = correctHistoricalPeriods[h]['name'];
+        let periodType = "history";
+        addClassesToYear(firstYear, lastYear, period, periodType);
     }
 }
 
-function addClassesToYear(firstYear, lastYear, period, periodType){
+function addBiblicalPeriods(biblicaPeriods) {
+    const correctBiblicalPeriods = JSON.parse(biblicaPeriods.replace(/&#34;/g, '"'));
+
+    for (b in correctBiblicalPeriods) {
+        const firstYear = correctBiblicalPeriods[b]['first_year'];
+        const lastYear = correctBiblicalPeriods[b]['last_year'] - 1;
+        const name = correctBiblicalPeriods[b]['name'];
+        const period = 'biblical'
+        addClassesToYear(firstYear, lastYear, name, period);
+    }
+}
+
+function addClassesToYear(firstYear, lastYear, period, periodType) {
     let type;
     let paddingType;
     let row;
 
-    if (periodType == "history"){
+    if (periodType == "history") {
         type = "hist-";
         paddingType = "hist-pad";
         row = "";
-    } else if(periodType == "bible-figures"){
+    } else if (periodType == "bible-figures") {
         type = 'bible-';
         paddingType = 'bible-pad';
         row = "-row"
@@ -75,7 +75,7 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
     eraTitle.textContent = period;
     let firstChild = firstYearElement.firstChild;
 
-    if (firstChild == null){
+    if (firstChild == null) {
         firstYearElement.appendChild(eraTitle);
     } else {
         firstYearElement.insertBefore(eraTitle, firstChild);
@@ -90,12 +90,12 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
     // loop through all years and add classes
     let initialYear = firstYear;
 
-   
-    for(i = firstYear; i < lastYear + 1; i++){
+
+    for (i = firstYear; i < lastYear + 1; i++) {
         // console.log(initialYear);
         // console.log(i);
 
-        if (i == 0){
+        if (i == 0) {
             initialYear++;
             continue;
         }
@@ -111,25 +111,25 @@ function addClassesToYear(firstYear, lastYear, period, periodType){
     emptyElement.textContent = 'PERIOD';
 }
 
-function addBiblicalFiguresToTimeline(name, birth, death, period){
+function addBiblicalFiguresToTimeline(name, birth, death, period) {
     let type;
     let row;
-    let color; 
-    
+    let color;
+
     let nextColor = NEXT_COLOR.getColor();
 
-    if (name == "Jesus Christ"){
+    if (name == "Jesus Christ") {
         color = 'col-jesus';
     }
     else {
 
-        switch(nextColor) {
+        switch (nextColor) {
             case '#3318CC':
-            color = 'col1-color';
-            break;
+                color = 'col1-color';
+                break;
             case '#675F99':
                 color = 'col2-color';
-            break;
+                break;
             case '#3884F':
                 color = 'col3-color';
                 break;
@@ -144,7 +144,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         }
     }
 
-    if (period == 'biblical'){
+    if (period == 'biblical') {
         type = 'bible-';
         row = '-row';
     }
@@ -155,10 +155,10 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     // find the first year row that will hold all the columns
     let firstYearRow = document.getElementById(`${type}${birth}${row}`);
     let columnToUse;
-    
+
     // add the number of necessary columns.
-    for (let i = firstYearColumn; i < firstYearColumn + 1; i++){
-        
+    for (let i = firstYearColumn; i < firstYearColumn + 1; i++) {
+
         let birthColumn = document.createElement("div");
         birthColumn.classList.add("col-1");
         birthColumn.classList.add(color);
@@ -167,7 +167,7 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         COLOMNS.addChildToBiblicalRow(birth, birthColumn);
     }
 
-    // fingd the last year last year of timeline
+    // find the last year last year of timeline
     let lastYearElement = document.getElementById(`${type}${death}${row}`);
     let figureEnd = document.createElement("div");
     figureEnd.textContent = `${name}'s death`;
@@ -180,12 +180,14 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     lastYearElement.appendChild(figureEnd);
     COLOMNS.addChildToBiblicalRow(death, figureEnd);
 
+
+
     // Add div slanted box that will contain the fill and death clips
     let emptyColumn = document.createElement("div");
     emptyColumn.classList.add("col-1");
     emptyColumn.classList.add("slanted-box");
 
-    // add the death clip and fill cliop
+    // add the death clip and fill clip
     let deathClip = document.createElement("div");
     deathClip.classList.add("clip-death");
     deathClip.classList.add("hello1");
@@ -197,20 +199,12 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     emptyColumn.appendChild(deathClip);
     emptyColumn.appendChild(fillClip);
 
-    // Add color to timeline
-    // add color to first
-    // firstColColor = COLOMNS.getYear(birth);
-    // console.log(`Columns for year ${name}: birth ${birth}`)
-    // console.log(firstColColor);
-    // console.log("\n");
-
-    // add color to last
 
 
 
     // setup the correct year for transition between -1 ans 1
     let forDeathColumn;
-    if (death + 1 < 0 || death + 1 > 0){
+    if (death + 1 < 0 || death + 1 > 0) {
         forDeathColumn = death + 1;
     } else {
         forDeathColumn = 1
@@ -230,9 +224,9 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
     //loop through all the current biblical figures years
     let yearToStartLoop = birth + 1;
 
-    for(i = yearToStartLoop; i < death; i++){
-        
-        if (i == 0){
+    for (i = yearToStartLoop; i < death; i++) {
+
+        if (i == 0) {
             // initialYear++;
             continue;
         }
@@ -245,26 +239,32 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         let isDeathColumn;
         let isTransClip;
 
-        if (rowChildren.length > 0){
+        if (rowChildren.length > 0) {
             lastChild = rowChildren.pop();
         }
 
         // check if last child is death column
-        if (lastChild != undefined){
-            
+        if (lastChild != undefined) {
             // check if it is a deathclip
-            if (lastChild.classList.contains("slanted-box")){
+            if (lastChild.classList.contains("slanted-box")) {
                 isDeathColumn = lastChild.classList.contains("slanted-box");
-            } else if (lastChild.classList.contains("clip-trans")){
+            } else if (lastChild.classList.contains("clip-trans")) {
                 isTransClip = lastChild.classList.contains("clip-trans");
             }
         }
 
         // if first column is death-clip
-        if(isDeathColumn){
-            // Get the previous column trans color
-            if (lastChild.classList.contains("slanted-box")){
+        if (isDeathColumn) {
+            if (lastChild.classList.contains("slanted-box")) {
+                const children = lastChild.childNodes;
+                console.log("printing chidren");
+                console.log(i);
+                children.forEach((child)=>{
+                    if (child.classList.contains("clip-death")){
+                        child.classList.add(color);
+                    }
 
+                });
             }
 
 
@@ -289,13 +289,13 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
             rowOfLoop.appendChild(transColumn);
             COLOMNS.addChildToBiblicalRow(i, transColumn);
 
-        }else if(isTransClip){
+        } else if (isTransClip) {
             let deathColumn = document.createElement("div");
             deathColumn.classList.add("col-1");
             deathColumn.classList.add("clip-death")
             rowOfLoop.appendChild(deathColumn);
             COLOMNS.addChildToBiblicalRow(i, deathColumn);
-        }else{
+        } else {
             // need to add a column
             let lifeSpanColumn = document.createElement("div");
             lifeSpanColumn.classList.add("col-1");

@@ -240,21 +240,21 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
         let rowOfLoop = document.getElementById(`${type}${i}${row}`);
 
         // get the last the last child column
-        const child = COLOMNS.getYear(i);
+        const rowChildren = COLOMNS.getYear(i);
         let lastChild;
         let isDeathColumn;
         let isTransClip;
 
-        if (child.length > 0){
-            lastChild = child.pop();
+        if (rowChildren.length > 0){
+            lastChild = rowChildren.pop();
         }
 
         // check if last child is death column
         if (lastChild != undefined){
             
             // check if it is a deathclip
-            if (lastChild.classList.contains("clip-death")){
-                isDeathColumn = lastChild.classList.contains("clip-death");
+            if (lastChild.classList.contains("slanted-box")){
+                isDeathColumn = lastChild.classList.contains("slanted-box");
             } else if (lastChild.classList.contains("clip-trans")){
                 isTransClip = lastChild.classList.contains("clip-trans");
             }
@@ -262,11 +262,33 @@ function addBiblicalFiguresToTimeline(name, birth, death, period){
 
         // if first column is death-clip
         if(isDeathColumn){
+            // Get the previous column trans color
+            if (lastChild.classList.contains("slanted-box")){
+
+            }
+
+
             let transColumn = document.createElement("div");
             transColumn.classList.add("col-1");
-            transColumn.classList.add("clip-trans")
+            transColumn.classList.add("slanted-box");
+
+            // Cread the two divide divs
+            // add the death clip and fill cliop
+            let deathClip = document.createElement("div");
+            deathClip.classList.add("clip-death");
+            deathClip.classList.add("hello1");
+
+            let fillClip = document.createElement("div");
+            fillClip.classList.add("clip-trans");
+            fillClip.classList.add("hello2");
+            fillClip.classList.add(color);
+
+            transColumn.appendChild(deathClip);
+            transColumn.appendChild(fillClip);
+
             rowOfLoop.appendChild(transColumn);
             COLOMNS.addChildToBiblicalRow(i, transColumn);
+
         }else if(isTransClip){
             let deathColumn = document.createElement("div");
             deathColumn.classList.add("col-1");

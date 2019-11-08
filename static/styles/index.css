@@ -56,7 +56,6 @@
 }
 
 .hello1 {
-    background: aquamarine;
     position: absolute;
     width: inherit;
     height: 35px;
@@ -64,7 +63,6 @@
 }
 
 .hello2 {
-    background: blue;
     width: inherit;
     height: 35px;
     position: absolute;

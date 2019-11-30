@@ -46,6 +46,10 @@ def search():
     elif 'word' in request.args:
         query_param = request.args['word']
 
+    # Check number of words in the user search
+    if len(query_param.split()) > 1:
+        return "Multi word query not implemented"
+
     verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%')). \
         join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())
 

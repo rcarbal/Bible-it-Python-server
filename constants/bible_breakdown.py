@@ -4,7 +4,17 @@ God = {
         'Father', 'Son', 'Spirit'
     ],
     'powers': {
-        'create': ['heavens', 'earth'],
+        'create': {
+            'created': ['heavens', 'earth', 'light'],
+            'how': [
+                'speaks into creation.'
+            ]
+            'examples': {
+                '1': {
+                    'example': ''
+                }
+            }
+        },
         'omnipresence': {
             'examples': {
                 '1': {

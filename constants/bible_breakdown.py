@@ -4,7 +4,15 @@ God = {
         'Father', 'Son', 'Spirit'
     ],
     'powers': {
-        'create': ['heavens', 'earth']
+        'create': ['heavens', 'earth'],
+        'omnipresence': {
+            'examples': {
+                '1': {
+                    'example': 'hovering over the waters fo the earth.',
+                    'verse': 'Genesis 1:2'
+                }
+            }
+        }
     }
 }
 
@@ -16,14 +24,17 @@ Father = {
 
 Son = {
     'name': [
-        "Jesus"
+        "Jesus Christ"
     ]
 }
 
 Spirit = {
     'name': [
         "Holy Spirit"
-    ]
+    ],
+    'found': {
+        'earth': 'hovering over the surface of the water.'
+    }
 }
 
 TIME = [
@@ -32,7 +43,11 @@ TIME = [
 
 Earth = {
     'name': 'earth',
-    'created': 'beginning'
+    'created': 'beginning',
+    'states': {
+        'beginning': 'formless and empty, darkness was over the surface of the deep.',
+        'verse': 'Genesis 1:1'
+    }
 }
 
 Heavens = {

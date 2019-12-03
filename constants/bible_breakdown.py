@@ -8,10 +8,11 @@ God = {
             'created': ['heavens', 'earth', 'light'],
             'how': [
                 'speaks into creation.'
-            ]
+            ],
             'examples': {
                 '1': {
-                    'example': ''
+                    'example': 'spoke light into creation.',
+                    'verse': 'genesis 1:3'
                 }
             }
         },

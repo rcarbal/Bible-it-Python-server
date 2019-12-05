@@ -32,7 +32,20 @@ ANSWERED_QUESTION = [
         QUESTION: 'how did God create light?',
         ANSWER: 'God spoke light into existence.',
         VERSE: 'Genesis 1:3'
+    },
+
+    # Genesis 1:4 "And God saw that light was good, and he separated the light from the darkness.
+    {
+        QUESTION: 'how did God perceive light, after he created it?',
+        ANSWER: 'God saw it that light was good after he spoke it into existence.',
+        VERSE: 'Genesis 1:4'
+    },
+    {
+        QUESTION: 'where does it say that light is good?',
+        ANSWER: 'In Genesis chapter 1, verse 4, it is written that God saw that the light was good after he created it.',
+        VERSE: 'Genesis 1:4'
     }
+
 
 
 

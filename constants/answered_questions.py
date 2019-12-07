@@ -44,6 +44,25 @@ ANSWERED_QUESTION = [
         QUESTION: 'where does it say that light is good?',
         ANSWER: 'In Genesis chapter 1, verse 4, it is written that God saw that the light was good after he created it.',
         VERSE: 'Genesis 1:4'
+    },
+    {
+        QUESTION: 'what did God do on the first day?',
+        ANSWER: 'God created light, and separated it from darkness. After evening and morning, the first day was '
+                'complete.',
+        VERSE: 'Genesis 1:5'
+    },
+    {
+        QUESTION: 'when did God name light "day" and darkness "night"?',
+        ANSWER: 'God named light "day" and darkness "night" on the first day, after he created light?',
+        VERSE: 'Genesis 1:5'
+    },
+    {
+        QUESTION: 'when did God create light?',
+        ANSWER: 'God created light on the first day of creation.',
+        VERSE: 'Genesis 1:5'
+    },
+    {
+        
     }
 
 

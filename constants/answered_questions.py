@@ -62,7 +62,10 @@ ANSWERED_QUESTION = [
         VERSE: 'Genesis 1:5'
     },
     {
-        
+        QUESTION: 'how did God created the skies?',
+        ANSWER: 'And God said, "Let there be vault between waters to separate waters from waters,'
+                '", so God made a space that is now the atmosphere.',
+        VERSE: 'Genesis 1:6'
     }
 
 

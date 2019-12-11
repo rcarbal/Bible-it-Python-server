@@ -66,6 +66,11 @@ ANSWERED_QUESTION = [
         ANSWER: 'And God said, "Let there be vault between waters to separate waters from waters,'
                 '", so God made a space that is now the atmosphere.',
         VERSE: 'Genesis 1:6'
+    },
+    {
+        QUESTION: 'did God separate waters that were on top of waters when creating the skies?',
+        ANSWER: 'Yes, the bible says that to create the skies God separated the waters and put a vault between them.',
+        VERSE: 'Genesis 1:7'
     }
 
 

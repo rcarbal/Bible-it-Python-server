@@ -71,9 +71,22 @@ ANSWERED_QUESTION = [
         QUESTION: 'did God separate waters that were on top of waters when creating the skies?',
         ANSWER: 'Yes, the bible says that to create the skies God separated the waters and put a vault between them.',
         VERSE: 'Genesis 1:7'
+    },
+    {
+        QUESTION: 'how do we know that the space God made between the waters was the sky?',
+        ANSWER: 'after God created the vault (expanse, space) between the waters above and below he called it sky.',
+        VERSE: 'Genesis 1:7-Genesis 1:8'
+    },
+    {
+        QUESTION: 'what day did God create the sky on earth.',
+        ANSWER: 'God created the skies on earth on the second day of creation.',
+        VERSE: 'Genesis 1:8'
+    },
+    {
+        QUESTION: 'how did God create the land we walk on?',
+        ANSWER: 'On the third day of creation God commanded the waters be gathered to one place, and dry ground '
+                'appeared.',
+        VERSE: 'Genesis 1:9'
     }
-
-
-
 
 ]

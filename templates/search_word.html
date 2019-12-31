@@ -2,11 +2,11 @@
 
 <div class="jumbotron jumbotron-fluid vertical-center mt-5">
     <div class="container">
-        <h1 class="display-4">Word Search</h1>
+        <h1 class="display-4">Search</h1>
         <div class="lead">
             <form class="form-inline my-2 my-lg-0" action="{{url_for('search')}}" method='GET'>
 
-                <input class="form-control mr-sm-2" type='search' size='50' name='word'>
+                <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word' onkeyup="echoWord()">
 
                 <input class="btn btn-outline-success my-2 my-sm-0" type='submit' value='Bible-it'>
 
@@ -15,5 +15,6 @@
     </div>
 </div>
 
+<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
 
 {% include "footer.html" %}

@@ -53,7 +53,7 @@
       <recent name="D:\Bibleit\bibleitenvbionic\Bible-it-Server" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for string_matching.TestStringMatching.test_get_string_matching_score">
+  <component name="RunManager" selected="Python.main">
     <configuration name="bible_db_setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,9 +147,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Unittests for string_matching.TestStringMatching.test_get_string_matching_score" />
         <item itemvalue="Python.s&amp;p" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_get_biblical_figures" />
         <item itemvalue="Python.bible_db_setup" />
       </list>
@@ -215,22 +215,22 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="344" y="139" key="#Notifications/0.0.1500.960@0.0.1500.960" timestamp="1576385278317" />
-    <state width="1480" height="287" key="GridCell.Tab.0.bottom" timestamp="1577806688375">
+    <state width="1480" height="287" key="GridCell.Tab.0.bottom" timestamp="1577807443548">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="287" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
-    <state width="1480" height="287" key="GridCell.Tab.0.center" timestamp="1577806688375">
+    <state width="1480" height="287" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1577807443548" />
+    <state width="1480" height="287" key="GridCell.Tab.0.center" timestamp="1577807443548">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="287" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
-    <state width="1480" height="287" key="GridCell.Tab.0.left" timestamp="1577806688375">
+    <state width="1480" height="287" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1577807443548" />
+    <state width="1480" height="287" key="GridCell.Tab.0.left" timestamp="1577807443548">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="287" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
-    <state width="1480" height="287" key="GridCell.Tab.0.right" timestamp="1577806688375">
+    <state width="1480" height="287" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1577807443548" />
+    <state width="1480" height="287" key="GridCell.Tab.0.right" timestamp="1577807443548">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="287" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
+    <state width="1480" height="287" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1577807443548" />
     <state x="253" y="123" key="SettingsEditor" timestamp="1577805155227">
       <screen x="0" y="0" width="1500" height="960" />
     </state>

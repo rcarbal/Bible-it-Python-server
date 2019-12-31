@@ -243,4 +243,13 @@ function getChapter(bookId, chapter, verse, ol){
         });
 }
 
+function echoWord(){
+    let input = document.getElementById('searchInput');
+
+    console.log(input);
+    let inputValue = input.value;
+
+    console.log(inputValue);
+}
+
 

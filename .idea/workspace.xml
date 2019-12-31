@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd89e7d5-e3c8-44af-9334-f9c704e7cb28" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/constants/answered_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/answered_questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,7 @@
       <recent name="D:\Bibleit\bibleitenvbionic\Bible-it-Server" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.s&amp;p">
+  <component name="RunManager" selected="Python tests.Unittests for string_matching.TestStringMatching.test_get_string_matching_score">
     <configuration name="bible_db_setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,6 +117,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for string_matching.TestStringMatching.test_get_string_matching_score" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Bible-it-Server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;string_matching.TestStringMatching.test_get_string_matching_score&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for tests.TestBibleitResults.test_get_biblical_figures" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,27 +145,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestBibleitResults.test_setup_historical_periods" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Bible-it-Server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestBibleitResults.test_setup_historical_periods&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for string_matching.TestStringMatching.test_get_string_matching_score" />
         <item itemvalue="Python.s&amp;p" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_get_biblical_figures" />
         <item itemvalue="Python.bible_db_setup" />
-        <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_setup_historical_periods" />
       </list>
     </recent_temporary>
   </component>
@@ -211,22 +211,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1366" height="200" key="GridCell.Tab.0.bottom" timestamp="1575737613353">
+    <state x="344" y="139" key="#Notifications" timestamp="1576385278317">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1366" height="200" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1575737613353" />
-    <state width="1366" height="200" key="GridCell.Tab.0.center" timestamp="1575737613353">
+    <state x="344" y="139" key="#Notifications/0.0.1500.960@0.0.1500.960" timestamp="1576385278317" />
+    <state width="1480" height="287" key="GridCell.Tab.0.bottom" timestamp="1577806688375">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1366" height="200" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1575737613353" />
-    <state width="1366" height="200" key="GridCell.Tab.0.left" timestamp="1575737613353">
+    <state width="1480" height="287" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
+    <state width="1480" height="287" key="GridCell.Tab.0.center" timestamp="1577806688375">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1366" height="200" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1575737613353" />
-    <state width="1366" height="200" key="GridCell.Tab.0.right" timestamp="1575737613353">
+    <state width="1480" height="287" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
+    <state width="1480" height="287" key="GridCell.Tab.0.left" timestamp="1577806688375">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1366" height="200" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1575737613353" />
+    <state width="1480" height="287" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
+    <state width="1480" height="287" key="GridCell.Tab.0.right" timestamp="1577806688375">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1480" height="287" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1577806688375" />
+    <state x="253" y="123" key="SettingsEditor" timestamp="1577805155227">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="253" y="123" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1577805155227" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

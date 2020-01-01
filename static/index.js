@@ -10,6 +10,8 @@ const POS = {
     "DET": "determiner", "PROPN": "proper noun", "SYM": "symbol"
 }
 
+let EVENT_LISTENER_RUNNING = false;
+
 $(document).on('show.bs.modal', '.fade', function (e) {
 
     var modal = $(this).data('modal');
@@ -244,37 +246,57 @@ function getChapter(bookId, chapter, verse, ol){
 }
 
 function echoWord(){
-    let input = document.getElementById('searchInput');
-    let previewDiv = document.getElementById('previewDiv');
+    
+    if (!EVENT_LISTENER_RUNNING){
 
-    // remove all previewDiv's children if any
-    if (previewDiv.hasChildNodes()){
-        previewDiv.innerHTML = "";
-    }
+        EVENT_LISTENER_RUNNING = true;
+        
+        let input = document.getElementById('searchInput');
+        let previewDiv = document.getElementById('previewDiv');
 
-    let inputValue = input.value;
+        // remove all previewDiv's children if any
+        if (previewDiv.hasChildNodes()){
+            previewDiv.innerHTML = "";
+        }
 
-    if (inputValue.length > 0){
-        axios.get(`/api/question_match?input=${inputValue}`)
-        .then((response)=>{
+        let inputValue = input.value;
 
-            response.data.forEach((data)=>{
-                // check for high match score
-                if (data[1] >= 90){
-                    let div = document.createElement("div");
-                    div.innerHTML = data[0];
+        if (inputValue.length > 0){
+            axios.get(`/api/question_match?input=${inputValue}`)
+            .then((response)=>{
 
-                    previewDiv.appendChild(div);
-                }
+                response.data.forEach((data)=>{
+                    // check for high match score
+                    if (data[1] >= 90){
+                        let div = document.createElement("div");
+                        div.innerHTML = data[0];
+
+                        previewDiv.appendChild(div);
+                        console.log("Inside forEach loop");
+                    }
+                });
+
+                console.log("Out of forEach loop");
+
+                // set visibility of search preview div to visible            
+                previewDiv.style.visibility = "visible";
+                console.log("preview set to visible");
+
+                EVENT_LISTENER_RUNNING = false;
+                console.log("Event set to FALSE.")
             });
+        }
+        else if (inputValue.length == 0){
+            previewDiv.style.visibility = "hidden";
+            console.log("preview is hidden");
 
-            // set visibility of search preview div to visible            
-            previewDiv.style.visibility = "visible";
-        });
+            EVENT_LISTENER_RUNNING = false;
+        }
     }
-    else if (inputValue.length == 0){
-        previewDiv.style.visibility = "hidden";
+    else {
+        console.log("Event set to TRUE");
     }
+
 }
 
 

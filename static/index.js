@@ -245,11 +245,14 @@ function getChapter(bookId, chapter, verse, ol){
 
 function echoWord(){
     let input = document.getElementById('searchInput');
-
-    console.log(input);
     let inputValue = input.value;
 
-    console.log(inputValue);
+    if (inputValue.length > 0){
+        axios.get(`/api/question_match?input=${inputValue}`)
+        .then((response)=>{
+            console.log(response.data);
+        });
+    }
 }
 
 

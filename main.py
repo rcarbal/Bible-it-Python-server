@@ -16,6 +16,9 @@ from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
 from utilities.filereader_niv import get_complete_bible
 from utilities.word_process import remove_pos
 
+from utilities.question_matcher import QuestionMatcher
+from constants.answered_questions import ANSWERED_QUESTION
+
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 BIBLE_STRING = ""
@@ -313,6 +316,29 @@ def get_chapter():
             readable_verses.append(remove_first_separator)
         json_string = json.dumps(readable_verses)
         return json_string
+
+
+@app.route('/api/question_match', methods=['GET'])
+def get_question_match():
+    print('One question match')
+    if request.method == 'GET':
+        req_args = request.args
+
+        if 'input' not in req_args:
+            return 'ERROR!!! no input in request args'
+        input = req_args['input']
+
+        array_that_holds_question = []
+        matcher = QuestionMatcher()
+        for json_question in ANSWERED_QUESTION:
+            array_that_holds_question.append(json_question['question'])
+
+        best_matched_string = matcher.get_question_score(questions_array=array_that_holds_question,
+                                                         user_string=input)
+        json_response = json.dumps(best_matched_string)
+        
+        return json_response
+
 
 
 # On last test rapid api was not returning response

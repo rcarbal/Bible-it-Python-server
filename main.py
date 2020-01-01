@@ -325,7 +325,7 @@ def get_question_match():
 
         if 'input' not in req_args:
             return 'ERROR!!! no input in request args'
-        input = req_args['input']
+        input_from_user = req_args['input']
 
         array_that_holds_question = []
         matcher = QuestionMatcher()
@@ -333,7 +333,7 @@ def get_question_match():
             array_that_holds_question.append(json_question['question'])
 
         best_matched_string = matcher.get_question_score(questions_array=array_that_holds_question,
-                                                         user_string=input)
+                                                         user_string=input_from_user)
         json_response = json.dumps(best_matched_string)
 
         return json_response

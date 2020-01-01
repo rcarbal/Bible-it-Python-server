@@ -259,10 +259,13 @@ function echoWord(){
         .then((response)=>{
 
             response.data.forEach((data)=>{
-                let div = document.createElement("div");
-                div.innerHTML = data;
+                // check for high match score
+                if (data[1] >= 90){
+                    let div = document.createElement("div");
+                    div.innerHTML = data[0];
 
-                previewDiv.appendChild(div);
+                    previewDiv.appendChild(div);
+                }
             });
 
             // set visibility of search preview div to visible            

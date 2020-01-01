@@ -96,6 +96,6 @@
 }
 
 .search-bar-results {
-    display: none;
+    visibility: hidden;
     background-color: white;
 }

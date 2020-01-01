@@ -245,13 +245,22 @@ function getChapter(bookId, chapter, verse, ol){
 
 function echoWord(){
     let input = document.getElementById('searchInput');
+    let previewDiv = document.getElementById('previewDiv');
+
     let inputValue = input.value;
 
     if (inputValue.length > 0){
         axios.get(`/api/question_match?input=${inputValue}`)
         .then((response)=>{
             console.log(response.data);
+
+            // set visibility of search preview div to visible
+            
+            previewDiv.style.visibility = "visible";
         });
+    }
+    else if (inputValue.length == 0){
+        previewDiv.style.visibility = "hidden";
     }
 }
 

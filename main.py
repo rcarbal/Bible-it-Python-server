@@ -320,7 +320,6 @@ def get_chapter():
 
 @app.route('/api/question_match', methods=['GET'])
 def get_question_match():
-    print('One question match')
     if request.method == 'GET':
         req_args = request.args
 
@@ -336,9 +335,8 @@ def get_question_match():
         best_matched_string = matcher.get_question_score(questions_array=array_that_holds_question,
                                                          user_string=input)
         json_response = json.dumps(best_matched_string)
-        
-        return json_response
 
+        return json_response
 
 
 # On last test rapid api was not returning response

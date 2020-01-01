@@ -90,3 +90,12 @@
 .col-jesus {
     background: #d4af37;
 }
+
+.remove-bottom-line {
+    border-bottom: 0px;
+}
+
+.search-bar-results {
+    display: none;
+    background-color: white;
+}

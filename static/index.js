@@ -247,15 +247,25 @@ function echoWord(){
     let input = document.getElementById('searchInput');
     let previewDiv = document.getElementById('previewDiv');
 
+    // remove all previewDiv's children if any
+    if (previewDiv.hasChildNodes()){
+        previewDiv.innerHTML = "";
+    }
+
     let inputValue = input.value;
 
     if (inputValue.length > 0){
         axios.get(`/api/question_match?input=${inputValue}`)
         .then((response)=>{
-            console.log(response.data);
 
-            // set visibility of search preview div to visible
-            
+            response.data.forEach((data)=>{
+                let div = document.createElement("div");
+                div.innerHTML = data;
+
+                previewDiv.appendChild(div);
+            });
+
+            // set visibility of search preview div to visible            
             previewDiv.style.visibility = "visible";
         });
     }

@@ -87,6 +87,26 @@ ANSWERED_QUESTION = [
         ANSWER: 'On the third day of creation God commanded the waters be gathered to one place, and dry ground '
                 'appeared.',
         VERSE: 'Genesis 1:9'
+    },
+    {
+        QUESTION: 'did God name the land and sea?',
+        ANSWER: 'After creating dry ground, God named it "land", and after gathering the waters he called them "seas".',
+        VERSE: 'Genesis 1:10'
+    },
+    {
+        QUESTION: 'how did God create plants and trees?',
+        ANSWER: 'God spoke, and commanded the dry land to produce vegetation.',
+        VERSE: 'Genesis 1:11'
+    },
+    {
+        QUESTION: "how did the dry land respond to God's command to produce vegetation?",
+        ANSWER: "When God commanded, the dry land responded by producing fruit bearing trees and vegetation that had "
+                "seeds.  Creation always responds according to God's will and decrees.",
+        VERSE: "Genesis 1:11-Genesis 1:12"
+    },
+    {
+        QUESTION: 'In what day did God create the skies, seas and vegetation?',
+        ANSWER: 'God created the skies along with the seas, dry land, and vegetation on the third day of creation.',
+        VERSE: 'Genesis 1:9-Genesis 1:13'
     }
-
 ]

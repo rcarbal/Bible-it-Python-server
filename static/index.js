@@ -272,29 +272,20 @@ function echoWord(){
                         div.innerHTML = data[0];
 
                         previewDiv.appendChild(div);
-                        console.log("Inside forEach loop");
                     }
                 });
 
-                console.log("Out of forEach loop");
-
                 // set visibility of search preview div to visible            
                 previewDiv.style.visibility = "visible";
-                console.log("preview set to visible");
 
                 EVENT_LISTENER_RUNNING = false;
-                console.log("Event set to FALSE.")
             });
         }
         else if (inputValue.length == 0){
             previewDiv.style.visibility = "hidden";
-            console.log("preview is hidden");
 
             EVENT_LISTENER_RUNNING = false;
         }
-    }
-    else {
-        console.log("Event set to TRUE");
     }
 
 }

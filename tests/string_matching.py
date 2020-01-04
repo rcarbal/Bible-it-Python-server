@@ -13,7 +13,7 @@ class TestStringMatching(unittest.TestCase):
             array_that_holds_question.append(json_question['question'])
 
         # string to compare
-        string_to_compare = 'what did God'
+        string_to_compare = 'how many genders'
 
         # get best matching string
         matcher = QuestionMatcher()

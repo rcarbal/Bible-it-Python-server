@@ -266,8 +266,9 @@ function echoWord(){
             .then((response)=>{
 
                 response.data.forEach((data)=>{
+                    console.log(data);
                     // check for high match score
-                    if (data[1] >= 90){
+                    if (data[1] >= 85){
                         let div = document.createElement("div");
                         div.innerHTML = data[0];
 

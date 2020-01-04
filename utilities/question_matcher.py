@@ -8,4 +8,5 @@ class QuestionMatcher:
 
         # get ratio for array
         score = process.extract(user_string, questions_array)
+        print(score)
         return score

@@ -12,6 +12,19 @@ const POS = {
 
 let EVENT_LISTENER_RUNNING = false;
 
+// get child from preview div
+$(document).ready(function() {
+    $('#previewDiv').on('click', function(event) {
+        // event.stopPropagation();
+        const question = event.target.innerHTML;
+
+        // get search and set search bar
+        const search = document.getElementById('searchInput');
+        search.value = question;
+        
+    });
+  });
+
 $(document).on('show.bs.modal', '.fade', function (e) {
 
     var modal = $(this).data('modal');
@@ -290,5 +303,3 @@ function echoWord(){
     }
 
 }
-
-

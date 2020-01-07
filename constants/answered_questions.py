@@ -195,5 +195,25 @@ ANSWERED_QUESTION = [
         QUESTION: 'did God intend mankind to rule over all the animals?',
         ANSWER: 'When blessing man kind, God stated mankind should rule over all the animals in the world.',
         VERSE: '{} 1:28'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did God intend mankind to eat?',
+        ANSWER: 'God gave all the plants with seeds, and trees with fruit that have seeds as food for mankind.',
+        VERSE: '{} 1:29'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did God intend all the animals in the earth to eat?',
+        ANSWER: 'God gave all green plant as food for all the animals on earth.',
+        VERSE: '{} 1:30'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'when did God create mankind?',
+        ANSWER: 'God created man kind on the sixth day of creation.',
+        VERSE: '{} 1:26-{} 1:31'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'when did God create all the animals that walk on land?',
+        ANSWER: 'God created all the animals that walk on the ground on the sixth day of creation, along with mankind.',
+        VERSE: '{} 1:24-{} 1:25, {} 1:31'.format(Book.genesis, Book.genesis, Book.genesis)
     }
 ]

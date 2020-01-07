@@ -46,6 +46,8 @@ def search():
 
     if 'word' in request.form:
         query_param = request.form['word']
+    elif 'question' in request.args:
+        return 'Question Received'
     elif 'word' in request.args:
         query_param = request.args['word']
 
@@ -310,7 +312,6 @@ def get_chapter():
         for v in verses:
             # convert raw verse data to readable verses
             # get current available information -  verse string, verse number and chapter
-            print(v.verse_number)
             remove_first_separator, first_pos = remove_pos(v.verse_string, "")
 
             readable_verses.append(remove_first_separator)

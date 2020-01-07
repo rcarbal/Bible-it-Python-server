@@ -21,7 +21,11 @@ $(document).ready(function() {
         // get search and set search bar
         const search = document.getElementById('searchInput');
         search.value = question;
-        
+
+        // call server to get response
+        if (question.split(" ").length){
+            getQuestion(question);
+        }
     });
   });
 
@@ -279,7 +283,6 @@ function echoWord(){
             .then((response)=>{
 
                 response.data.forEach((data)=>{
-                    console.log(data);
                     // check for high match score
                     if (data[1] >= 85){
                         let div = document.createElement("div");
@@ -302,4 +305,11 @@ function echoWord(){
         }
     }
 
+}
+
+function getQuestion(question){
+    axios.get(`/word_search?question=${question}`)
+        .then((respose)=>{
+            console.log(respose);
+        });   
 }

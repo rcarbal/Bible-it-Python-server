@@ -50,8 +50,26 @@ def search():
         query_param = request.args['word']
 
     # Check number of words in the user search
+    # Render template with answer to question
     if len(query_param.split()) > 1:
-        return render_template('word_search_result.html', question=query_param)
+
+        # convert JSON questions to list
+        array_that_holds_question = []
+        matcher = QuestionMatcher()
+        for json_question in ANSWERED_QUESTION:
+            question = json_question['question']
+            answer = json_question['answer']
+            verse = json_question['verse']
+            question_tuple = (question, answer, verse)
+
+            array_that_holds_question.append(question_tuple)
+
+        best_matched_string = matcher.get_best_question_score(questions_array=array_that_holds_question,
+                                                              user_string=query_param)
+
+        # print("best question {}".format(best_matched_string))
+        #         # json_response = json.dumps(best_matched_string)
+        return render_template('word_search_result.html', answer=best_matched_string)
 
     verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%')). \
         join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())

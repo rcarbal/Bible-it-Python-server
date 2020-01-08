@@ -24,7 +24,7 @@ $(document).ready(function() {
 
         // call server to get response
         if (question.split(" ").length){
-            getQuestion(question);
+            document.getElementById("searchForm").submit();
         }
     });
   });
@@ -307,9 +307,8 @@ function echoWord(){
 
 }
 
+//calls the endpoint to retrieve response by from backend.
 function getQuestion(question){
-    axios.get(`/word_search?question=${question}`)
-        .then((respose)=>{
-            console.log(respose);
-        });   
+    // axios.get(`/word_search?question=${question}`);   
+    axios.get(`/word_search?question=${question}`);
 }

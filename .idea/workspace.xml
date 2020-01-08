@@ -5,7 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/question_matcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/question_matcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search_word.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search_word.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/word_search_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/word_search_result.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,38 +219,38 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="344" y="139" key="#Notifications/0.0.1500.960@0.0.1500.960" timestamp="1576385278317" />
-    <state width="1480" height="290" key="GridCell.Tab.0.bottom" timestamp="1578379184480">
+    <state width="1480" height="290" key="GridCell.Tab.0.bottom" timestamp="1578466209248">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1578379184480" />
-    <state width="1480" height="290" key="GridCell.Tab.0.center" timestamp="1578379184480">
+    <state width="1480" height="290" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1578466209248" />
+    <state width="1480" height="290" key="GridCell.Tab.0.center" timestamp="1578466209248">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1578379184480" />
-    <state width="1480" height="290" key="GridCell.Tab.0.left" timestamp="1578379184480">
+    <state width="1480" height="290" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1578466209248" />
+    <state width="1480" height="290" key="GridCell.Tab.0.left" timestamp="1578466209248">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1578379184480" />
-    <state width="1480" height="290" key="GridCell.Tab.0.right" timestamp="1578379184480">
+    <state width="1480" height="290" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1578466209248" />
+    <state width="1480" height="290" key="GridCell.Tab.0.right" timestamp="1578466209248">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1578379184480" />
-    <state width="1480" height="290" key="GridCell.Tab.1.bottom" timestamp="1578379184481">
+    <state width="1480" height="290" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1578466209248" />
+    <state width="1480" height="290" key="GridCell.Tab.1.bottom" timestamp="1578465250986">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1578379184481" />
-    <state width="1480" height="290" key="GridCell.Tab.1.center" timestamp="1578379184481">
+    <state width="1480" height="290" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1578465250986" />
+    <state width="1480" height="290" key="GridCell.Tab.1.center" timestamp="1578465250986">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1578379184481" />
-    <state width="1480" height="290" key="GridCell.Tab.1.left" timestamp="1578379184481">
+    <state width="1480" height="290" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1578465250986" />
+    <state width="1480" height="290" key="GridCell.Tab.1.left" timestamp="1578465250985">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1578379184481" />
-    <state width="1480" height="290" key="GridCell.Tab.1.right" timestamp="1578379184481">
+    <state width="1480" height="290" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1578465250985" />
+    <state width="1480" height="290" key="GridCell.Tab.1.right" timestamp="1578465250986">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1480" height="290" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1578379184481" />
+    <state width="1480" height="290" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1578465250986" />
     <state x="331" y="215" key="IDE.errors.dialog" timestamp="1578241642057">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -272,11 +273,6 @@
           <line>80</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -291,7 +287,8 @@
         <watch expression="f" />
       </configuration>
       <configuration name="PythonConfigurationType">
-        <watch expression="readable_verses" />
+        <watch expression="request" language="Python" />
+        <watch expression="request.data" />
       </configuration>
     </watches-manager>
   </component>

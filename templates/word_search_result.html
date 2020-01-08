@@ -6,7 +6,7 @@
         <div class="lead">
             <form class="form-inline my-2 my-lg-0" action="{{url_for('search')}}" method='GET'>
 
-                <input class="form-control mr-sm-2" type='search' size='50' name='word'>
+                <input class="form-control mr-sm-2" type='search' size='50' name='word' value="{{query[0]}}">
 
                 <input class="btn btn-outline-success my-2 my-sm-0" type='submit' value='Bible-it'>
 
@@ -21,8 +21,8 @@
     
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>{{answer[1]}}</p>
-        <footer class="blockquote-footer"><cite title="Source Title">{{answer[2]}}</cite></footer>
+        <p>{{query[1]}}</p>
+        <footer class="blockquote-footer"><cite title="Source Title">{{query[2]}}</cite></footer>
       </blockquote>
     </div>
   </div>

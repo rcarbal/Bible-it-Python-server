@@ -7,12 +7,12 @@ VERSE = 'verse'
 ANSWERED_QUESTION = [
     {
         QUESTION: 'when did God create the heavens and the earth?',
-        ANSWER: 'in the beginning.',
+        ANSWER: 'in the beginning was everything created by God.',
         VERSE: '{} 1:1'.format(Book.genesis)
     },
     {
         QUESTION: 'what did God create in the beginning?',
-        ANSWER: 'the heavens and the earth.',
+        ANSWER: 'God created all the the heavens and the earth in the beginning.',
         VERSE: '{} 1:1'.format(Book.genesis)
     },
     {

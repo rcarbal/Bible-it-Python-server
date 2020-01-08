@@ -69,7 +69,7 @@ def search():
 
         # print("best question {}".format(best_matched_string))
         #         # json_response = json.dumps(best_matched_string)
-        return render_template('word_search_result.html', answer=best_matched_string)
+        return render_template('word_search_result.html', query=best_matched_string)
 
     verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%')). \
         join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())

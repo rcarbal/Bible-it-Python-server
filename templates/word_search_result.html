@@ -4,9 +4,11 @@
     <div class="container">
         <h1 class="display-4">Bible Search</h1>
         <div class="lead">
-            <form class="form-inline my-2 my-lg-0" action="{{url_for('search')}}" method='GET'>
+            <form class="my-2 my-lg-0" action="{{url_for('search')}}" method='GET' id="searchForm">
 
-                <input class="form-control mr-sm-2" type='search' size='50' name='word' value="{{query[0]}}">
+                <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
+                    autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}">
+                <div id="previewDiv" class="search-bar-results"></div>
 
                 <input class="btn btn-outline-success my-2 my-sm-0" type='submit' value='Bible-it'>
 

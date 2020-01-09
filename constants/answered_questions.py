@@ -48,14 +48,14 @@ ANSWERED_QUESTION = [
         VERSE: '{} 1:4'.format(Book.genesis)
     },
     {
-        QUESTION: 'what did God do on the first day?',
+        QUESTION: 'what did God do on the first day of creation?',
         ANSWER: 'God created light, and separated it from darkness. After evening and morning, the first day was '
                 'complete.',
         VERSE: '{} 1:5'.format(Book.genesis)
     },
     {
         QUESTION: 'when did God name light "day" and darkness "night"?',
-        ANSWER: 'God named light "day" and darkness "night" on the first day, after he created light?',
+        ANSWER: 'God named light "day" and darkness "night" on the first day creation, after he created light?',
         VERSE: '{} 1:5'.format(Book.genesis)
     },
     {
@@ -215,5 +215,22 @@ ANSWERED_QUESTION = [
         QUESTION: 'when did God create all the animals that walk on land?',
         ANSWER: 'God created all the animals that walk on the ground on the sixth day of creation, along with mankind.',
         VERSE: '{} 1:24-{} 1:25, {} 1:31'.format(Book.genesis, Book.genesis, Book.genesis)
+    },
+
+    # Genesis 2
+    {
+        QUESTION: 'was creation ever completed?',
+        ANSWER: 'After the sixth day of creation, it the bible declares that everything was finished.',
+        VERSE: '{} 2:1'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was completed when God finished creation?',
+        ANSWER: 'All the heavens and the earth and all the hosts of them were completed',
+        VERSE: '{} 2:1'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'when did God rest after finishing all of creation?',
+        ANSWER: 'On the seventh day, good ended his work and rested.',
+        VERSE: '{} 2:2'.format(Book.genesis)
     }
 ]

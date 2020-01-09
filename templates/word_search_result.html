@@ -5,9 +5,13 @@
         <h1 class="display-4">Bible Search</h1>
         <div class="lead">
             <form class="my-2 my-lg-0" action="{{url_for('search')}}" method='GET' id="searchForm">
-
-                <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
-                    autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}">
+                {% if query is defined %}
+                    <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
+                        autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}">
+                {% else %}
+                    <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
+                        autocomplete="off" onkeyup="echoWord()" value="{{word}}">
+                {% endif %}
                 <div id="previewDiv" class="search-bar-results"></div>
 
                 <input class="btn btn-outline-success my-2 my-sm-0" type='submit' value='Bible-it'>
@@ -19,6 +23,7 @@
 
 <!-- Question's answer display start -->
 
+{% if query is defined %}
 <div class="card">
     
     <div class="card-body">
@@ -28,10 +33,11 @@
       </blockquote>
     </div>
   </div>
+{% endif %}
 
 <!-- Question's answer display end -->
 
-
+{% if word is defined %}
 <br><br>
 <div>Word search result: <strong>{{word}}</strong></div>
 
@@ -239,6 +245,7 @@
     </div>
 
 </div>
+{% endif %}
 
 <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
 

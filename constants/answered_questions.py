@@ -55,7 +55,7 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'when did God name light "day" and darkness "night"?',
-        ANSWER: 'God named light "day" and darkness "night" on the first day creation, after he created light?',
+        ANSWER: 'God named light "day" and darkness "night" on the first day creation, after he created light.',
         VERSE: '{} 1:5'.format(Book.genesis)
     },
     {
@@ -232,5 +232,169 @@ ANSWERED_QUESTION = [
         QUESTION: 'when did God rest after finishing all of creation?',
         ANSWER: 'On the seventh day, good ended his work and rested.',
         VERSE: '{} 2:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how long did it take God to finish everything?',
+        ANSWER: 'It took God six days to finish the work of creation.',
+        VERSE: '{} 2:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why is the seventh day considered holy?',
+        ANSWER: 'The seventh day is holy because God rested from all his work, and he blessed it and made it holy.',
+        VERSE: '{} 2:3'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how was the ground watered before man was created?',
+        ANSWER: 'Before God sent rain, the ground was watered by streams that rose from the ground.',
+        VERSE: '{} 2:5-{} 2:6'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'what did God use to form man?',
+        ANSWER: 'God used the dust from the ground to form man.',
+        VERSE: '{} 2:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how did God form man?',
+        ANSWER: 'God took dust from the ground and breathed into his nostrils the breath of life.',
+        VERSE: '{} 2:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did God plant a garden in Eden?',
+        ANSWER: 'the Lord planted a garden in the east, in Eden.',
+        VERSE: '{} 2:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'in what direction was the garden of Eden placed?',
+        ANSWER: 'the Lord planted the garden of Eden to the east.',
+        VERSE: '{} 2:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did God place man in the garden of Eden?',
+        ANSWER: 'God placed man in the garden of Eden?',
+        VERSE: '{} 2:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what kind of trees did God put in the garden of Eden?',
+        ANSWER: 'God made all kinds of beautiful trees in the garden of Eden that were good for food.',
+        VERSE: '{} 2:9'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was in the middle of the garden of Eden?',
+        ANSWER: 'in the middle of the garden God placed the tree of life, and the tree of the knowledge of good and '
+                'evil',
+        VERSE: '{} 2:9'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is the tree of life?',
+        ANSWER: 'the tree of life is on of the two trees God placed in the middle of the garden of Eden.',
+        VERSE: '{} 2:9'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is the tree of knowledge of good and evil?',
+        ANSWER: 'the tree of life is on of the two trees God placed in the middle of the garden of Eden.',
+        VERSE: '{} 2:9'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how was the garden of Eden watered?',
+        ANSWER: 'a river flowed from the garden of Eden and watered it.',
+        VERSE: '{} 2:10'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did the river that watered the garden of Eden separate into other rivers?',
+        ANSWER: 'the river that watered the garden of Eden separated into four other rivers; they are Pishon, Gihon, '
+                'Tigris and Euphrates.',
+        VERSE: '{} 2:10-{} 2:14'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'what is the Pishon river?',
+        ANSWER: 'When the river that waters the garden of Eden separates into four main rivers, the first is the '
+                'Pishon river.',
+        VERSE: '{} 2:11'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'where does the Pishon river travel trough?',
+        ANSWER: 'The Pishon river travels through the entire land of Havilah.',
+        VERSE: '{} 2:11'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'is there gold iin Havilah?',
+        ANSWER: 'The gold in the land of Havilah is good, along with resin and onyx.',
+        VERSE: '{} 2:11-{} 2:12'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'What kind of natural resources are found in Havilah?',
+        ANSWER: 'Havilah has gold, resin and onyx of good quality.',
+        VERSE: '{} 2:11-{} 2:12'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'what is the Gihon river?',
+        ANSWER: 'When the river that waters the garden of Eden separates into four main rivers, the second is the '
+                'Gihon river.',
+        VERSE: '{} 2:13'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'where does the Gihon river travel through?',
+        ANSWER: 'The Gihon river travels through the entire land of Cush.',
+        VERSE: '{} 2:13'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is the Tigris river?',
+        ANSWER: 'When the river that waters the garden of Eden separates into four main rivers, the third is the '
+                'Tigris river.',
+        VERSE: '{} 2:14'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'where does the Tigris river travel through?',
+        ANSWER: 'The Tigris river travels through the east side of Ashur.',
+        VERSE: '{} 2:14'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What is the Euphrates river?',
+        ANSWER: 'When the river that waters the garden of Eden separates into four main rivers, the fourth is the '
+                'Euphrates river.',
+        VERSE: '{} 2:14'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Why did God put man in the garden of Eden?',
+        ANSWER: 'The Lord put man in the garden of Eden to work it and care for it.',
+        VERSE: '{} 2:15'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did man eat in the garden of Eden?',
+        ANSWER: 'man was free to eat from any tree in the garden, except from the tree of the knowledge of good and '
+                'evil. ',
+        VERSE: '{} 2:15'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was man not allowed to eat in the garden of Eden?',
+        ANSWER: 'Man was not allowed to eat from the tree of knowledge of good and evil.',
+        VERSE: '{} 2:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'was man allowed to eat from the tree of knowledge of good and evil?',
+        ANSWER: 'Man was not allowed to eat from the tree of knowledge of good and evil.',
+        VERSE: '{} 2:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what would happen to man if he ate from the fruit of the tree of knowledge of good and evil?',
+        ANSWER: 'God declared that if man ate from the fruit of the tree of knowledge of good and evil, he would '
+                'certainly die. ',
+        VERSE: '{} 2:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'does God want man to be alone?',
+        ANSWER: 'The Lord God said, "It is not good for man to be alone."',
+        VERSE: '{} 2:18'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did God first do to aid mans\' loneliness?',
+        ANSWER: 'God brought all the animals of the land and birds of the sky to Adam, so he could name them.',
+        VERSE: '{} 2:19'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did Adam give names to all the animals?',
+        ANSWER: 'God gave Adam the task of naming all the animals.',
+        VERSE: '{} 2:19'.format(Book.genesis)
     }
+
 ]

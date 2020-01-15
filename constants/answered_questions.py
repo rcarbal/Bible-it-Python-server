@@ -193,7 +193,7 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'did God intend mankind to rule over all the animals?',
-        ANSWER: 'When blessing man kind, God stated mankind should rule over all the animals in the world.',
+        ANSWER: 'When blessing mankind, God stated mankind should rule over all the animals in the world.',
         VERSE: '{} 1:28'.format(Book.genesis)
     },
     {
@@ -208,7 +208,7 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'when did God create mankind?',
-        ANSWER: 'God created man kind on the sixth day of creation.',
+        ANSWER: 'God created mankind on the sixth day of creation.',
         VERSE: '{} 1:26-{} 1:31'.format(Book.genesis, Book.genesis)
     },
     {
@@ -395,6 +395,31 @@ ANSWERED_QUESTION = [
         QUESTION: 'did Adam give names to all the animals?',
         ANSWER: 'God gave Adam the task of naming all the animals.',
         VERSE: '{} 2:19'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'was any suitable helper found within the animals for Adam?',
+        ANSWER: 'There was no suitable helper found in any animal.',
+        VERSE: '{} 2:20'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how did God remove a rib from Adam?',
+        ANSWER: 'God made Adam fall into a deep sleep, and took a rib from him.',
+        VERSE: '{} 2:21'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did God remove from Adam when he put him to sleep?',
+        ANSWER: 'God removed a rib from Adam after putting him in a deep sleep.',
+        VERSE: '{} 2:21'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why did God remove a rib from Adam?',
+        ANSWER: 'God removed a rib from Adam to create a woman.',
+        VERSE: '{} 2:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did God create with Adam\'s rib?',
+        ANSWER: 'God used Adams\'s rib to create a women.',
+        VERSE: '{} 2:22'.format(Book.genesis)
     }
 
 ]

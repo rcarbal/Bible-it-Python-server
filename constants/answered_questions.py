@@ -420,6 +420,31 @@ ANSWERED_QUESTION = [
         QUESTION: 'what did God create with Adam\'s rib?',
         ANSWER: 'God used Adams\'s rib to create a women.',
         VERSE: '{} 2:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did adam say when he saw Eve?',
+        ANSWER: 'When Adam saw eve he said, "This is now bone of my bone and flesh of my flesh." and named her women',
+        VERSE: '{} 2:23'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Why does man leave his father and mother?',
+        ANSWER: 'Man will leave his father and mother to become one with his wife.',
+        VERSE: '{} 2:24'
+    },
+    {
+        QUESTION: 'what happens when a man and a women unite?',
+        ANSWER: 'When a man and a women unite, they become one flesh.',
+        VERSE: '{} 2:24'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'were Adam and Eve naked in the garden of Eden?',
+        ANSWER: 'Adam and Eve were naked in garden of Eden, but they were not ashamed.',
+        VERSE: '{} 2:25'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'was Adam and Eve ashamed of being naked in the garden of Eden?',
+        VERSE: 'Even thou Adam and Eve were naked in the garden of Eden, they were not ashamed.',
+        ANSWER: '{} 2:25'.format(Book.genesis)
     }
 
 ]

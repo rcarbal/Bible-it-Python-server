@@ -445,6 +445,49 @@ ANSWERED_QUESTION = [
         QUESTION: 'was Adam and Eve ashamed of being naked in the garden of Eden?',
         VERSE: 'Even thou Adam and Eve were naked in the garden of Eden, they were not ashamed.',
         ANSWER: '{} 2:25'.format(Book.genesis)
+    },
+
+    # Genesis 3
+    {
+        QUESTION: 'who was the craftiest animal the Lord had made?',
+        ANSWER: 'Of all the animals, the serpent was the craftiest animal the Lord had made.',
+        VERSE: '{} 3:1'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did Eve know she was not suppose to eat the fruit of the three of knowledge of good and evil?',
+        ANSWER: 'Eve knew that they were not allowed to touch or eat of the tree that is in the middle of the garden.',
+        VERSE: '{} 3:2-{} 3:3'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'how did the snake trick Eve into eating the fruit.',
+        ANSWER: 'The serpent told Eve that if they ate of the fruit of knowledge they would not die.',
+        VERSE: '{} 3:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'who did the snake trick into eating the fruit?',
+        ANSWER: 'The serpent tricked Eve into eating the fruit of knowledge of good and evil.',
+        VERSE: '{} 3:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what would happen to Eve if she ate of the fruit of knowledge according to the snake?',
+        ANSWER: 'The snake said that she would not die, and she would be like God.',
+        VERSE: '{} 3:4-{} 3:5'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'what did Eve see when she looked at the fruit of knowledge?',
+        ANSWER: 'Eve saw that fruit was pleasing to look at and desirable for gaining knowledge.',
+        VERSE: '{} 3:6'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did Eve give to her husband Adam some of the fruit to eat?',
+        ANSWER: 'After eating of the fruit of knowledge, she gave some to her husband Adam.',
+        VERSE: '{} 3:6'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did Adam eat of the fruit of knowledge of good and evil?',
+        ANSWER: 'After Eve was tricked into eating of the fruit, she gave some to her husband Adam and he ate the '
+                'fruit. ',
+        VERSE: '{} 3:6'.format(Book.genesis)
     }
 
 ]

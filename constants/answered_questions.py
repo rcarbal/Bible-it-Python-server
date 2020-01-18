@@ -488,6 +488,45 @@ ANSWERED_QUESTION = [
         ANSWER: 'After Eve was tricked into eating of the fruit, she gave some to her husband Adam and he ate the '
                 'fruit. ',
         VERSE: '{} 3:6'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what happened to Adam and Eve after they ate the fruit of knowledge of good and evil?',
+        ANSWER: 'After eating of the fruit of knowledge, both Adam and Eve\'s eyes were opened, and they realize they '
+                'were naked. ',
+        VERSE: '{} 3:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how did Adam and Eve realize that they were both naked?',
+        ANSWER: 'Adam and Eve both realized that they were naked after eating the fruit of the tree of knowledge that '
+                'God had forbidden. ',
+        VERSE: '{} 3:6-{} 3:7'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'how did Adam and Eve cover themselves after they realized they were naked?',
+        ANSWER: 'After realizing they naked, Adam and Eve sowed fig leaves together to cover themselves.',
+        VERSE: '{} 3:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did Adam and Eve use to cover themselves?',
+        ANSWER: 'Adam and Eve used fig leaves sewn together cover themselves. ',
+        VERSE: '{} 3:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did Adam and Eve hear after eating of the fruit of knowledge of good and evil?',
+        ANSWER: 'After eating of the fruit, Adam and Eve heard the Lord God walking in the garden in the cool of the '
+                'day.',
+        VERSE: '{} 3:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did Adam and Eve do when they heard the Lord God walking through the garden?',
+        ANSWER: 'When Adam and Eve heard the Lord God waling through the garden, they were afraid and hid among the '
+                'trees. ',
+        VERSE: '{} 3:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did the Lord God call out to Adam when he and his Eve hid from him??',
+        ANSWER: 'The Lord God called out to them when they were hiding from him in the trees of the garden.',
+        VERSE: '{} 3:9'.format(Book.genesis)
     }
 
 ]

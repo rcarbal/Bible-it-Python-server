@@ -135,7 +135,7 @@ ANSWERED_QUESTION = [
     {
         QUESTION: 'when did God create the sun, moon and stars',
         ANSWER: "God created the sun, moon and stars on the fourth day",
-        VERSE: '{} 1:14- {} 1:19'.format(Book.genesis, Book.genesis)
+        VERSE: '{} 1:14-{} 1:19'.format(Book.genesis, Book.genesis)
     },
     {
         QUESTION: 'What was God command to create fish and birds',
@@ -527,6 +527,71 @@ ANSWERED_QUESTION = [
         QUESTION: 'did the Lord God call out to Adam when he and his Eve hid from him??',
         ANSWER: 'The Lord God called out to them when they were hiding from him in the trees of the garden.',
         VERSE: '{} 3:9'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why did Adam hide from the Lord after he realized he was naked?',
+        ANSWER: 'Adam hid from the Lord after he realized he was naked because he was afraid?',
+        VERSE: '{} 3:10'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was Adam afraid of when the Lord called out to him after Adam realized he was naked?',
+        ANSWER: 'The bible does not say what Adam was afraid of, when God called out to him.',
+        VERSE: '{} 3:10'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did God question Adam how he know he was naked?',
+        ANSWER: 'God asked Adam who had revealed to them that they were naked, and if he had eaten of the fruit of '
+                'knowledge?',
+        VERSE: '{} 3:11'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was Adam\'s excuse to the Lord God on why he ate the fruit of knowledge?',
+        ANSWER: 'Adam blamed Eve for giving him some of the fruit to eat.',
+        VERSE: '{} 3:12'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was Eve\'s excuse to the Lord God on why she ate the fruit?',
+        ANSWER: 'Eve blamed the serpent for tricking her into eating of the fruit of knowledge.',
+        VERSE: '{} 3:13'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was God\'s curse to the serpent for tricking Eve into eating of the fruit of knowledge?',
+        ANSWER: 'God cursed the serpent above all animals, it would crawl on its belly and eat dust. God put '
+                'hostility between man and serpent. ',
+        VERSE: '{} 3:14-{} 3:15'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'why did God curse the serpent?',
+        ANSWER: 'God cursed the serpent because it had tricked Eve into eating of the fruit of knowledge.',
+        VERSE: '{} 3:13-{} 3:15'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'why did God curse Eve?',
+        ANSWER: 'God cursed Eve because she had eaten of the fruit of knowledge: God had forbidden Adam and Eve from '
+                'eating of that fruit. ',
+        VERSE: '{} 2:17, {} 3:16'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'what was God\'s curse to Eve?',
+        ANSWER: 'God\'s curse to Eve was that giving birth would be severely painful, that her desire would be for '
+                'her husband, and that her husband would rule over her. ',
+        VERSE: '{} 3:16'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why is giving birth so painful to a women?',
+        ANSWER: 'Giving birth is painful for a woman because it is God\'s decree over Eve for eating of the fruit of '
+                'knowledge. ',
+        VERSE: '{} 3:16'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is a woman\'s desire?',
+        ANSWER: 'Decreed by God, a woman\'s desire is for her husband.',
+        VERSE: '{} 3:16'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Is a husband suppose to rule over his wife?',
+        ANSWER: 'Decreed by God, a husband is to rule over his wife.',
+        VERSE: '{} 3:16'.format(Book.genesis)
     }
 
 ]

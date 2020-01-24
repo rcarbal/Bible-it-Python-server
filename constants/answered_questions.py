@@ -592,6 +592,23 @@ ANSWERED_QUESTION = [
         QUESTION: 'Is a husband suppose to rule over his wife?',
         ANSWER: 'Decreed by God, a husband is to rule over his wife.',
         VERSE: '{} 3:16'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why did God curse Adam.',
+        ANSWER: 'God cursed Adam because he listened to his wife and ate from the tree of knowledge, which God had '
+                'forbidden both from eating. ',
+        VERSE: '{} 3:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was Adam\'s curse.',
+        ANSWER: 'God decreed that Adam would have to work for his food, his work would be hard until he died; when he '
+                'died he would return to the ground. ',
+        VERSE: '{} 3:17-{} 3:19'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'is the ground cursed because of Adam\'s sin?',
+        ANSWER: 'The ground was cursed because of Adam\'s sin, it now produces thorns and thistles.',
+        VERSE: '{} 3:17-{} 3:19'.format(Book.genesis, Book.genesis)
     }
 
 ]

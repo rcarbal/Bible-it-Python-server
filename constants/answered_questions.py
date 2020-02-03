@@ -284,6 +284,12 @@ ANSWERED_QUESTION = [
                 'evil',
         VERSE: '{} 2:9'.format(Book.genesis)
     },
+
+    {
+        QUESTION: 'where is the tree of life located?',
+        ANSWER: 'The tree of life is located in the middle of the garden of Eden.',
+        VERSE: '{} 2:9'.format(Book.genesis)
+    },
     {
         QUESTION: 'what is the tree of life?',
         ANSWER: 'the tree of life is on of the two trees God placed in the middle of the garden of Eden.',
@@ -609,6 +615,64 @@ ANSWERED_QUESTION = [
         QUESTION: 'is the ground cursed because of Adam\'s sin?',
         ANSWER: 'The ground was cursed because of Adam\'s sin, it now produces thorns and thistles.',
         VERSE: '{} 3:17-{} 3:19'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'how was mankind suppose to get food after the Lord God kicked them out of the garden?',
+        ANSWER: 'Through hard work, would mankind eat from the plants of thr ground.',
+        VERSE: '{} 3:17-{} 3-19'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'is man suppose to work hard?',
+        ANSWER: 'God sentenced man to work hard all his life until the day he dies.',
+        VERSE: '{} 3:17-{} 3-19'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'is mankind suppose to die?',
+        ANSWER: 'All men will return to the dust he came from, this was declared by the Lord God.',
+        VERSE: '{} 3:19'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did Adam name his wife \"Eve\"?',
+        ANSWER: 'Adam named his wife Eve because she would become the mother of all the people to come.',
+        VERSE: '{} 3:20'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'is Eve the mother of all the people in the world?',
+        ANSWER: 'Since Eve is the first women, she is the mother of all the people who came after her.',
+        VERSE: '{} 3:20'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did the Lord God clothed Adam and Eve?',
+        ANSWER: 'The Lord made garments of skin for Adam and his wife and clothed them.',
+        VERSE: '{} 3:21'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did mankind become like God after they ate of the fruit of knowledge?',
+        ANSWER: 'The Lord God said, "The man has now become like one of us, knowing good and evil. He must no be '
+                'allowed to reach out his hand and take also from the tree of life and eat, and live forever. ',
+        VERSE: '{} 3:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how did mankind become like God after they ate from the fruit of knowledge?',
+        ANSWER: 'Man became like God in knowing good and evil after they ate of the fruit of knowledge of good and '
+                'evil.',
+        VERSE: '{} 3:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what was mankind not allowed to do after eating of the fruit of knowledge?',
+        ANSWER: 'Mankind was not allowed to eat from the fruit of the tree of life, and live forever.',
+        VERSE: "{} 3:22".format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is the tree of life?',
+        ANSWER: 'The tree of life is one of two trees that God placed in the middle of the garden of Eden. According '
+                'to Genesis chapter 3 verse 22; if man reached out and ate from the tree of life he could live '
+                'forever. ',
+        VERSE: '{} 3:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'can you live forever if you eat from the tree of life?',
+        ANSWER: 'You live forever if you eat from the tree of life?',
+        VERSE: '{} 3:22'.format(Book.genesis)
     }
-
 ]

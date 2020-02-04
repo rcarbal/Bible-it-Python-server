@@ -674,5 +674,32 @@ ANSWERED_QUESTION = [
         QUESTION: 'can you live forever if you eat from the tree of life?',
         ANSWER: 'You live forever if you eat from the tree of life?',
         VERSE: '{} 3:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why did the Lord God banish Adam and Eve from the garden of Eden?',
+        ANSWER: 'God banished Adam and Eve from the garden of Eden because they ate from the tree of knowledge, which'
+                'he forbid them from eating.',
+        VERSE: '{} 3:10-{} 3:22'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'what did Adam do after he was banished from the garden of Eden?',
+        ANSWER: 'After Adam was banished from he garden of Eden he worked the ground.',
+        VERSE: '{} 3:23'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'how is the garden of Eden protected after man was banished from it?',
+        ANSWER: 'God placed cherubim and a flaming sword on the east side of the garden.',
+        VERSE: '{} 3:23'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'are there angels protecting the garden of Eden?',
+        ANSWER: 'God placed cherubim and a flaming sword on the east side of the garden.',
+        VERSE: '{} 3:24'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is protecting the garden of Eden now?',
+        ANSWER: 'God placed cherubim and a flaming sword on the east side of the garden.',
+        VERSE: '{} 3:24'.format(Book.genesis)
     }
+    ## GENESIS 4
 ]

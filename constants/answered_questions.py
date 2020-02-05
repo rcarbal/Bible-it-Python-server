@@ -140,7 +140,7 @@ ANSWERED_QUESTION = [
     {
         QUESTION: 'What was God command to create fish and birds',
         ANSWER: "God's command to create fish and birds can be found in Genesis chapter 1 verse 20.",
-        VERSE : '{} 1:20'.format(Book.genesis)
+        VERSE: '{} 1:20'.format(Book.genesis)
     },
     {
         QUESTION: "did God create the all the creatures in the sea, and all the creautres that fly?",
@@ -700,6 +700,42 @@ ANSWERED_QUESTION = [
         QUESTION: 'what is protecting the garden of Eden now?',
         ANSWER: 'God placed cherubim and a flaming sword on the east side of the garden.',
         VERSE: '{} 3:24'.format(Book.genesis)
-    }
+    },
     ## GENESIS 4
+     {
+        QUESTION: 'who was Adam\'s first born son?',
+        ANSWER: 'Adam and Eve\'s first born was Cain.',
+        VERSE: '{} 4:1'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'who was Eve\'s first born son?',
+        ANSWER: 'Adam and Eve\'s first born was Cain.',
+        VERSE: '{} 4:1'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did Eve say when she gave birth to Cain?',
+        ANSWER: 'After giving birth to Cain Eve said, "With the help of the lord I have brought forth a man."',
+        VERSE: '{} 4:1'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'who was Adam\'s second born son?',
+        ANSWER: 'Adam and Eve\'s first born was Abel.',
+        VERSE: '{} 4:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'who was Eve\'s first born son?',
+        ANSWER: 'Adam and Eve\'s first born was Abel.',
+        VERSE: '{} 4:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did Abel do for work?',
+        ANSWER: 'Abel was a shepherd so he kept flocks.',
+        VERSE: '{} 4:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did Cain do for work?',
+        ANSWER: 'Cain was farmer so he worked the soil.',
+        VERSE: '{} 4:2'.format(Book.genesis)
+    }
 ]
+

@@ -702,7 +702,7 @@ ANSWERED_QUESTION = [
         VERSE: '{} 3:24'.format(Book.genesis)
     },
     ## GENESIS 4
-     {
+    {
         QUESTION: 'who was Adam\'s first born son?',
         ANSWER: 'Adam and Eve\'s first born was Cain.',
         VERSE: '{} 4:1'.format(Book.genesis)
@@ -736,6 +736,67 @@ ANSWERED_QUESTION = [
         QUESTION: 'what did Cain do for work?',
         ANSWER: 'Cain was farmer so he worked the soil.',
         VERSE: '{} 4:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'is Cain older than Abel?',
+        ANSWER: 'Cain wa born first to Adam and Eve, afterward Abel was born.',
+        VERSE: '{} 4:1-{} 4:2'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'is Abel younger than Cain?',
+        ANSWER: 'Cain wa born first to Adam and Eve, afterward Abel was born.',
+        VERSE: '{} 4:1-{} 4:2'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'what did Cain and Abel do for work?',
+        ANSWER: 'Cain was a farmer so he worked the soil, Abel was a shepherd so he kept flocks.',
+        VERSE: '{} 4:2'.format(Book.genesis)
+
+    },
+    {
+        QUESTION: 'what did Cain bring to God as an offering?',
+        ANSWER: 'Cain brought some fruits from the soil as an offering to God.',
+        VERSE: '{} 4:3'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what did Abel bring to God as an offering?',
+        ANSWER: 'Abel brought some fat portions from the firstborn of the flock.',
+        VERSE: '{} 4:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who\'s offering did God see with favor, Cain or Abel?',
+        ANSWER: 'God saw Abel\'s offering of fat from the firstborn of his flock with favor.',
+        VERSE: '{} 4:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did the Lord God see Abel\'s offering with favor?',
+        ANSWER: 'God saw Abel\'s offering of fat from the firstborn of his flock with favor.',
+        VERSE: '{} 4:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did the Lord God see Cain\'s offering with favor?',
+        ANSWER: 'God did not see Cain\'s offering of fruit from the ground with favor.',
+        VERSE: '{} 4:5'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Why did Cain become angry after giving God his offering?',
+        ANSWER: 'Cain became very after giving God his offering of fruit because the Lord saw Abel\'s offering with '
+                'favor and not his.',
+        VERSE: '{} 4:4-{} 4:5'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'What was Cain\'s reaction after God did not see his offering with favor?',
+        ANSWER: 'Cain became angry, and his face was downcast.',
+        VERSE: '{} 4:5'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What did God say to Cain became angry?',
+        ANSWER: 'When Cain became angry, he asked him "Why are you angry? Why is your face downcast?',
+        VERSE: '{} 4:6'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How could Cain\'s offering be accepted before God?',
+        ANSWER: 'If Cain does what is right, he will be accepted.',
+        VERSE: '{} 4:7'.format(Book.genesis)
     }
 ]
-

@@ -798,5 +798,32 @@ ANSWERED_QUESTION = [
         QUESTION: 'How could Cain\'s offering be accepted before God?',
         ANSWER: 'If Cain does what is right, he will be accepted.',
         VERSE: '{} 4:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Does God want us to do what is right?',
+        ANSWER: 'God wants us to do what is right, no bad deed is acceptable before his eyes.',
+        VERSE: '{} 4:7'.format(Book.genesis)
+    },
+    {
+
+        QUESTION: 'What happens if you do what is wrong?',
+        ANSWER: 'To those who do wrong, sin waits for them, sin wants to rule over them.',
+        VERSE: '{} 4:7'.format(Book.genesis)
+
+    },
+    {
+        QUESTION: 'Can sin consume someone life?',
+        ANSWER: 'Sin wishes to rule over you, always waiting at your door.',
+        VERSE: '{} 4:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How did Cain kill Abel?',
+        ANSWER: 'Cain said to Abel, "Let\'s go out to the field", while they were in the field Cain killed his brother.',
+        VERSE: '{} 4:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Cain kill Abel?',
+        ANSWER: 'While the brothers where out in the field, Cain attacked and killed Abel.',
+        VERSE: '{} 4:8'.format(Book.genesis)
     }
 ]

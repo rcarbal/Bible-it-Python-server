@@ -825,5 +825,100 @@ ANSWERED_QUESTION = [
         QUESTION: 'Did Cain kill Abel?',
         ANSWER: 'While the brothers where out in the field, Cain attacked and killed Abel.',
         VERSE: '{} 4:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What did Cain reply to the Lord God asked him where his brother able was?',
+        ANSWER: 'Cain replied to the Lord, "Id don\'t know, am I my brothers keeper?"',
+        VERSE: '{} 4:9'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What did the Lord say about Able\'s death after he was murdered by Cain?',
+        ANSWER: 'The Lord God said to Cain, "Listen! Your brother\'s blood cries out to me from the ground."',
+        VERSE: '{} 4:10'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Was Cain placed under a curse for murdering his brother Abel?',
+        ANSWER: 'God placed Cain under a curse for murdering his brother Abel, which would drive him from the land.',
+        VERSE: '{} 4:11'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What was Cain curse for killing his brother Abel?',
+        ANSWER: 'Cain was driven from the land, it would no longer yield crops for him. He would be a restless '
+                'wanderer on the earth',
+        VERSE: '{} 4:11-{} 4:12'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'Was Cain afraid of the curse God placed on him?',
+        ANSWER: 'Cain was afraid of being driven from the land, and hidden from God\'s presence. He was afraid of '
+                'being killed by whoever found him. ',
+        VERSE: '{} 4:13-{} 4-14'
+    },
+    {
+        QUESTION: 'Did God protect Cain from being murdered?',
+        ANSWER: 'God place a mark on Cain, and declared that anyone who killed Cain would suffer vengeance seven '
+                'times over. ',
+        VERSE: '{} 4:15'.format(Book.genesis)
+    }
+    ,
+    {
+        QUESTION: 'Was Cain no longer in the Lord\'s presence?',
+        ANSWER: 'After murdering his brother Abel, Cain went out of the Lord\'s presence and lived in the land of Nod.',
+        VERSE: '{} 4:13-{}4:16'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'Where did Cain live after he murdered his brother Abel?',
+        ANSWER: 'After murdering his brother Abel and going out of the Lord\'s presence Cain lived in the land of Nod, '
+                'east of Eden. ',
+        VERSE: '{} 4:16'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What was the name of Cain\'s first born son?',
+        ANSWER: 'Cain first born son was named Enoch.',
+        VERSE: '{} 4:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What did Cain do after he left because murdered his bother Abel?',
+        ANSWER: 'Cain built a city and named it after his son Enoch.',
+        VERSE: '{} 4:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Cain build a city?',
+        ANSWER: 'Cain built a city and named it after his son Enoch.',
+        VERSE: '{} 4:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What was the name of Enoch son?',
+        ANSWER: 'Enoch\'s son was named Irad.',
+        VERSE: '{} 4:18'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What was the name of Irad son?',
+        ANSWER: 'Irad\'s son was named Mehujael.',
+        VERSE: '{} 4:18'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What was the name of Mehujael\'s son?',
+        ANSWER: 'Mehujael\'s son was named Methushael.',
+        VERSE: '{} 4:18'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What was the name of Methushael\'s son?',
+        ANSWER: 'Methushael\'s son was named Lamech.',
+        VERSE: '{} 4:18'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many wives did Lamech have?',
+        ANSWER: 'Lamech had two wives, one was named Adah and the other was named Zillah.',
+        VERSE: '{} 4:19'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Adah?',
+        ANSWER: 'Adah was one of Lamech\'s wives, the other was Zillah.',
+        VERSE: '{} 4:19'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Zillah?',
+        ANSWER: 'Zillad was one of Lamech\'s wives, the other was Adah.',
+        VERSE: '{} 4:19'.format(Book.genesis)
     }
 ]

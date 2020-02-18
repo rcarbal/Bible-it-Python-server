@@ -858,8 +858,7 @@ ANSWERED_QUESTION = [
         ANSWER: 'God place a mark on Cain, and declared that anyone who killed Cain would suffer vengeance seven '
                 'times over. ',
         VERSE: '{} 4:15'.format(Book.genesis)
-    }
-    ,
+    },
     {
         QUESTION: 'Was Cain no longer in the Lord\'s presence?',
         ANSWER: 'After murdering his brother Abel, Cain went out of the Lord\'s presence and lived in the land of Nod.',
@@ -920,5 +919,111 @@ ANSWERED_QUESTION = [
         QUESTION: 'Who was Zillah?',
         ANSWER: 'Zillad was one of Lamech\'s wives, the other was Adah.',
         VERSE: '{} 4:19'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Jabal?',
+        ANSWER: 'Jabal was one of two sons Lamech had with Adah.',
+        VERSE: '{} 4:20'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Jabal\'s mother?',
+        ANSWER: 'Jabal\'s mother was Adah, and his father was Lamech.',
+        VERSE: '{} 4:20'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Jabal\'s father?',
+        ANSWER: 'Jabal\'s mother was Adah, and his father was Lamech.',
+        VERSE: '{} 4:20'.format(Book.genesis)
+    },
+
+    {
+        QUESTION: 'Who are the descendants of Jabal? ',
+        ANSWER: 'The descendants of Jabal are the people known for living in tents and raising livestock.',
+        VERSE: '{} 4:20'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Jubal?',
+        ANSWER: 'Jubal was one of two sons Lamech had with Adah.',
+        VERSE: '{} 4:21'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Jubal\'s mother?',
+        ANSWER: 'Jubal\'s mother was Adah, and his father was Lamech.',
+        VERSE: '{} 4:21'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Jubal\'s father?',
+        ANSWER: 'Jubal\'s mother was Adah, and his father was Lamech.',
+        VERSE: '{} 4:21'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who are the descendants of Jubal? ',
+        ANSWER: 'The descendants of Jubal are the people known for playing stringed instruments and pipes.',
+        VERSE: '{} 4:21'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Adah have any children?',
+        ANSWER: 'Adah had two sons, Jabal and Jubal.',
+        VERSE: '{} 4:20-{}4:21'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'Did Zillah have any children?',
+        ANSWER: 'Lamech had two children with Zillah, a son named Tubal-Cain and a daugther named Naamah.',
+        VERSE: '{} 4:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who was Tubal-Cain?',
+        ANSWER: 'Tubal-Cain was the son Lamech with Zillah.',
+        VERSE: '{} 4:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What was Tubal-Cain known for?',
+        ANSWER: 'Tubal-Cain was known for forging all kinds of tools out of Bronze and Iron.',
+        VERSE: '{} 4:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Tubal-Cain have any siblings?',
+        ANSWER: 'Tubal-Cain had a sister named Naamah.',
+        VERSE: '{} 4:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Tubal-Cain have a sister?',
+        ANSWER: 'Tubal-Cain had a sister named Naamah.',
+        VERSE: '{} 4:22'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Lamech kill a someone?',
+        ANSWER: 'Lamech killed a young man for injuring him.',
+        VERSE: '{} 4:23'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Why did Lamech kill someone?',
+        ANSWER: 'Lamech killed a young man because the man injured him.',
+        VERSE: '{} 4:23'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Lamech want to be avenged if he was killed?',
+        ANSWER: 'Lamech wanted to be avenged seventy times compared to the seven times God decreed over Cain.',
+        VERSE: '{} 4:24'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who is Seth?',
+        ANSWER: 'Seth is Adam\'s third son.',
+        VERSE: '{} 4:25'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Seth have children?',
+        ANSWER: 'Seth had a son, he named him Enosh.',
+        VERSE: '{} 4:26'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Who is Enosh?',
+        ANSWER: 'Enosh is the son of Seth.',
+        VERSE: '{} 4:26'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'When did people begin to call on the name of the Lord?',
+        ANSWER: 'During the time of Enosh\'s life, people began to call on God.',
+        VERSE: '{} 4:26'.format(Book.genesis)
     }
 ]

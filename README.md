@@ -15,6 +15,7 @@ content.
 ## Implementation
 - Python 3.7.
 - Built Flask framework
+- Client uses Bootstrap 4.0
 
 ## WORD SEARCHES 
 - Searches for any word exact or inexact matches throughout the entire Holy Bible.

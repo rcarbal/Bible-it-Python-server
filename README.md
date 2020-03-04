@@ -16,6 +16,8 @@ content.
 - Python 3.7.
 - Built Flask framework
 - Client uses Bootstrap 4.0
+- Uses FuzzyWuzzy library for string matching.
+- SQLAlchemy ORM
 
 ## WORD SEARCHES 
 - Searches for any word exact or inexact matches throughout the entire Holy Bible.
@@ -30,7 +32,7 @@ content.
 
 ![image](https://user-images.githubusercontent.com/20021751/75856079-765e4580-5da8-11ea-8e84-7f74f5b8b6e7.png)
 
-##QUESTION SUGGESTIONS
+## QUESTION SUGGESTIONS
 
 -  Shows suggested questions for user's search bar input.
 

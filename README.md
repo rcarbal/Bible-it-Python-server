@@ -14,10 +14,13 @@ content.
 
 ## Implementation
 - Python 3.7.
-- Built Flask framework
+- Built using Flask framework
 - Client uses Bootstrap 4.0
 - Uses FuzzyWuzzy library for string matching.
 - SQLAlchemy ORM
+- Uses NLP Spacy to retrieve text Part of Speech.
+- Calls Meriam Webster's API to get definitions and Synonyms.
+
 
 ## WORD SEARCHES 
 - Searches for any word exact or inexact matches throughout the entire Holy Bible.

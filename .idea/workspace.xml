@@ -54,7 +54,7 @@
       <recent name="D:\Bibleit\bibleitenvbionic\Bible-it-Server" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.answered_questions">
+  <component name="RunManager" selected="Python.main">
     <configuration name="answered_questions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Bible-it-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,8 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.answered_questions" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.answered_questions" />
         <item itemvalue="Python tests.Unittests for string_matching.TestStringMatching.test_get_string_matching_score" />
         <item itemvalue="Python.s&amp;p" />
         <item itemvalue="Python tests.Unittests for tests.TestBibleitResults.test_get_biblical_figures" />
@@ -216,6 +216,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="344" y="139" key="#Notifications/0.0.1500.960@0.0.1500.960" timestamp="1576385278317" />
+    <state x="700" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583307984789">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="700" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583307984789" />
     <state width="1480" height="287" key="GridCell.Tab.0.bottom" timestamp="1581986341947">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -265,10 +269,14 @@
     </state>
     <state x="253" y="123" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1581986139399" />
     <state x="324" y="133" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582036035202" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582037380590">
+    <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1583716660956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582037380590" />
+    <state x="656" y="118" width="607" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583716660956" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583716628730">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583716628730" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

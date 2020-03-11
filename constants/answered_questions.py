@@ -173,7 +173,7 @@ ANSWERED_QUESTION = [
     {
         QUESTION: 'did God create man according to his image?',
         ANSWER: 'God declared man would be according to his likeness, and image.',
-        VERSE: '{} 1:26-{} 1:27'.format(Book.genesis, Book.genesis)
+        VERSE: '{} 1:26-{} 1:27, {} 5:1'.format(Book.genesis, Book.genesis, Book.genesis)
     },
     {
         QUESTION: 'did God give mankind authority over all the animals?',
@@ -184,7 +184,7 @@ ANSWERED_QUESTION = [
     {
         QUESTION: 'how many genders did God create for mankind?',
         ANSWER: 'God created two genders for mankind, male and female.',
-        VERSE: '{} 1:27'.format(Book.genesis)
+        VERSE: '{} 1:27, {} 5:1'.format(Book.genesis, Book.genesis)
     },
     {
         QUESTION: 'does God want mankind to populate the earth?',
@@ -1014,16 +1014,78 @@ ANSWERED_QUESTION = [
     {
         QUESTION: 'Did Seth have children?',
         ANSWER: 'Seth had a son, he named him Enosh.',
-        VERSE: '{} 4:26'.format(Book.genesis)
+        VERSE: '{} 4:26, {} 5:6'.format(Book.genesis, Book.genesis)
     },
     {
         QUESTION: 'Who is Enosh?',
         ANSWER: 'Enosh is the son of Seth.',
-        VERSE: '{} 4:26'.format(Book.genesis)
+        VERSE: '{} 4:26, {} 5:6'.format(Book.genesis, Book.genesis)
     },
     {
         QUESTION: 'When did people begin to call on the name of the Lord?',
         ANSWER: 'During the time of Enosh\'s life, people began to call on God.',
         VERSE: '{} 4:26'.format(Book.genesis)
+    },
+
+    {
+        QUESTION: 'Why do we say "Mankind"?',
+        ANSWER: 'When God created humans he called them "Mankind.',
+        VERSE: '{} 5:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did God name humans "Mankind"?',
+        ANSWER: 'When God created humans he called them "Mankind.',
+        VERSE: '{} 5:2'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Adam have Seth?',
+        ANSWER: 'Seth was born when Adam was 120 years old.',
+        VERSE: '{} 5:3'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Adam live after he had Seth?',
+        ANSWER: 'Adam lived an additional 800 years after he had Seth.',
+        VERSE: '{} 5:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Adam have more children after he had Seth?',
+        ANSWER: 'Adam had more children after he had Seth.',
+        VERSE: '{} 5:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Adam live?',
+        ANSWER: 'Adam lived a total of 930 years.',
+        VERSE: '{} 5:5'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Adam die?',
+        ANSWER: 'Adam died at the age of 930 years old.',
+        VERSE: '{} 5:5'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Seth have Enosh?',
+        ANSWER: 'Enosh was born when Seth was 105 years old.',
+        VERSE: '{} 5:6'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Seth live after he had Enosh?',
+        ANSWER: 'Enosh lived an additional 807 years after he had Enosh.',
+        VERSE: '{} 5:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Seth have more children after Enosh?',
+        ANSWER: 'Seth had more children after Enosh.',
+        VERSE: '{} 5:7'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Seth live',
+        ANSWER: 'Seth lived a total of 912 years.',
+        VERSE: '{} 5:8'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Seth die?',
+        ANSWER: 'Seth died at the age of 912 years old.',
+        VERSE: '{} 5:8'.format(Book.genesis)
     }
+
 ]

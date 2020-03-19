@@ -1049,7 +1049,7 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'Did Adam have more children after he had Seth?',
-        ANSWER: 'Adam had more children after he had Seth.',
+        ANSWER: 'Adam did have more children after he had Seth.',
         VERSE: '{} 5:4'.format(Book.genesis)
     },
     {
@@ -1069,12 +1069,12 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'How many years did Seth live after he had Enosh?',
-        ANSWER: 'Enosh lived an additional 807 years after he had Enosh.',
+        ANSWER: 'Seth lived an additional 807 years after he had Enosh.',
         VERSE: '{} 5:7'.format(Book.genesis)
     },
     {
         QUESTION: 'Did Seth have more children after Enosh?',
-        ANSWER: 'Seth had more children after Enosh.',
+        ANSWER: 'Seth did have more children after Enosh.',
         VERSE: '{} 5:7'.format(Book.genesis)
     },
     {
@@ -1086,6 +1086,49 @@ ANSWERED_QUESTION = [
         QUESTION: 'At what age did Seth die?',
         ANSWER: 'Seth died at the age of 912 years old.',
         VERSE: '{} 5:8'.format(Book.genesis)
+    },
+    # 03/19/20 -1
+    {
+        QUESTION: 'At what age did Enosh have Kenan?',
+        ANSWER: 'Kenan was born when Enosh was 90 years old.',
+        VERSE: '{} 5:9'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Enosh live after he had Kenan?',
+        ANSWER: 'Enosh lived an additional 815 years after he had Kenan.',
+        VERSE: '{} 5:10'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Enosh have more children after Kenan?',
+        ANSWER: 'Enosh did have more children after Kenan.',
+        VERSE: '{} 5:10'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Enosh live?',
+        ANSWER: 'Enosh lived a total of 905 years.',
+        VERSE: '{} 5:11'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At wat age did Enosh die',
+        ANSWER: 'Enosh died at the age of 905 years old.',
+        VERSE: '{} 5:11'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Kenan have Mahalalel?',
+        ANSWER: 'Mahalalel was born when Kenan was 70 years old.',
+        VERSE: '{} 5:12'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Kenan live after he had Mahalalel?',
+        ANSWER: 'Kenan lived an additional 840 years after he had Mahalalel.',
+        VERSE: '{} 5:13'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Kenan have more children after Mahalalel?',
+        ANSWER: 'Kenan did have more children after Mahalalel.',
+        VERSE: '{} 5:13'.format(Book.genesis)
     }
+
+    # 03/19/20 -1
 
 ]

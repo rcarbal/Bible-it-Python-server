@@ -1109,7 +1109,7 @@ ANSWERED_QUESTION = [
         VERSE: '{} 5:11'.format(Book.genesis)
     },
     {
-        QUESTION: 'At wat age did Enosh die',
+        QUESTION: 'At what age did Enosh die?',
         ANSWER: 'Enosh died at the age of 905 years old.',
         VERSE: '{} 5:11'.format(Book.genesis)
     },
@@ -1129,6 +1129,122 @@ ANSWERED_QUESTION = [
         VERSE: '{} 5:13'.format(Book.genesis)
     }
 
-    # 03/19/20 -1
+    # 03/27 #1
+    ,
+    {
+        QUESTION: 'How many years did Kenan live?',
+        ANSWER: 'Kenan lived a total of 910 years.',
+        VERSE: '{} 5:14'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Kenan die?',
+        ANSWER: 'Kenan died at the age of 905 years old.',
+        VERSE: '{} 5:14'.format(Book.genesis)
+    }
+    # 2
+    ,
+    {
+        QUESTION: 'At what age did Mahalalel have Jared?',
+        ANSWER: 'Jared was born when Kenan was 65 years old.',
+        VERSE: '{} 5:15'.format(Book.genesis)
+    },
+    # 3
+    {
+        QUESTION: 'How many years did Mahalalel live after he had Jared?',
+        ANSWER: 'Mahalalel lived an additional 830 years after he had Jared.',
+        VERSE: '{} 5:16'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Mahalalel have more children after Jared?',
+        ANSWER: 'Mahalalel did have more children after Jared.',
+        VERSE: '{} 5:16'.format(Book.genesis)
+    },
+    # 4
+    {
+        QUESTION: 'How many years did Mahalalel live?',
+        ANSWER: 'Mahalalel lived a total of 895 years.',
+        VERSE: '{} 5:17'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Mahalalel die?',
+        ANSWER: 'Mahalalel died at the age of 895 years old.',
+        VERSE: '{} 5:17'.format(Book.genesis)
+    }
+    # 5
+    ,
+    {
+        QUESTION: 'At what age did Jared have Enoch?',
+        ANSWER: 'Enoch was born when Jared was 162 years old.',
+        VERSE: '{} 5:18'.format(Book.genesis)
+    },
+    # 6
+    {
+        QUESTION: 'How many years did Jared live after he had Enoch?',
+        ANSWER: 'Jared lived an additional 800 years after he had Enoch.',
+        VERSE: '{} 5:19'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'Did Jared have more children after Enoch?',
+        ANSWER: 'Jared did have more children after Enoch.',
+        VERSE: '{} 5:19'.format(Book.genesis)
+    },
+    # 7
+    {
+        QUESTION: 'How many years did Jared live?',
+        ANSWER: 'Jared lived a total of 962 years.',
+        VERSE: '{} 5:20'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Jared die?',
+        ANSWER: 'Mahalalel died at the age of 962 years old.',
+        VERSE: '{} 5:20'.format(Book.genesis)
+    }
 
+    # 8
+    ,
+    {
+        QUESTION: 'At what age did Enoch have Methuselah?',
+        ANSWER: 'Methuselah was born when Enoch was 65 years old.',
+        VERSE: '{} 5:21'.format(Book.genesis)
+    },
+    # 9
+    {
+        QUESTION: 'How many years did Enoch live after he had Methuselah?',
+        ANSWER: 'Enoch did not die, he walked faithfully with God an additional 300 years after he had Methuselah, '
+                'then God took him without seeing death.',
+        VERSE: '{} 5:22, {} 5:24, {} 11:5'.format(Book.genesis, Book.genesis, Book.hebrews)
+    },
+    {
+        QUESTION: 'Did Enoch have more children after Methuselah?',
+        ANSWER: 'Enoch did have more children after Methuselah.',
+        VERSE: '{} 5:22'.format(Book.genesis)
+    },
+    # 10
+    {
+        QUESTION: 'How many years did Enoch live?',
+        ANSWER: 'Enoch lived a total of 365 years before God took him.',
+        VERSE: '{} 5:23'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Enoch die?',
+        ANSWER: 'Enoch did not die, he lived 365 years before God took him without seeing death.',
+        VERSE: '{} 5:23-{} 5:24, {} 11:5'.format(Book.genesis, Book.genesis, Book.hebrews)
+    },
+    # 11
+    {
+        QUESTION: 'Who walked faithfully with God?',
+        ANSWER: 'Enoch walked faithfully with God, because of that God took him.',
+        VERSE: '{} 5:24'.format(Book.genesis)
+
+    },
+    {
+        QUESTION: 'Why did God take Enoch?',
+        ANSWER: "God took Enoch because he walked faithfully in God's eyes.",
+        VERSE: '{} 5:24'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Methuselah have Lamech?',
+        ANSWER: 'Lamech was born when Methuselah was 187 years old.',
+        VERSE: '{} 5:25'.format(Book.genesis)
+    }
 ]

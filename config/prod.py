@@ -8,3 +8,4 @@ def get_prod_keys():
         'mw_dict_key': os.environ['MW_DICT_KEY'],
         'mw_thesaurus_key': os.environ['MW_THESAURUS_KEY']
     }
+    return keys

@@ -2,76 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb52694-370b-44f8-9078-36f964e7a23d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bible-it-Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bible-it-Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bi_classes/biblecalendar.py" beforeDir="false" afterPath="$PROJECT_DIR$/bi_classes/biblecalendar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bible_db_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/bible_db_setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dev.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/Book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/answered_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/answered_questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/bible_breakdown.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/bible_breakdown.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/biblibal_figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/biblibal_figures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/civilizations.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/civilizations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/historical_periods.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/historical_periods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/periods.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/periods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/databse_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/databse_connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http_call/api/meeriam/mw_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/http_call/api/meeriam/mw_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements/req.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/column.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/figureColors.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/figureColors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/Untitled-1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/Untitled-1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/timeline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sample_timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sample_timeline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/timeline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/string_matching.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/string_matching.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_calendar.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_calendar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_pos.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/question_matcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/question_matcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Click-7.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Click-7.0.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.0.2.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.0.2.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Jinja2-2.11.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Jinja2-2.11.1.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/MarkupSafe-1.1.1-py3.8.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/MarkupSafe-1.1.1-py3.8.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/MarkupSafe-1.1.1-py3.8.egg-info/installed-files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/MarkupSafe-1.1.1-py3.8.egg-info/installed-files.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/SQLAlchemy-1.3.13-py3.8.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/SQLAlchemy-1.3.13-py3.8.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/SQLAlchemy-1.3.13-py3.8.egg-info/installed-files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/SQLAlchemy-1.3.13-py3.8.egg-info/installed-files.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Werkzeug-0.16.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Werkzeug-0.16.1.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2019.11.28.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2019.11.28.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/easy-install.pth" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/easy-install.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/fuzzywuzzy-0.17.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/fuzzywuzzy-0.17.0.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.8.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.8.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/itsdangerous-1.1.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/itsdangerous-1.1.0.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pip-19.0.3-py3.8.egg/EGG-INFO/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-19.0.3-py3.8.egg/EGG-INFO/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/requests-2.22.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/requests-2.22.0.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/setuptools.pth" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/setuptools.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/urllib3-1.25.8.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/urllib3-1.25.8.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8-script.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8-script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8.exe.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install-script.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/easy_install-script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/easy_install.exe.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip-script.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip-script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip.exe.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip3-script.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip3-script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip3.8-script.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip3.8-script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip3.8.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip3.8.exe.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip3.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip3.exe.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,25 +76,29 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="743" y="297" width="426" height="507" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1585319285552" />
-    <state width="1874" height="281" key="GridCell.Tab.0.bottom" timestamp="1585844381319">
+    <state width="1874" height="281" key="GridCell.Tab.0.bottom" timestamp="1585955106013">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="281" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1585844381319" />
-    <state width="1874" height="281" key="GridCell.Tab.0.center" timestamp="1585844381318">
+    <state width="1874" height="281" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1585955106013" />
+    <state width="1874" height="281" key="GridCell.Tab.0.center" timestamp="1585955106013">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="281" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1585844381318" />
-    <state width="1874" height="281" key="GridCell.Tab.0.left" timestamp="1585844381317">
+    <state width="1874" height="281" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1585955106013" />
+    <state width="1874" height="281" key="GridCell.Tab.0.left" timestamp="1585955106013">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="281" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1585844381317" />
-    <state width="1874" height="281" key="GridCell.Tab.0.right" timestamp="1585844381318">
+    <state width="1874" height="281" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1585955106013" />
+    <state width="1874" height="281" key="GridCell.Tab.0.right" timestamp="1585955106013">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="281" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1585844381318" />
+    <state width="1874" height="281" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1585955106013" />
     <state x="464" y="188" width="1026" height="840" key="SettingsEditor" timestamp="1585319864040">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="464" y="188" width="1026" height="840" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1585319864040" />
+    <state x="623" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1586007227179">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="623" y="258" width="672" height="678" key="search.everywhere.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1586007227179" />
   </component>
 </project>

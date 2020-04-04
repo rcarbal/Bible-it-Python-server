@@ -6,10 +6,10 @@ from config.prod import get_prod_keys
 
 def get_keys():
     print("Inside keys.py >> get_keys()")
-    if 'HOME' in os.environ and os.environ['HOME'] == 'production':
+    if 'BIBLE_HOME' in os.environ and os.environ['BIBLE_HOME'] == 'production':
         print("Found os.environ HOME returning home")
         keys = get_prod_keys()
-        return "Heroku"
+        return keys
 
     else:
         print("Inside DEV machuin returning get_dev-keys()")

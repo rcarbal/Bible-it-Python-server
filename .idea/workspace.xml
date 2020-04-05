@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6fb52694-370b-44f8-9078-36f964e7a23d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -72,6 +71,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="707" y="358" width="498" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586028260164">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="707" y="358" width="498" height="384" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1920.1055@0.25.1920.1055" timestamp="1586028260164" />
     <state x="743" y="297" width="426" height="507" key="FileChooserDialogImpl" timestamp="1585319285552">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>

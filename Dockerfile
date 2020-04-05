@@ -1,4 +1,5 @@
 FROM python:3.7-alpine
+#ENV BIBLE_HOME=production
 
 #RUN apt-get update -y && \
 #    apt-get install -y python-pip python-dev

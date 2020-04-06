@@ -2,9 +2,9 @@ version: '3.7'
 
 services:
   bibleit:
-    build:
-      context: .
-      dockerfile: Dockerfile
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
     image: bibleit/bibleit-flask:0.1.0
     ports:
       - "5000:5000"

@@ -374,6 +374,8 @@ if __name__ == '__main__':
     print("Bible-it Server Started ==================================================>")
     BIBLE_STRING = get_complete_bible('./bible-json/NIV.json')
     app.secret_key = 'super_secret_key'
+    bible_home = str(os.environ.get("BIBLE_HOME"))
+    print("==================================================>>>> BIBLE_HOME: {}".format(bible_home))
     port = int(os.environ.get("PORT", 5000))
     app.debug = True
     app.run(host='0.0.0.0', port=port)

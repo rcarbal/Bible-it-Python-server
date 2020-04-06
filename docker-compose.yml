@@ -5,7 +5,7 @@ services:
 #    build:
 #      context: .
 #      dockerfile: Dockerfile
-    image: bibleit/bibleit-flask:0.1.0
+    image: bibleit/bibleit-flask:latest
     ports:
       - "5000:5000"
     restart: always

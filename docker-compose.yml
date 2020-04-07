@@ -2,15 +2,19 @@ version: '3.7'
 
 services:
   bibleit:
+    build:
+      context: .
+      target: prod
 #    build:
 #      context: .
 #      dockerfile: Dockerfile
     image: bibleit/bibleit-flask:latest
     ports:
       - "5000:5000"
+      - "5678:5678"
     restart: always
     environment:
       - BIBLE_HOME=production
-      - "RAPID_KEY=${RAPID_KEY}"
-      - "MW_DICT_KEY=${MW_DICT_KEY}"
-      - "MW_THESAURUS_KEY=${MW_THESAURUS_KEY}"
+      - RAPID_KEY=${RAPID_KEY}
+      - MW_DICT_KEY=${MW_DICT_KEY}
+      - MW_THESAURUS_KEY=${MW_THESAURUS_KEY}

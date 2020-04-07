@@ -1,12 +1,15 @@
 import requests
 from config.keys import get_keys
 import json
+import sys
+# import pdb
 
 
 def get_mw_definition(word):
     keys = get_keys()
+    # pdb.set_trace()
 
-    url = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/{}?key={}".format(word,
+    url = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/{}?key={}'.format(word,
                                                                                              keys['mw_dict_key'])
 
     response = requests.request("GET", url)
@@ -17,8 +20,8 @@ def get_mw_definition(word):
 def get_mw_synonym(word):
     keys = get_keys()
 
-    url = "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{}?key={}".format(word
-                                                                                            ,keys['mw_thesaurus_key'])
+    url = 'https://www.dictionaryapi.com/api/v3/references/thesaurus/json/{}?key={}'.format(word
+                                                                                            , keys['mw_thesaurus_key'])
 
     response = requests.request("GET", url)
     res_json = json.loads(response.text)

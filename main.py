@@ -21,7 +21,16 @@ from constants.answered_questions import ANSWERED_QUESTION
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-BIBLE_STRING = ""
+# Running startup 
+bible_home = str(os.environ.get("BIBLE_HOME"))
+nvi_file = ""
+if bible_home == 'production':
+    nvi_file = "/app/NIV.json"
+else:
+    nvi_file = "NIV.json"
+
+BIBLE_STRING = get_complete_bible(nvi_file)
+# End of startup
 
 app = Flask(__name__)
 
@@ -32,6 +41,7 @@ engine = create_engine('sqlite:///database/bibledatabase.db?check_same_thread=Fa
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
+
 
 
 @app.route('/')
@@ -280,6 +290,7 @@ def timeline_test():
 def word_definition():
     query_param = None
     if request.method == 'GET':
+        print("Inside word_definition() ==========>>>>>>>>>>")
 
         if 'word' in request.args:
             query_param = request.args['word']
@@ -372,10 +383,9 @@ def rapid_api_word_definitions():
 
 if __name__ == '__main__':
     print("Bible-it Server Started ==================================================>")
-    BIBLE_STRING = get_complete_bible('./bible-json/NIV.json')
     app.secret_key = 'super_secret_key'
-    bible_home = str(os.environ.get("BIBLE_HOME"))
+    # bible_home = str(os.environ.get("BIBLE_HOME"))
     print("==================================================>>>> BIBLE_HOME: {}".format(bible_home))
     port = int(os.environ.get("PORT", 5000))
-    app.debug = True
+    app.debug = bool(os.environ.get("DEBUG", True))
     app.run(host='0.0.0.0', port=port)

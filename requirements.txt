@@ -2,3 +2,4 @@ fuzzywuzzy
 requests
 sqlalchemy
 Flask
+python-dotenv

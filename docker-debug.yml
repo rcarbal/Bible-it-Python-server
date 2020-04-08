@@ -2,6 +2,9 @@ version: '3.7'
 
 services:
   bibleit:
+    build:
+      context: .
+      target: debug
 #    build:
 #      context: .
 #      dockerfile: Dockerfile

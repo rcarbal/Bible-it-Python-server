@@ -15,6 +15,7 @@ chmod +x /usr/local/bin/docker-compose
 # WorkingDirectory=[whatever you have below]
 mkdir /srv/docker
 curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/rcarbal/Bible-it-Server/master/docker-compose.yml
+curl -o /srv/docker/Dockerfile https://raw.githubusercontent.com/rcarbal/Bible-it-Server/master/Dockerfile
 
 # copy in systemd unit file and register it so our compose file runs
 # on system restart

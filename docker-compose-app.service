@@ -12,7 +12,9 @@ Type=oneshot
 RemainAfterExit=yes
 # match the below to wherever you copied your docker-compose.yml
 WorkingDirectory=/srv/docker
-ExecStart=/usr/local/bin/docker-compose build --pull && docker-compose up -d
+#ExecStart=/usr/local/bin/docker-compose build --pull && docker-compose up -d
+ExecStart=/usr/local/bin/docker-compose up -d
+
 ExecStop=/usr/local/bin/docker-compose down && docker image rm bibleit/bibleit-flask:latest
 TimeoutStartSec=0
 

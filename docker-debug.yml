@@ -7,7 +7,7 @@ services:
       target: debug
 #    build:
 #      context: .
-#      dockerfile: Dockerfile
+#      dockerfile: DebugDockerfile
     image: bibleit/bibleit-flask:latest
     ports:
       - "5000:5000"

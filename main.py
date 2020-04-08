@@ -43,11 +43,10 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
-
 @app.route('/')
 def root():
     print("On root")
-    return render_template('search_word.html')
+    return render_template('rd_search.html')
 
 
 @app.route('/word_search')

@@ -43,6 +43,12 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
+@app.route('/test')
+def test():
+    print("On root")
+    return render_template('test.html')
+
+
 @app.route('/')
 def root():
     print("On root")

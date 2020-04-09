@@ -57,6 +57,10 @@ def search():
     elif 'word' in request.args:
         query_param = request.args['word']
 
+    q_length = len(query_param)
+    if q_length < 1 or query_param == " " or query_param is None:
+        return '', 204
+
     # Check number of words in the user search
     # Render template with answer to question
     if len(query_param.split()) > 1:

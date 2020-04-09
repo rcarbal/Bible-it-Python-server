@@ -7,7 +7,7 @@ VERSE = 'verse'
 ANSWERED_QUESTION = [
     {
         QUESTION: 'when did God create the heavens and the earth?',
-        ANSWER: 'in the beginning was everything created by God.',
+        ANSWER: 'In the beginning everything was created by God.',
         VERSE: '{} 1:1'.format(Book.genesis)
     },
     {
@@ -27,7 +27,7 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'was the Holy Spirit present on earth in the beginning?',
-        ANSWER: 'the spirit of God was hovering over the waters before the earth was ordered.',
+        ANSWER: 'The spirit of God was hovering over the waters before the earth was ordered.',
         VERSE: '{} 1:2'.format(Book.genesis)
     },
     {
@@ -133,8 +133,8 @@ ANSWERED_QUESTION = [
         VERSE: '{} 1:18'.format(Book.genesis)
     },
     {
-        QUESTION: 'when did God create the sun, moon and stars',
-        ANSWER: "God created the sun, moon and stars on the fourth day",
+        QUESTION: 'when did God create the sun, moon and stars?',
+        ANSWER: "God created the sun, moon and stars on the fourth day.",
         VERSE: '{} 1:14-{} 1:19'.format(Book.genesis, Book.genesis)
     },
     {

@@ -42,6 +42,7 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+
 @app.route('/')
 def root():
     print("On root")
@@ -81,7 +82,7 @@ def search():
 
         # print("best question {}".format(best_matched_string))
         #         # json_response = json.dumps(best_matched_string)
-        return render_template('word_search_result.html', query=best_matched_string)
+        return render_template('rd_search_results.html', query=best_matched_string)
 
     verses = session.query(Verse).filter(Verse.verse_string.ilike('%' + query_param + '%')). \
         join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())
@@ -217,7 +218,7 @@ def search():
             second_exact.append(completed_dictionary)
             continue
 
-    return render_template('word_search_result.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact,
+    return render_template('rd_search_results.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact,
                            count=len(exact),
                            word=query_param, second_count=len(second_exact))
 

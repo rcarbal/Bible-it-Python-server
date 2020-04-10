@@ -7,7 +7,7 @@ VERSE = 'verse'
 ANSWERED_QUESTION = [
     {
         QUESTION: 'when did God create the heavens and the earth?',
-        ANSWER: 'in the beginning was everything created by God.',
+        ANSWER: 'In the beginning everything was created by God.',
         VERSE: '{} 1:1'.format(Book.genesis)
     },
     {
@@ -27,7 +27,7 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'was the Holy Spirit present on earth in the beginning?',
-        ANSWER: 'the spirit of God was hovering over the waters before the earth was ordered.',
+        ANSWER: 'The spirit of God was hovering over the waters before the earth was ordered.',
         VERSE: '{} 1:2'.format(Book.genesis)
     },
     {
@@ -118,7 +118,7 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: "what is the purpose for the sun and moon.",
-        ANSWER: "God purpose for the sun and moon were and still are to bring light over the earth.",
+        ANSWER: "God's purpose for the sun and moon were and still are to bring light over the earth.",
         VERSE: "{} 1:15-{} 1:18".format(Book.genesis, Book.genesis)
     },
     {
@@ -133,18 +133,18 @@ ANSWERED_QUESTION = [
         VERSE: '{} 1:18'.format(Book.genesis)
     },
     {
-        QUESTION: 'when did God create the sun, moon and stars',
-        ANSWER: "God created the sun, moon and stars on the fourth day",
+        QUESTION: 'when did God create the sun, moon and stars?',
+        ANSWER: "God created the sun, moon and stars on the fourth day.",
         VERSE: '{} 1:14-{} 1:19'.format(Book.genesis, Book.genesis)
     },
     {
-        QUESTION: 'What was God command to create fish and birds',
+        QUESTION: 'what was God command to create fish and birds',
         ANSWER: "God's command to create fish and birds can be found in Genesis chapter 1 verse 20.",
         VERSE: '{} 1:20'.format(Book.genesis)
     },
     {
         QUESTION: "did God create the all the creatures in the sea, and all the creautres that fly?",
-        ANSWER: 'on the fifth day of creation God created all animals that live in the sea and all the animals that '
+        ANSWER: 'On the fifth day of creation God created all animals that live in the sea and all the animals that '
                 'fly in the sky.',
         VERSE: "{} 1:21".format(Book.genesis)
     },

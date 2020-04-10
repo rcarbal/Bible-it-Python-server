@@ -1,16 +1,18 @@
 {% include "header.html" %}
 
+<!-- container start  -->
+
 <div class="jumbotron jumbotron-fluid vertical-center mt-5">
     <div class="container">
         <h1 class="display-4">Bible Search</h1>
         <div class="lead">
             <form class="my-2 my-lg-0" action="{{url_for('search')}}" method='GET' id="searchForm">
                 {% if query is defined %}
-                    <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
-                        autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}">
+                <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
+                    autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}">
                 {% else %}
-                    <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
-                        autocomplete="off" onkeyup="echoWord()" value="{{word}}">
+                <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
+                    autocomplete="off" onkeyup="echoWord()" value="{{word}}">
                 {% endif %}
                 <div id="previewDiv" class="search-bar-results"></div>
 
@@ -25,14 +27,14 @@
 
 {% if query is defined %}
 <div class="card">
-    
+
     <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>{{query[1]}}</p>
-        <footer class="blockquote-footer"><cite title="Source Title">{{query[2]}}</cite></footer>
-      </blockquote>
+        <blockquote class="blockquote mb-0">
+            <p>{{query[1]}}</p>
+            <footer class="blockquote-footer"><cite title="Source Title">{{query[2]}}</cite></footer>
+        </blockquote>
     </div>
-  </div>
+</div>
 {% endif %}
 
 <!-- Question's answer display end -->
@@ -49,7 +51,7 @@
         <div class="card-header" id="headingOne">
             <h2 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                        aria-expanded="true" aria-controls="collapseOne">
+                    aria-expanded="true" aria-controls="collapseOne">
                     <div>Exact Search Results: {{count}}</div>
                 </button>
             </h2>
@@ -71,14 +73,13 @@
                             </p>
                             <!-- Modal Exact word info-->
                             <div class="modal fade" id="exampleModalLong{{i.index}}" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word="{{word}}"
-                                 data-pos="{{i.pos}}" data-modal="1" data-index="{{i.index}}">
+                                aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-word="{{word}}"
+                                data-pos="{{i.pos}}" data-modal="1" data-index="{{i.index}}">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLongTitle">{{word}} Information</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -86,8 +87,7 @@
 
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                                             </button>
                                         </div>
                                     </div>
@@ -96,11 +96,9 @@
 
                             <!-- Modal Exact read Chapter -->
                             <div class="modal fade" id="readChapter{{i.index}}" tabindex="-1" role="dialog"
-                                 aria-labelledby="readChapterTitle" aria-hidden="true"
-                                 data-section="{{i.section_name}}" data-book="{{i.book_name}}"
-                                 data-chapter="{{i.chapter_id}}" data-verse="{{i.verse_number}}"
-                                 data-book_id="{{i.book_id}}"
-                            >
+                                aria-labelledby="readChapterTitle" aria-hidden="true" data-section="{{i.section_name}}"
+                                data-book="{{i.book_name}}" data-chapter="{{i.chapter_id}}"
+                                data-verse="{{i.verse_number}}" data-book_id="{{i.book_id}}">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -127,7 +125,7 @@
                             <!--End of Modal-->
 
                             <button type="button" class="btn btn-outline-info btn-sm float-right" data-toggle="modal"
-                                    data-target="#readChapter{{i.index}}">
+                                data-target="#readChapter{{i.index}}">
                                 Read chapter
                             </button>
                         </div>
@@ -150,7 +148,7 @@
         <div class="card-header" id="headingtwo">
             <h2 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
-                        aria-expanded="true" aria-controls="collapseOne2">
+                    aria-expanded="true" aria-controls="collapseOne2">
                     <div>Inexact Search Results: {{second_count}}</div>
                 </button>
             </h2>
@@ -172,15 +170,14 @@
                                 <!-- Modal 2 Inexact word info -->
                             </p>
                             <div class="modal fade" id="exampleModalInexact{{b.index}}" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalLongTitle2" aria-hidden="true" data-word2="{{b.main_word}}"
-                                 data-pos="{{b.pos}}" data-modal="2" data-index="{{b.index}}">
+                                aria-labelledby="exampleModalLongTitle2" aria-hidden="true" data-word2="{{b.main_word}}"
+                                data-pos="{{b.pos}}" data-modal="2" data-index="{{b.index}}">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLongTitle2">{{b.main_word}}
                                                 Information</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -188,8 +185,7 @@
 
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                                             </button>
                                         </div>
                                     </div>
@@ -198,13 +194,12 @@
 
                             <!-- End on modal -->
 
-                             <!-- Modal Inexact read Chapter -->
+                            <!-- Modal Inexact read Chapter -->
                             <div class="modal fade" id="readChapterInexact{{b.index}}" tabindex="-1" role="dialog"
-                                 aria-labelledby="readChapterInexactTitle" aria-hidden="true"
-                                 data-section="{{b.section_name}}" data-book="{{b.book_name}}"
-                                 data-chapter="{{b.chapter_id}}" data-verse="{{b.verse_number}}"
-                                 data-book_id="{{b.book_id}}"
-                            >
+                                aria-labelledby="readChapterInexactTitle" aria-hidden="true"
+                                data-section="{{b.section_name}}" data-book="{{b.book_name}}"
+                                data-chapter="{{b.chapter_id}}" data-verse="{{b.verse_number}}"
+                                data-book_id="{{b.book_id}}">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -231,7 +226,7 @@
                             <!--End of Modal-->
 
                             <button type="button" class="btn btn-outline-info btn-sm float-right" data-toggle="modal"
-                                    data-target="#readChapterInexact{{b.index}}">
+                                data-target="#readChapterInexact{{b.index}}">
                                 Read chapter
                             </button>
 
@@ -246,7 +241,5 @@
 
 </div>
 {% endif %}
-
-<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
 
 {% include "footer.html" %}

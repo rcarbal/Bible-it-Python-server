@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- initial 1.0 is 1 to 1 between DeviceIndependentPixels and CSS pixels -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibleit.co</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/search.css') }}" />
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Bibleit.co</a>
+    </nav>
+
+    <!-- Start of the container -->
+    <!-- Search Bar -->
+    <div class="container mt-1">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-7">
+                <!--Search Bar-->
+                <form class="my-2 my-lg-0" action="{{url_for('search')}}" method='GET' id="searchForm">
+                    {% if query is defined %}
+                    <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
+                        autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}" autocorrect="off" autocapitalize="none">
+                    {% else %}
+                    <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
+                           autocorrect="off" autocapitalize="none" autocomplete="off" onkeyup="echoWord()" value="{{word}}" >
+                    {% endif %}
+                    <div id="previewDiv" class="search-bar-results"></div>
+
+                    <input class="btn btn-primary btn-lg mt-1" type='submit' value='Bibleit'>
+
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Question's answer display start -->
+        {% if query is defined %}
+        <div class="card mt-5   ">
+
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{query[1]}}</p>
+                    <footer class="blockquote-footer"><cite title="Source Title">{{query[2]}}</cite></footer>
+                </blockquote>
+            </div>
+        </div>
+        {% endif %}
+        <!-- Question's answer display END -->
+
+
+        <!-- START of exact and inexact -->
+        {% if word is defined %}
+        <br><br>
+        <div>Word search result: <strong>{{word}}</strong></div>
+
+        <br>
+        <!-- Bootstrap first collapsible search result-->
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            <div>Exact Search Results: {{count}}</div>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div>
+                        <ol class="list-group list-group-flush">
+                            {% for i in verses %}
+                            <li class="list-group-item">
+                                <div class="card-body">
+                                    <div class="float-right text-muted">{{i.index}}</div>
+                                    <h6 class="card-subtitle mb-2">{{i.section_name}}</h6>
+                                    <h6 class="card-subtitle mb-2">Book: {{i.book_name}}</h6>
+                                    <h6 class="card-subtitle mb-2"> Chapter: {{i.chapter_number}}</h6>
+                                    <h6 class="card-subtitle mb-2"> Verse: {{i.verse_number}}</h6>
+                                    <p class="card-text">
+                                        {{ i.verse_string }}
+                                    </p>
+                                    <button type="button" class="btn btn-outline-info btn-sm float-right"
+                                        data-toggle="modal" data-target="#reusableModal" data-section="{{i.section_name}}"
+                                            data-book="{{i.book_name}}" data-chapter_id="{{i.chapter_id}}"
+                                            data-verse="{{i.verse_number}}" data-book_id="{{i.book_id}}" data-modalType="2"
+                                            data-chapter="{{i.chapter_number}}">
+                                        Read chapter
+                                    </button>
+                                </div>
+                            </li>
+
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================= -->
+
+        <!-- Bootstrap first collapsible search result-->
+        <div class="accordion" id="accordionExample2">
+            <div class="card">
+                <div class="card-header" id="headingtwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
+                            aria-expanded="true" aria-controls="collapseOne2">
+                            <div>Inexact Search Results: {{second_count}}</div>
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne2" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample2">
+                    <div>
+                        <ol class="list-group list-group-flush">
+                            {% for b in second_verses %}
+                            <li class="list-group-item">
+                                <div class="card-body">
+                                    <div class="float-right text-muted">{{b.index}}</div>
+                                    <h6 class="card-subtitle mb-2">{{b.section_name}}</h6>
+                                    <h6 class="card-subtitle mb-2">Book: {{b.book_name}}</h6>
+                                    <h6 class="card-subtitle mb-2"> Chapter: {{b.chapter_number}}</h6>
+                                    <h6 class="card-subtitle mb-2"> Verse: {{b.verse_number}}</h6>
+                                    <p class="card-text">
+                                        {{ b.verse_string }}
+                                    </p>
+
+                                    <button type="button" class="btn btn-outline-info btn-sm float-right"
+                                        data-toggle="modal" data-target="#reusableModal"  data-section="{{b.section_name}}"
+                                            data-book="{{b.book_name}}" data-chapter_id="{{b.chapter_id}}"
+                                            data-verse="{{b.verse_number}}" data-book_id="{{b.book_id}}" data-modalType="2"
+                                            data-chapter="{{b.chapter_number}}">
+                                        Read chapter
+                                    </button>
+
+                                </div>
+
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        {% endif %}
+        <!-- END of exact and inexact -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="reusableModal" tabindex="-1" role="dialog" aria-labelledby="reusableModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reusableModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!-- end of container -->
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/modal.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
+
+<!--INLINE CODE-->
+<!--<form class="form-inline container row" action="{{url_for('search')}}" method='GET' id="searchForm">-->
+
+<!--    <div class="col-10">-->
+<!--        <div class="form-group mx-sm-3 mb-2 mr-2">-->
+<!--            <input class="form-control" type='text' id="searchInput">-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="col-2">-->
+<!--        <input class="btn btn-primary mb-2" type='submit' value='Bibleit'>-->
+
+<!--    </div>-->
+<!--</form>-->

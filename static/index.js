@@ -29,24 +29,6 @@ $(document).ready(function() {
     });
   });
 
-function getChapter(bookId, chapter, verse, ol){
-    axios.get(`/api/chapter?book=${bookId}&chapter=${chapter}&verse=${verse}`)
-        .then((response)=>{            
-
-            // loop through all the verses and add them tho the ordered list
-            const verses = response['data']
-
-            for (verse in verses){
-                const verseString = verses[verse];
-
-                let li = document.createElement('li');
-                li.innerHTML = verseString;
-                ol.appendChild(li);
-            }
-
-        });
-}
-
 function echoWord(){
     
     if (!EVENT_LISTENER_RUNNING){

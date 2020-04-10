@@ -94,7 +94,10 @@
                                         {{ i.verse_string }}
                                     </p>
                                     <button type="button" class="btn btn-outline-info btn-sm float-right"
-                                        data-toggle="modal" data-target="#readChapter{{i.index}}">
+                                        data-toggle="modal" data-target="#reusableModal" data-section="{{i.section_name}}"
+                                            data-book="{{i.book_name}}" data-chapter_id="{{i.chapter_id}}"
+                                            data-verse="{{i.verse_number}}" data-book_id="{{i.book_id}}" data-modalType="2"
+                                            data-chapter="{{i.chapter_number}}">
                                         Read chapter
                                     </button>
                                 </div>
@@ -138,7 +141,10 @@
                                     </p>
 
                                     <button type="button" class="btn btn-outline-info btn-sm float-right"
-                                        data-toggle="modal" data-target="#reusableModal">
+                                        data-toggle="modal" data-target="#reusableModal"  data-section="{{b.section_name}}"
+                                            data-book="{{b.book_name}}" data-chapter_id="{{b.chapter_id}}"
+                                            data-verse="{{b.verse_number}}" data-book_id="{{b.book_id}}" data-modalType="2"
+                                            data-chapter="{{b.chapter_number}}">
                                         Read chapter
                                     </button>
 

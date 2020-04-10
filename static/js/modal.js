@@ -1,7 +1,6 @@
 $('#reusableModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   data = $(event.relatedTarget.dataset)[0];
-  console.log(data);
   var modal = $(this);
 
   // setup word difinition information
@@ -9,9 +8,30 @@ $('#reusableModal').on('show.bs.modal', function (event) {
     setupWordModal(modal, data)
   }
   else {
-
+    console.log(data)
+    setupChapterModal(data, modal)
   }
 })
+
+function setupChapterModal(dataRef, modal){
+       let section = dataRef.section
+       let book = dataRef.book
+       let bookId = dataRef.book_id
+       let chapter = dataRef.chapter
+       let chapterId = dataRef.chapter_id
+       let verse = dataRef.verse
+
+       modal.find('.modal-title').text(`${book}: Chapter: ${chapter}`)
+
+       // get the modal
+       let element = document.getElementsByClassName("modal-body")[0];
+       element.innerHTML = "";
+       // create the list
+       let ol = document.createElement('ol');
+       element.appendChild(ol)
+
+       getChapter(bookId, chapterId, verse, ol);
+}
 
 function setupWordModal(modal, dataReference) {
   let word = dataReference.word
@@ -59,84 +79,6 @@ function setupWordModal(modal, dataReference) {
   getDefinitions(word, ol, pos)
 }
 
-//$(document).on('show.bs.modal', '.fade', function (e) {
-//
-//    var modal = $(this).data('modal');
-//    var word;
-//
-//    if (modal == 1 || modal == 2) {
-//
-//        const index = $(this).data('index');
-//
-//        if (modal == 2) {
-//
-//            // sets up the inexact word list
-//            word = $(this).data('word2');
-//        } else {
-//
-//            // sets up the exact word list
-//            word = $(this).data('word');
-//        }
-//
-//        // Gets the POS
-//        var pos_list = $(this).data('pos');
-//
-//        // Officiial
-//        var pos;
-//        if(pos_list == 'PROPN'){
-//            pos = 'NOUN';
-//        }else{
-//            pos = pos_list;
-//        }
-//
-//        element = this.getElementsByClassName("modal-body")[0];
-//        element.innerHTML = "";
-//
-//        // create the definition header
-//        let definitionHeader = document.createElement('h6');
-//        definitionHeader.innerHTML = "-" + pos + " " + word;
-//
-//        // create the definition h6 element
-//        let headerEl = document.createElement('h6');
-//        headerEl.innerHTML = "- Definitions"
-//
-//        // create <hr> tag
-//        let hrTag = document.createElement('hr');
-//
-//
-//        // create the synonym header
-//        let synonymHeader = document.createElement('h6');
-//        synonymHeader.innerHTML = "- Synonyms Found in the bible NIV"
-//
-//        // create ordered list
-//        let ol = document.createElement('ol');
-//
-//        element.appendChild(definitionHeader);
-//        element.appendChild(headerEl);
-//        element.appendChild(ol);
-//        element.appendChild(hrTag);
-//        element.appendChild(synonymHeader);
-//
-//        // Call definitions urk
-//        getDefinitions(word, ol, pos)
-//    } else {
-//        let section = $(this).data('section');
-//        let book = $(this).data('book');
-//        let bookId = $(this).data('book_id');
-//        let chapter = $(this).data('chapter');
-//        let verse = $(this).data('verse');
-//
-//        // get the modal
-//        element = this.getElementsByClassName("modal-body")[0];
-//        element.innerHTML = "";
-//        // create the list
-//        let ol = document.createElement('ol');
-//        element.appendChild(ol)
-//
-//        getChapter(bookId, chapter, verse, ol);
-//    }
-//
-//});
 // Retrieves Definitions
 function getDefinitions(word, defintionOderedList, pos) {
   axios.get("/api/word/definition?word=" + word)
@@ -284,4 +226,37 @@ function getSynonyms(word, pos) {
               }
           }
       });
+}
+
+function getChapter(bookId, chapter, verse, ol){
+
+  const intToMatch = parseInt(verse);
+    axios.get(`/api/chapter?book=${bookId}&chapter=${chapter}&verse=${verse}`)
+        .then((response)=>{
+
+            // loop through all the verses and add them tho the ordered list
+            const verses = response['data']
+
+            var count = 1;
+
+            for (verse in verses){
+                const verseString = verses[verse];
+
+                let li = document.createElement('li');
+
+                // find the verse we need
+                if (intToMatch == count){
+                  // var strongEl = document.createElement("strong");
+                  // strongEl.innerHTML = verseString;
+                  li.innerHTML = `<strong><u>${verseString}</u></strong>`;
+                  li.classList.add("pt-2");
+                  li.classList.add("pb-2");
+                }else {
+                  li.innerHTML = verseString;
+                }
+                ol.appendChild(li);
+                count++;
+            }
+
+        });
 }

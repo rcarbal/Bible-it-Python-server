@@ -218,8 +218,8 @@ def search():
 
         if not match:
             index += 1
-            joinned_verse = " ".join(second_slipt_into_words)
-            markup_verse = Markup(joinned_verse)
+            joined_verse = " ".join(second_slipt_into_words)
+            markup_verse = Markup(joined_verse)
             completed_dictionary['verse_string'] = markup_verse
             completed_dictionary['index'] = index
             completed_dictionary['main_word'] = main_word

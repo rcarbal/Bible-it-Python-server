@@ -60,7 +60,7 @@ def search():
 
     q_length = len(query_param)
     if q_length < 1 or query_param == " " or query_param is None:
-        return '', 204
+        return render_template('rd_search.html')
 
     # Check number of words in the user search
     # Render template with answer to question
@@ -127,10 +127,12 @@ def search():
                 word = word.replace('?', "")
             if word == query_param:
                 index += 1
-                complete_words = remove_first_separator.replace(word, '<strong>' +
-                                                                '<a href="#" data-toggle="modal" data-target="'
-                                                                '#exampleModalLong' + str(
-                    index) + '"' + '>' + word + '</a> '
+                complete_words = remove_first_separator.replace(word, '<strong> <a href="#" data-toggle="modal" '
+                                                                + 'data-target="#reusableModal" '
+                                                                + 'data-word="' + word + '" '
+                                                                + 'data-modalType="1" '
+                                                                + 'data-pos="' + first_pos + '"'
+                                                                + '>' + word + '</a> '
                                                                 + '</strong>')
                 new_words = Markup(complete_words)
                 completed_dictionary['verse_string'] = new_words
@@ -144,7 +146,7 @@ def search():
     second_verses = session.query(Verse).filter(Verse.verse_string.like('%' + query_param + '%')). \
         join(Chapter).join(Book).order_by(Book.id.asc(), Chapter.chapter.asc(), Verse.verse_number.asc())
 
-    second_exact = []
+    inexact_results = []
     match = True
 
     index = 0
@@ -197,12 +199,19 @@ def search():
                     ind = index + 1
                     match = False
                     main_word = original_word
-                    original_word = original_word.replace(original_word, '<strong>' + '<a href="#" '
-                                                                                      'data-toggle="modal" '
-                                                                                      'data-target=" '
-                                                                                      '#exampleModalInexact' + str(ind)
-                                                          + '"' + '> '
-                                                          + original_word
+                    # complete_words = remove_first_separator.replace(word, '<strong> <a href="#" data-toggle="modal" '
+                    #                                                 + 'data-target="#reusableModal" '
+                    #                                                 + 'data-word="' + word + '" '
+                    #                                                 + 'data-modalType="1" '
+                    #                                                 + 'data-pos="' + first_pos + '"'
+                    #                                                 + '>' + word + '</a> '
+                    #                                                 + '</strong>')
+                    original_word = original_word.replace(original_word, '<strong>' + '<a href="#" data-toggle="modal" '
+                                                          + 'data-target="#reusableModal" '
+                                                          + 'data-word="' + original_word + '" '
+                                                          + 'data-modalType="1" '
+                                                          + 'data-pos="' + pos + '"'
+                                                          + '>' + original_word + '</a> '
                                                           + '</a>' + '</strong>')
 
             second_slipt_into_words.append(original_word)
@@ -215,12 +224,12 @@ def search():
             completed_dictionary['index'] = index
             completed_dictionary['main_word'] = main_word
             completed_dictionary['pos'] = pos
-            second_exact.append(completed_dictionary)
+            inexact_results.append(completed_dictionary)
             continue
 
-    return render_template('rd_search_results.html', verses=exact, pos_exact=pos_exact, second_verses=second_exact,
+    return render_template('rd_search_results.html', verses=exact, pos_exact=pos_exact, second_verses=inexact_results,
                            count=len(exact),
-                           word=query_param, second_count=len(second_exact))
+                           word=query_param, second_count=len(inexact_results))
 
 
 @app.route('/timeline', methods=['GET'])

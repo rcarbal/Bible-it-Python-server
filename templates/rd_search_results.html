@@ -32,10 +32,10 @@
                 <form class="my-2 my-lg-0" action="{{url_for('search')}}" method='GET' id="searchForm">
                     {% if query is defined %}
                     <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
-                        autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}">
+                        autocomplete="off" onkeyup="echoWord()" value="{{query[0]}}" autocorrect="off" autocapitalize="none">
                     {% else %}
                     <input id="searchInput" class="form-control mr-sm-2" type='search' size='50' name='word'
-                        autocomplete="off" onkeyup="echoWord()" value="{{word}}">
+                           autocorrect="off" autocapitalize="none" autocomplete="off" onkeyup="echoWord()" value="{{word}}" >
                     {% endif %}
                     <div id="previewDiv" class="search-bar-results"></div>
 
@@ -110,57 +110,80 @@
 
         <!-- ============================================================= -->
 
-<!-- Bootstrap first collapsible search result-->
-<div class="accordion" id="accordionExample2">
-    <div class="card">
-        <div class="card-header" id="headingtwo">
-            <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
-                    aria-expanded="true" aria-controls="collapseOne2">
-                    <div>Inexact Search Results: {{second_count}}</div>
-                </button>
-            </h2>
-        </div>
+        <!-- Bootstrap first collapsible search result-->
+        <div class="accordion" id="accordionExample2">
+            <div class="card">
+                <div class="card-header" id="headingtwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne2"
+                            aria-expanded="true" aria-controls="collapseOne2">
+                            <div>Inexact Search Results: {{second_count}}</div>
+                        </button>
+                    </h2>
+                </div>
 
-        <div id="collapseOne2" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample2">
-            <div>
-                <ol class="list-group list-group-flush">
-                    {% for b in second_verses %}
-                    <li class="list-group-item">
-                        <div class="card-body">
-                            <div class="float-right text-muted">{{b.index}}</div>
-                            <h6 class="card-subtitle mb-2">{{b.section_name}}</h6>
-                            <h6 class="card-subtitle mb-2">Book: {{b.book_name}}</h6>
-                            <h6 class="card-subtitle mb-2"> Chapter: {{b.chapter_number}}</h6>
-                            <h6 class="card-subtitle mb-2"> Verse: {{b.verse_number}}</h6>
-                            <p class="card-text">
-                                {{ b.verse_string }}
-                            </p>
-                            
-                            <button type="button" class="btn btn-outline-info btn-sm float-right" data-toggle="modal"
-                                data-target="#readChapterInexact{{b.index}}">
-                                Read chapter
-                            </button>
+                <div id="collapseOne2" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample2">
+                    <div>
+                        <ol class="list-group list-group-flush">
+                            {% for b in second_verses %}
+                            <li class="list-group-item">
+                                <div class="card-body">
+                                    <div class="float-right text-muted">{{b.index}}</div>
+                                    <h6 class="card-subtitle mb-2">{{b.section_name}}</h6>
+                                    <h6 class="card-subtitle mb-2">Book: {{b.book_name}}</h6>
+                                    <h6 class="card-subtitle mb-2"> Chapter: {{b.chapter_number}}</h6>
+                                    <h6 class="card-subtitle mb-2"> Verse: {{b.verse_number}}</h6>
+                                    <p class="card-text">
+                                        {{ b.verse_string }}
+                                    </p>
 
-                        </div>
+                                    <button type="button" class="btn btn-outline-info btn-sm float-right"
+                                        data-toggle="modal" data-target="#reusableModal">
+                                        Read chapter
+                                    </button>
 
-                    </li>
-                    {% endfor %}
-                </ol>
+                                </div>
+
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-</div>
+        </div>
 
 
         {% endif %}
         <!-- END of exact and inexact -->
 
+        <!-- Modal -->
+        <div class="modal fade" id="reusableModal" tabindex="-1" role="dialog" aria-labelledby="reusableModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reusableModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div> <!-- end of container -->
 
 
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/modal.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

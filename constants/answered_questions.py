@@ -851,7 +851,7 @@ ANSWERED_QUESTION = [
         QUESTION: 'Was Cain afraid of the curse God placed on him?',
         ANSWER: 'Cain was afraid of being driven from the land, and hidden from God\'s presence. He was afraid of '
                 'being killed by whoever found him. ',
-        VERSE: '{} 4:13-{} 4-14'
+        VERSE: '{} 4:13-{} 4-14'.format(Book.genesis, Book.genesis)
     },
     {
         QUESTION: 'Did God protect Cain from being murdered?',

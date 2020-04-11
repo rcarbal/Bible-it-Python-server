@@ -32,8 +32,10 @@
 <!--                Search Bar-->
                 <form action="{{url_for('search')}}" method='GET' id="searchForm">
 
-                    <input id="searchInput" class="form-control input-lg mt-3" type='text' size='50' name='word'
-                        autocomplete="off" onkeyup="echoWord()" autocorrect="off" autocapitalize="none">
+                    <div class="form-group position-relative m-0">
+                        <input id="searchInput" class="form-control input-lg mt-3" type='search' size='50' name='word'
+                               autocomplete="off" onkeyup="echoWord()" autocorrect="off" autocapitalize="none">
+                    </div>
                     <div id="previewDiv" class="search-bar-results"></div>
     
                     <input class="btn btn-primary btn-lg mt-4" type='submit' value='Bibleit'>
@@ -43,6 +45,7 @@
         </div>
 
     </div>
+
 
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

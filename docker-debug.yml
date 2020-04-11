@@ -10,6 +10,7 @@ services:
 #      dockerfile: DebugDockerfile
     image: bibleit/bibleit-flask:latest
     ports:
+      - "80:80"
       - "5000:5000"
       - "5678:5678"
     restart: always

@@ -11,13 +11,12 @@ class StripeApi:
             line_items=[{
                 'name': 'Donation',
                 'description': 'Donation for Bibleit',
-                'images': ['https://example.com/t-shirt.png'],
+                'images': ['https://picsum.photos/280/320?random=4'],
                 'amount': amount,
                 'currency': 'usd',
                 'quantity': 1,
             }],
-            success_url='https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url='https://example.com/cancel',
+            success_url='http://localhost:8000/success?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url='http://localhost:8000/cancel',
         )
-
         return session

@@ -13,6 +13,7 @@ from database.db_classes_niv import Verse, Chapter, Book, Years, GeneralBiblePer
     BiblibicalFigures
 from http_call.api.rapidapi.call_rapid_api import get_definition, get_synonym
 from http_call.api.meeriam.mw_api import get_mw_definition, get_mw_synonym
+from stripe_calls.stripe_api import StripeApi
 from utilities.filereader_niv import get_complete_bible
 from utilities.word_process import remove_pos
 
@@ -377,6 +378,20 @@ def get_question_match():
         json_response = json.dumps(best_matched_string)
 
         return json_response
+
+
+@app.route('/api/stripe_session', methods=['GET'])
+def get_stripe_session():
+    if request.method == 'GET':
+        req_args = request.args
+
+        if 'amount' not in req_args:
+            return 'ERROR!!! no amount in request args'
+
+        amount_from_user = req_args['amount']
+        stripe_session = StripeApi.get_session(amount=amount_from_user)
+
+        return stripe_session
 
 
 # On last test rapid api was not returning response

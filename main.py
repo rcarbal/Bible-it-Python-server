@@ -380,6 +380,9 @@ def get_question_match():
         return json_response
 
 
+# =======================================================================================
+# Payment endpoints
+
 @app.route("/donate", methods=['GET'])
 def get_donation_page():
     return render_template('/payments/index.html')
@@ -398,18 +401,27 @@ def get_stripe_session():
         return stripe_session
 
 
-# On last test rapid api was not returning response
-# API is on hold.
-def rapid_api_word_definitions():
-    query_param = None
+@app.route('/donate/success', methods=['GET'])
+def get_successful_payment():
     if request.method == 'GET':
+        return render_template('/payments/payment_success.html')
 
-        if 'word' in request.args:
-            query_param = request.args['word']
 
-    definition = get_definition(query_param)
+# End of payments endpoints
+# =======================================================================================
 
-    return definition
+# # On last test rapid api was not returning response
+# # API is on hold.
+# def rapid_api_word_definitions():
+#     query_param = None
+#     if request.method == 'GET':
+#
+#         if 'word' in request.args:
+#             query_param = request.args['word']
+#
+#     definition = get_definition(query_param)
+#
+#     return definition
 
 
 if __name__ == '__main__':

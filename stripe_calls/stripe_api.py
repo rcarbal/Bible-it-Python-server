@@ -16,7 +16,7 @@ class StripeApi:
                 'currency': 'usd',
                 'quantity': 1,
             }],
-            success_url='http://localhost:8000/success?session_id={CHECKOUT_SESSION_ID}',
+            success_url='http://localhost:8000/donate/success?session_id={CHECKOUT_SESSION_ID}',
             cancel_url='http://localhost:8000/cancel',
         )
         return session

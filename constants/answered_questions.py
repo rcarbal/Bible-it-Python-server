@@ -292,12 +292,12 @@ ANSWERED_QUESTION = [
     },
     {
         QUESTION: 'what is the tree of life?',
-        ANSWER: 'the tree of life is on of the two trees God placed in the middle of the garden of Eden.',
+        ANSWER: 'the tree of life is one of the two trees God placed in the middle of the garden of Eden.',
         VERSE: '{} 2:9'.format(Book.genesis)
     },
     {
         QUESTION: 'what is the tree of knowledge of good and evil?',
-        ANSWER: 'the tree of life is on of the two trees God placed in the middle of the garden of Eden.',
+        ANSWER: 'the tree of life is one of the two trees God placed in the middle of the garden of Eden.',
         VERSE: '{} 2:9'.format(Book.genesis)
     },
     {

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibleit Donations</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/search.css') }}" />
+
+<script src="https://kit.fontawesome.com/fd7806e634.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <div class="main">
+        <div class="payment-form">
+            <h1>Bibleit Donations</h1>
+            <button id="buy-button">Donate</button>
+            
+        </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('pk_test_evkN5TJEfqd2bJkOWQg7GGaE001AY6XPXw');
+        var buyButton = document.getElementById('buy-button');
+        buyButton.addEventListener('click', function(event){
+            event.preventDefault();
+            stripe.redirectToCheckout({
+                sessionId: sessionId
+            });
+        });
+
+        var sessionId;
+
+        fetch('/api/stripe_session?amount=300', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // body: JSON.stringify({})
+        }).then(function(r){
+            return r.json();
+        }).then(function(response){
+            sessionId = response['id'];
+        });
+    </script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/modal.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+</body>
+</html>

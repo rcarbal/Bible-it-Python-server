@@ -380,6 +380,11 @@ def get_question_match():
         return json_response
 
 
+@app.route("/donate", methods=['GET'])
+def get_donation_page():
+    return render_template('/payments/index.html')
+
+
 @app.route('/api/stripe_session', methods=['GET'])
 def get_stripe_session():
     if request.method == 'GET':
@@ -390,7 +395,6 @@ def get_stripe_session():
 
         amount_from_user = req_args['amount']
         stripe_session = StripeApi.get_session(amount=amount_from_user)
-
         return stripe_session
 
 

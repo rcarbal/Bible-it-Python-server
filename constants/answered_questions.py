@@ -1,8 +1,11 @@
 from constants.Book import Book
 
+GENESIS = Book.genesis
 QUESTION = 'question'
 ANSWER = 'answer'
 VERSE = 'verse'
+NOT_ANSWERED = 'The answer is not found'
+NOT_VERSE = 'Verse NOT FOUND'
 
 ANSWERED_QUESTION = [
     {
@@ -1246,5 +1249,221 @@ ANSWERED_QUESTION = [
         QUESTION: 'At what age did Methuselah have Lamech?',
         ANSWER: 'Lamech was born when Methuselah was 187 years old.',
         VERSE: '{} 5:25'.format(Book.genesis)
+    },
+    # 04/23/2020 START - 1
+    {
+        QUESTION: 'how many years did Methuselah live after he had Lamech?',
+        ANSWER: 'Methuselah lived an additional 782 years after he had Lamech.',
+        VERSE: '{} 5:26'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did Methuselah have mare children after Lamech?',
+        ANSWER: 'Methuselah did have more children after he had Lamech.',
+        VERSE: '{} 5:26'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'How many years did Methuselah live?',
+        ANSWER: 'Methuselah lived a total of 969 years.',
+        VERSE: '{} 5:27'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Methuselah die?',
+        ANSWER: 'Methuselah died at the age of 962 years old.',
+        VERSE: '{} 5:27'.format(Book.genesis)
+    },
+
+    # ===============> Next person
+    {
+        QUESTION: 'At what age did Lamech have Noah?',
+        ANSWER: 'Noah was born when Lamech was 182 years old.',
+        VERSE: '{} 5:28'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'What did Lamech say his son Noah would do?',
+        ANSWER: 'Lamech said his son Noah, "... would confront us in the labor and toil of our hands caused by the '
+                'ground the Lord has cursed." ',
+        VERSE: '{} 5:29'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what does it mean that Noah would "confront" in the labor and toil his father Lamech declared?',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: 'how many years did Lamech live after he had Noah?',
+        ANSWER: 'Lamech lived an additional 595 years after he had Noah.',
+        VERSE: '{} 5:30'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'did Lamech have mare children after Noah?',
+        ANSWER: 'Lamech did have more children after he had Noah.',
+        VERSE: '{} 5:30'.format(Book.genesis)
+    },
+    # 7
+    {
+        QUESTION: 'How many years did Lamech live?',
+        ANSWER: 'Lamech lived a total of 777 years.',
+        VERSE: '{} 5:31'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Lamech die?',
+        ANSWER: 'Lamech died at the age of 777 years old.',
+        VERSE: '{} 5:31'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'At what age did Noah have his sons?',
+        ANSWER: 'Shem, Ham and Japheth were born when Lamech was 500 years old.',
+        VERSE: '{} 5:32'.format(Book.genesis)
+    },
+    {
+        QUESTION: "what were the names of Noah's sons?",
+        ANSWER: "Shem, Ham and Japheth were Noah's sons in the book of Genesis.",
+        VERSE: '{} 5:32, {} 6:10'.format(Book.genesis, GENESIS)
+    },
+    {
+        QUESTION: 'who are Shem, Ham and Japheth in the Book of Genesis?',
+        ANSWER: 'They are the Sons of Noah.',
+        VERSE: '{} 5:32, {} 6:10'.format(Book.genesis, GENESIS)
+    },
+    {
+        QUESTION: 'what did the sons of God do to the daughters of humans?',
+        ANSWER: 'The sons of God took any of the women they choose, and marry them.',
+        VERSE: '{} 6:1-{} 6:2'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'why did the sons of God take and marry the daughters of humans?',
+        ANSWER: 'The sons of God saw that women were beautiful, so they took and marry which ever they choose.',
+        VERSE: '{} 6:1-{} 6:2'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'who are the sons of God?',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: 'who are the daughters of humans?',
+        ANSWER: 'In the book of Genesis, when humans started to populate the world, daughters were born to them.',
+        VERSE: '{} 6:1'.format(Book.genesis)
+    },
+    {
+        QUESTION: "did God limit humans lifespan?",
+        ANSWER: "God declared that mankind lifespan would be 120 years.",
+        VERSE: '{} 6:3'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why did God limit humans lifespan',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: "what does it mean that God's spirit will not contend with humans forever?",
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+
+    # 6:3
+    {
+        QUESTION: 'when were the Nephilim on earth?',
+        ANSWER: 'The Nephilim where on earth in the days of Noah and can be found in the days of Moses.',
+        VERSE: '{} 6:4'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what are Nephilim?',
+        ANSWER: 'Nephilim are famous and power giants of ancient times. They were on the earth in the days of Noah '
+                'and in the days of Moses. ',
+        VERSE: '{} 6:4, {} 13:33'.format(Book.genesis, Book.numbers)
+    },
+    {
+        QUESTION: 'did giants exist?',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+
+    # 04/23/2020 END - 1 - 11
+    {
+        QUESTION: 'are people naturally evil?',
+        ANSWER: 'The human heart will lean to evil and wickedness, continuously.',
+        VERSE: '{} 6:5'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is the human heart?',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: 'what are the thoughts of the human heart?',
+        ANSWER: 'Without God the thoughts of the human heart are only evil all the time.',
+        VERSE: '{} 6:5'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'can the human race be wicked?',
+        ANSWER: 'Without God the human race can be greatly wicked, and always thinking of evil things?',
+        VERSE: '{} 6:5'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'what is evil?',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: 'does God regret things?',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: 'what is God\'s regret?',
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: "can God's heart be troubled?",
+        ANSWER: NOT_ANSWERED,
+        VERSE: NOT_VERSE
+    },
+    {
+        QUESTION: 'what did God feel when he saw mankind\'s wickedness?',
+        ANSWER: 'God\'s heart was deeply troubled because of how great humans\'s wickedness was.',
+        VERSE: '{} 6:6'.format(Book.genesis)
+    },
+    {
+        QUESTION: 'why did God wipe all mankind, the animals that walk the ground, and the birds?',
+        ANSWER: 'Because of how great mankind wickedness was, God wiped away all things that moved on the ground and '
+                'flew through the air, except Noah and his family. ',
+        VERSE: '{} 6:5-{} 6:8'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'who was the only one that found favor when God was going to destroy the world with a flood?',
+        ANSWER: 'Noah and his family were the only ones that found favor in God\'s eyes when the world was going to '
+                'be destroyed. ',
+        VERSE: '{} 6:7-{} 6:8'.format(Book.genesis, Book.genesis)
+    },
+    {
+        QUESTION: 'why did Noah find favor in God\'s eyes?',
+        ANSWER: 'Noah was a righteous man, blameless among the people of his time who walked with God.',
+        VERSE: '{} 6:9'.format(GENESIS)
+    },
+    {
+        QUESTION: 'what were people like in Noah\'s time?',
+        ANSWER: 'The world was corrupted, full of violence, everything they did, and all the thoughts in people\'s '
+                'hearts were wicked all the time. ',
+        VERSE: '{} 6:5, {} 6:11-{} 6:12'.format(GENESIS, GENESIS, GENESIS)
+    },
+    {
+        QUESTION: 'how bad can mankind get?',
+        ANSWER: 'Without God, the world can be full of perversion, violence, with everything people think and do be '
+                'wicked all time.',
+        VERSE: '{} 6:5, {} 6:11-{} 6:12'.format(GENESIS, GENESIS, GENESIS)
+    },
+    {
+        QUESTION: 'who\'s fault was it that the earth wicked in Noah\'s time?',
+        ANSWER: 'The people filled the earth with wickedness and violence, and because of that God destroyed the earth.',
+        VERSE: '{} 6:11-{} 6:13'.format(GENESIS, GENESIS)
+    },
+    {
+        QUESTION: 'what did God command Noah to build?',
+        ANSWER: 'God commanded Noah to build an ark.',
+        VERSE: '{} 6:14'.format(GENESIS)
     }
+
+    # Genesis 6:20
 ]

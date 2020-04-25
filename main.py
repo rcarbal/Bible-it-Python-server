@@ -3,6 +3,7 @@ import json
 import os
 
 from flask import Flask, request, render_template, Markup
+from flask_cors import cross_origin
 from sqlalchemy import create_engine, desc, asc
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -359,7 +360,11 @@ def get_chapter():
         return json_string
 
 
+# ================================================================================
+# Questions Route
+
 @app.route('/api/question_match', methods=['GET'])
+@cross_origin()
 def get_question_match():
     if request.method == 'GET':
         req_args = request.args
@@ -405,6 +410,11 @@ def get_stripe_session():
 def get_successful_payment():
     if request.method == 'GET':
         return render_template('/payments/payment_success.html')
+
+
+@app.route('/webhook', methods=['POST'])
+def call_webhooks():
+    StripeApi.call_webhooks(request=request)
 
 
 # End of payments endpoints

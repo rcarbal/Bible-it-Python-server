@@ -385,6 +385,33 @@ def get_question_match():
         return json_response
 
 
+@app.route('/api/question')
+@cross_origin()
+def get_question():
+    if request.method == 'GET':
+        req_args = request.args
+
+        if 'input' not in req_args:
+            return 'ERROR!!! no input in request args'
+        input_from_user = req_args['input']
+
+        # convert JSON questions to list
+        array_that_holds_question = []
+        matcher = QuestionMatcher()
+        for json_question in ANSWERED_QUESTION:
+            question = json_question['question']
+            answer = json_question['answer']
+            verse = json_question['verse']
+            question_tuple = (question, answer, verse)
+
+            array_that_holds_question.append(question_tuple)
+
+        best_matched_string = matcher.get_best_question_score(questions_array=array_that_holds_question,
+                                                              user_string=input_from_user)
+        json_response = json.dumps(best_matched_string)
+        return json_response
+
+
 # =======================================================================================
 # Payment endpoints
 
